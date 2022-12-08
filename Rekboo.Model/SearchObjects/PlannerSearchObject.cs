@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rekboo.Model.SearchObjects
 {
-    public class PlannerSearchObject
+    public class PlannerSearchObject : BaseSearchObject
     {
         public int NumberOfPeople { get; set; }
         public int NumberOfRecipes { get; set; }

@@ -11,6 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IMealService, MealService>();
+builder.Services.AddTransient<IPlannerMealService, PlannerMealService>();
+builder.Services.AddTransient<IPlannerService, PlannerService>();
+
 builder.Services.AddAutoMapper(typeof(IUserService));
 
 builder.Services.AddDbContext<RekbooContext>(
