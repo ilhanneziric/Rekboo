@@ -11,5 +11,6 @@ namespace Rekboo.Services
 {
     public interface IUserService : ICRUDService<User, UserSearchObject, UserInsertRequest, UserUpdateRequest>
     {
+        User Login(string email, string password);
     }
 }

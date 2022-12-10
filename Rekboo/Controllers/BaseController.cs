@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Rekboo.Services;
 
 namespace Rekboo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class BaseController<T, TSearch> : Controller where T : class where TSearch : class
     {
         public IService<T, TSearch> Service { get; set; }

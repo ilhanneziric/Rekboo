@@ -11,6 +11,8 @@ namespace Rekboo.Services.Database
         public int MealID { get; set; }
         public string Name { get; set; } = null!;
         public string Description { get; set; } = null!;
+        public int Calories { get; set; }
+
         //photo
         //tags/preferences
 
