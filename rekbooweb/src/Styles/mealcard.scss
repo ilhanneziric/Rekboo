@@ -1,0 +1,25 @@
+@import './parent';
+
+.mealCardContainer{
+    display: inline-block;
+    width: 300px;
+    border-radius: 25px;
+    margin: 30px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.mealCardPhoto{
+    object-fit: fill;
+    width: 300px;
+    height: 300px;
+    border-radius: 25px;
+}
+
+.mealCardDescriptionContainer{
+    padding: 10px 20px;
+}
+
+.mealCardTitle{
+    font-weight: bold;
+    font-size: larger;
+}

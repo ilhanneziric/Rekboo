@@ -1,0 +1,9 @@
+@import './parent';
+
+.plannerMealsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 2rem;
+    margin-top: 2rem;
+}
