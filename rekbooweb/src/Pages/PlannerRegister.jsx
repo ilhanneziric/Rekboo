@@ -1,7 +1,8 @@
 import Wizard from "../Components/Wizard"
 import '../Styles/plannerregister.scss'
-import RegisterPhoto from '../Icons/registerPhoto.png';
+import RegisterPhoto from '../Assets/registerPhoto.png';
 import { useState } from "react";
+import Footer from "../Components/Footer";
 
 const PlannerRegister = () => {
   const [inputs, setInputs] = useState({
@@ -27,7 +28,7 @@ const PlannerRegister = () => {
     }
     
     console.log(inputs);
-} 
+  } 
   return (
     <>
       <Wizard/>      

@@ -1,0 +1,11 @@
+@import './parent';
+
+.stepperContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stepper{
+    width: 800px;
+}

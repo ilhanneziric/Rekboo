@@ -12,6 +12,9 @@ import PlannerRegister from './Pages/PlannerRegister';
 import Login from './Pages/Login';
 import Page404 from './Pages/Page404';
 import Header from './Components/Header';
+import Admin from './Pages/Admin';
+import Footer from './Components/Footer';
+
 function App() {
   return (
     <>
@@ -23,6 +26,7 @@ function App() {
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/howitworks' element={<HowItWorks/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/admin' element={<Admin/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
             <Route path='/planneraddress' element={<PlannerAddress/>}/>
             <Route path='/plannerregister' element={<PlannerRegister/>}/>
@@ -31,6 +35,7 @@ function App() {
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>
+        <Footer/>
       </Router> 
     </>
   );

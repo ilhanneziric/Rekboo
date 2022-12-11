@@ -1,0 +1,53 @@
+@import './parent';
+
+.plannerAddressContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addressOrderContainer{
+    border-left: 5px solid $green;
+    padding: 50px;
+    margin: 50px 50px 50px 0;
+    width: 300px;
+}
+
+.addressRegisterForm{
+    width: 500px;
+    height: 100%;
+}
+
+.addressFormContainer{
+    width: 500px;
+}
+
+.orderInformationItemContainer{
+    display: block;
+    margin: 10px 0;
+}
+
+.orderInformationItemPrice{
+    display: inline;
+    float: right;
+}
+
+.orderInformationItemPriceTotal{
+    font-weight: bold;
+    display: inline;
+    float: right;
+}
+
+.orderInformationItemTitle{
+    display: block;
+    font-weight: bold;
+}
+
+.orderInformationItemPlan{
+    display: inline;
+}
+
+.orderInformationItemTitleInline{
+    display: inline;
+    font-weight: bold;
+}
