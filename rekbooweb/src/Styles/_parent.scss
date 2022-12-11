@@ -1,0 +1,25 @@
+//colors
+$green: #9BD13D;
+$darkGreen: #3E5418;
+$grey: #ececec;
+
+//measures
+$wizardWidth: 9rem;
+
+.btn{
+    background-color: $green;
+    color: white;
+    padding: 10px 20px;
+    border: 5px solid $green;
+    text-align: center;
+}
+
+.btn:hover{
+    border-bottom: 5px solid $darkGreen;
+    cursor: pointer;
+}
+
+.btn:active{
+    background-color: $darkGreen;
+    border: 5px solid $darkGreen;
+}

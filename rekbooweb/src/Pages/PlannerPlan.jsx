@@ -1,7 +1,10 @@
+import Wizard from "../Components/Wizard"
 
 const PlannerPlan = () => {
   return (
-    <div>PlannerPlan</div>
+    <>
+      <Wizard/>
+    </>
   )
 }
 

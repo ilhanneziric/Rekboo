@@ -1,21 +1,22 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
-import HomePage from './Screens/HomePage';
-import AboutUs from './Screens/AboutUs';
-import HowItWorks from './Screens/HowItWorks';
-import PlannerAddress from './Screens/PlannerAddress';
-import PlannerCheckout from './Screens/PlannerCheckout';
-import PlannerMeals from './Screens/PlannerMeals';
-import PlannerPlan from './Screens/PlannerPlan';
-import PlannerRegister from './Screens/PlannerRegister';
-import Login from './Screens/Login';
-import Page404 from './Screens/Page404';
-
+import HomePage from './Pages/HomePage';
+import AboutUs from './Pages/AboutUs';
+import HowItWorks from './Pages/HowItWorks';
+import PlannerAddress from './Pages/PlannerAddress';
+import PlannerCheckout from './Pages/PlannerCheckout';
+import PlannerMeals from './Pages/PlannerMeals';
+import PlannerPlan from './Pages/PlannerPlan';
+import PlannerRegister from './Pages/PlannerRegister';
+import Login from './Pages/Login';
+import Page404 from './Pages/Page404';
+import Header from './Components/Header';
 function App() {
   return (
     <>
       <Router>
+      <Header/>
         <div className='container'>
           <Routes>
             <Route path='/' element={<HomePage/>}/>

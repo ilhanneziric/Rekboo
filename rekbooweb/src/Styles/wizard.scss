@@ -1,0 +1,19 @@
+@import './parent';
+
+.wizardNav{
+    display: inline;
+    width: $wizardWidth;//this is same as wizaed line width
+    margin: 50px 10px;
+}
+
+.wizardTitle{
+    // margin: 70px 50px;
+    display: block;
+    text-align: center;
+    margin-bottom: 0;
+}
+.wizardContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

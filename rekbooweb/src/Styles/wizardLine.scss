@@ -1,0 +1,25 @@
+@import './parent';
+
+.wizardLineContainer{
+    display: inline-block;
+    width: 5rem;
+    height: 4px;
+}
+
+.wizardLineBack{
+    position: absolute;
+    background-color: $grey;
+    width: $wizardWidth;
+    height: 10px;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.wizardLineFront{
+    position: absolute;
+    background-color: $green;
+    border-radius: 20px;
+    height: 10px;
+    width: 5rem;
+    z-index: 1;
+}

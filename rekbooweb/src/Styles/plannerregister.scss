@@ -1,0 +1,48 @@
+@import './parent';
+
+.registerTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
+.plannerRegisterContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerForm{
+    width: 500px;
+    height: 100%;
+}
+
+.registerPhoto{
+    width: 500px;
+}
+
+.registerFormLbl{
+    display: block;
+}
+
+.registerFormInput{
+    display: block;
+    width: 70%;
+
+    height: 2.5em;
+    outline: transparent;
+    border: 2px solid $darkGreen;
+    padding: 5px 10px;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.registerFormInput:focus{
+    outline: 2px solid $green;
+    border: 2px solid $green;
+}
+
+.registerBtn{
+    margin: 20px 0;
+    width: 70%;
+}
