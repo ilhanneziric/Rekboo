@@ -16,6 +16,7 @@ namespace Rekboo.Services.Database
         public string? Email { get; set; }
         public string? Phone { get; set; }
         public string? City { get; set; }
+        public string? Address { get; set; }
 
         public virtual ICollection<Planner>? Planners { get; set; }
     }
