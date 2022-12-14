@@ -1,0 +1,42 @@
+@import './parent';
+
+.tagCardBody{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tagCardContainer{
+    display: inline-block;
+    margin: 10px;
+}
+
+.tagCardIcon{
+    width: 50px;
+}
+
+.tagCardIconChecked{
+    background-color: $green;
+}
+
+.tagCardName{
+    text-align: center;
+    margin: 10px;
+    color: $darkGreen;
+    font-weight: bold;
+}
+
+.tagCardChecked, .tagCardBody:hover{
+    outline: 5px solid $green;
+    cursor: pointer;
+}
+
+.tagCardMark{
+    width: 20px;
+    top: 0;
+    right: 0;
+}

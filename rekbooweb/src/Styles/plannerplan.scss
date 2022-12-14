@@ -1,0 +1,82 @@
+@import './parent';
+
+.planTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
+.plannerPlanContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.planLeftContainer{
+    width: 400px;
+    margin-right: 80px;
+}
+
+.planRightContainer{
+    width: 400px;
+    margin-left: 80px;
+}
+
+.noOfContainers{
+    margin-bottom: 20px;
+}
+
+.noOfTitle{
+    color: $darkGreen;
+    font-weight: bolder;
+}
+
+.noOfCardContainer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.noOfCard{
+    padding: 20px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 25px;
+    background-color: $grey;
+    color: $darkGreen;
+}
+
+.noOfCardChecked{
+    color: $green;
+}
+
+.noOfCardChecked, .noOfCard:hover{
+    outline: 4px solid $green;
+    cursor: pointer;
+}
+
+.totalOrderPrice{
+    background-color: $grey;
+    font-size: 1.1rem;
+    display: inline;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.totalOrderRecipes{
+    margin: 10px 0;
+}
+
+.totalOrderChosenPlan{
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.totalOrderContainer{
+    border-left: 5px solid $green;
+    padding: 10px;
+}

@@ -1,5 +1,5 @@
-import Wizard from "../Components/Wizard"
 import '../Styles/plannerregister.scss'
+import Wizard from "../Components/Wizard"
 import RegisterPhoto from '../Assets/registerPhoto.png';
 import { useState } from "react";
 import Footer from "../Components/Footer";
