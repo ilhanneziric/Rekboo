@@ -1,34 +1,34 @@
 @import './parent';
 
-.plannerRegisterTitle{
+.loginContainerAll{
+    margin: 120px 0;
+}
+
+.loginTitle{
     text-align: center;
     color: $darkGreen;
     margin: 0;
 }
 
-.plannerRegisterContainer{
+.loginContainer{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 70px;
 }
 
-.plannerRegisterForm{
-    width: 500px;
+.loginForm{
+    width: 300px;
     height: 100%;
 }
 
-.plannerRegisterPhoto{
-    width: 500px;
-}
-
-.plannerRegisterFormLbl{
+.loginFormLbl{
     display: block;
 }
 
-.plannerRegisterFormInput{
+.loginFormInput{
     display: block;
-    width: 70%;
-
+    width: 100%;
     height: 2.5em;
     outline: transparent;
     border: 2px solid $darkGreen;
@@ -37,12 +37,12 @@
     font-size: 1.2rem;
 }
 
-.registerFormInput:focus{
+.loginFormInput:focus{
     outline: 2px solid $green;
     border: 2px solid $green;
 }
 
-.plannerRegisterBtn{
+.loginBtn{
     margin: 20px 0;
-    width: 70%;
+    width: 100%;
 }

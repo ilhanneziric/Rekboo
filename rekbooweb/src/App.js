@@ -14,6 +14,7 @@ import Page404 from './Pages/Page404';
 import Header from './Components/Header';
 import Admin from './Pages/Admin';
 import Footer from './Components/Footer';
+import Register from './Pages/Register';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/howitworks' element={<HowItWorks/>}/>
             <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
             <Route path='/planneraddress' element={<PlannerAddress/>}/>

@@ -33,22 +33,22 @@ const PlannerRegister = () => {
     <>
       <Wizard/>      
       <div>
-        <h1 className="registerTitle">{title}</h1>
+        <h1 className="plannerRegisterTitle">{title}</h1>
         <div className="plannerRegisterContainer">
-          <div className="registerPhotoContainer">
-            <img className="registerPhoto" src={RegisterPhoto} alt="Register Photo" />
+          <div className="plannerRegisterPhotoContainer">
+            <img className="plannerRegisterPhoto" src={RegisterPhoto} alt="Register Photo" />
           </div>
-          <form onSubmit={onSubmitForm} className="registerForm">
-            <label className="registerFormLbl">UNESITE E-MAIL:</label>
-            <input className="registerFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
+          <form onSubmit={onSubmitForm} className="plannerRegisterForm">
+            <label className="plannerRegisterFormLbl">UNESITE E-MAIL:</label>
+            <input className="plannerRegisterFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
             {
               validEmail && (<>
-              <label className="registerFormLbl">UNESITE ŠIFRA:</label>
-              <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
-              <label className="registerFormLbl">PONOVO UNESITE ŠIFRU:</label>
-              <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>)
+              <label className="plannerRegisterFormLbl">UNESITE ŠIFRU:</label>
+              <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
+              <label className="plannerRegisterFormLbl">PONOVO UNESITE ŠIFRU:</label>
+              <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>)
             }
-            <button className='btn registerBtn'>POTVRDI</button>
+            <button className='btn plannerRegisterBtn'>POTVRDI</button>
           </form>
         </div>
       </div>
