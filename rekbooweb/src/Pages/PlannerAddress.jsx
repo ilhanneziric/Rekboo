@@ -27,24 +27,24 @@ const PlannerAddress = () => {
   return (
     <>
       <Wizard/>
-      <h1 className="registerTitle">UNESITE KONTAKT INFORMACIJE</h1>
+      <h1 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h1>
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
-          <form onSubmit={onSubmitForm} className="addressRegisterForm">
-            <label className="registerFormLbl">IME:</label>
-            <input className="registerFormInput" name="FirstName" type="text" value={FirstName} onChange={e => onChange(e)}/>
-            <label className="registerFormLbl">PREZIME:</label>
-            <input className="registerFormInput" name="LastName" type="text" value={LastName} onChange={e => onChange(e)}/>
-            <label className="registerFormLbl">ADRESU:</label>
-            <input className="registerFormInput" name="Address" type="text" value={Address} onChange={e => onChange(e)}/>
-            <label className="registerFormLbl">GRAD:</label>
-            <input className="registerFormInput" name="City" type="text" value={City} onChange={e => onChange(e)}/>
-            <label className="registerFormLbl">TELEFON:</label>
-            <input className="registerFormInput" name="Phone" type="text" value={Phone} onChange={e => onChange(e)}/>
-            <button className='btn registerBtn'>POTVRDI</button>
+          <form onSubmit={onSubmitForm} className="addressaddressForm">
+            <label className="addressFormLbl">IME:</label>
+            <input className="addressFormInput" name="FirstName" type="text" value={FirstName} onChange={e => onChange(e)}/>
+            <label className="addressFormLbl">PREZIME:</label>
+            <input className="addressFormInput" name="LastName" type="text" value={LastName} onChange={e => onChange(e)}/>
+            <label className="addressFormLbl">ADRESU:</label>
+            <input className="addressFormInput" name="Address" type="text" value={Address} onChange={e => onChange(e)}/>
+            <label className="addressFormLbl">GRAD:</label>
+            <input className="addressFormInput" name="City" type="text" value={City} onChange={e => onChange(e)}/>
+            <label className="addressFormLbl">TELEFON:</label>
+            <input className="addressFormInput" name="Phone" type="text" value={Phone} onChange={e => onChange(e)}/>
+            <button className='btn addressBtn'>POTVRDI</button>
           </form>
           </div>
-          <div>
+          <div className="addressOrderInformationContainer">
             <div className="orderInformationTitle">INFORMACIJE O NARUDŽBI</div>
             <div className="addressOrderContainer">
               <div className="orderInformationItemContainer">

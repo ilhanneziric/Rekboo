@@ -1,0 +1,8 @@
+@import './parent';
+
+.navcontainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 300px;;
+}
