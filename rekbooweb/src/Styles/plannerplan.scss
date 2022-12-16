@@ -40,9 +40,8 @@
 }
 
 .noOfCard{
-    padding: 20px;
+    padding: 15px;
     margin-right: 10px;
-    font-size: 1.2rem;
     font-weight: bold;
     border-radius: 25px;
     background-color: $grey;
@@ -60,7 +59,6 @@
 
 .totalOrderPrice{
     background-color: $grey;
-    font-size: 1.1rem;
     display: inline;
     padding: 5px;
     margin: 5px 0;
@@ -72,11 +70,16 @@
 }
 
 .totalOrderChosenPlan{
-    font-size: 1.1rem;
     font-weight: bolder;
 }
 
 .totalOrderContainer{
     border-left: 5px solid $green;
     padding: 10px;
+}
+
+.planNextBtn{
+    @extend .btn;
+    padding: 2px 5px;
+    margin: 20px 0;
 }

@@ -33,7 +33,7 @@ const PlannerRegister = () => {
     <>
       <Wizard/>      
       <div>
-        <h1 className="plannerRegisterTitle">{title}</h1>
+        <h2 className="plannerRegisterTitle">{title}</h2>
         <div className="plannerRegisterContainer">
           <div className="plannerRegisterPhotoContainer">
             <img className="plannerRegisterPhoto" src={RegisterPhoto} alt="Register Photo" />

@@ -12,7 +12,7 @@ const PlannerPlan = () => {
     <>
       <Wizard/>      
       <div>
-        <h1 className="planTitle">ODABERITE SVOJ PLAN</h1>
+        <h2 className="planTitle">ODABERITE SVOJ PLAN</h2>
         <div className="plannerPlanContainer">
           <div className="planLeftContainer">
           <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
@@ -24,24 +24,20 @@ const PlannerPlan = () => {
           </div>
           <div className="planRightContainer">
             <div className="noOfContainers">
-              <h3 className="noOfTitle">BROJ OSOBA:</h3>
+              <h4 className="noOfTitle">BROJ OSOBA:</h4>
               <div className="noOfCardContainer">
                 <div className="noOfCard">2</div>
-                <div className="noOfCard">3</div>
                 <div className="noOfCard">4</div>
-                <div className="noOfCard">5</div>
-                <div className="noOfCard">6</div>
               </div>
             </div>
             <div className="noOfContainers">
-              <h3 className="noOfTitle">BROJ RECEPATA SEDMIČNO:</h3>
+              <h4 className="noOfTitle">BROJ RECEPATA SEDMIČNO:</h4>
               <div className="noOfCardContainer">
                 <div className="noOfCard">2</div>
                 <div className="noOfCard">3</div>
                 <div className="noOfCard">4</div>
                 <div className="noOfCard">5</div>
                 <div className="noOfCard">6</div>
-                <div className="noOfCard">7</div>
               </div>
             </div>
             <div className="totalOrderContainer">
@@ -50,6 +46,7 @@ const PlannerPlan = () => {
               <div className="totalOrderRecipes">6 porcija ukupno</div>
               <div className="totalOrderPrice">Ukupna cijana: <b>60KM</b></div>
             </div>
+            <div className="planNextBtn">DALJE</div>
           </div>
         </div>
       </div>

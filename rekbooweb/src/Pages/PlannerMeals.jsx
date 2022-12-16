@@ -6,7 +6,7 @@ const PlannerMeals = () => {
   return (
     <>
     <Wizard/>
-    <h1 className="registerTitle">ODABERITE 3 JELA</h1>
+    <h2 className="registerTitle">ODABERITE 3 JELA</h2>
     <div className="plannerMealsContainer">
       <MealCard/>
       <MealCard/>

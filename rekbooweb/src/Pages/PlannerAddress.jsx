@@ -27,7 +27,7 @@ const PlannerAddress = () => {
   return (
     <>
       <Wizard/>
-      <h1 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h1>
+      <h2 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h2>
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
           <form onSubmit={onSubmitForm} className="addressaddressForm">
