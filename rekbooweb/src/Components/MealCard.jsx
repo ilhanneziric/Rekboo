@@ -1,9 +1,9 @@
 import '../Styles/mealcard.scss'
 import mealPhoto from '../Assets/mealPhoto.png'
-const MealCard = () => {
+const MealCard = ({setShown}) => {
   return (
     <>
-        <div className="mealCardContainer">
+        <div className="mealCardContainer" onClick={() => setShown(true)}>
             <img  className="mealCardPhoto" src={mealPhoto} alt="Meal photo" />
             <div className="mealCardDescriptionContainer">
                 <div className="mealCardTitle">Pita zeljanica</div>
