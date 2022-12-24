@@ -43,6 +43,11 @@
 }
 
 .registerBtn{
+    @extend .btn;
     margin: 20px 0;
     width: 100%;
+}
+
+.registerBtn:hover{
+    color: white;
 }

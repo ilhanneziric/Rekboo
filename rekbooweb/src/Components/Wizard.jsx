@@ -1,10 +1,37 @@
 import WizardLine from "./WizardLine"
 import '../Styles/wizard.scss'
 
-const Wizard = () => {
+const Wizard = ({level}) => {
   return (
     <>
         <div className="wizardContainer">
+            {
+                level > 1 &&
+                <div className="wizardNav">
+                    <p className="wizardTitle">ODABERI PLAN</p>
+                    <WizardLine remNumber={4.5}/>
+                </div>
+            }
+
+            {
+                level > 2 &&
+                <div className="wizardNav">
+                    <p className="wizardTitle">ODABERI PLAN</p>
+                    <WizardLine remNumber={9}/>
+                </div>
+            }
+
+            {
+                level > 3
+            }
+
+            {
+                level > 4
+            }
+
+            {
+                level > 5
+            }
             <div className="wizardNav">
                 <p className="wizardTitle">ODABERI PLAN</p>
                 <WizardLine remNumber={9}/>

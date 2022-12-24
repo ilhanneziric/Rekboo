@@ -4,6 +4,9 @@ import TagCard from '../Components/TagCard'
 
 import Vegan from '../Assets/vegan.svg';
 import VeganChecked from '../Assets/veganChecked.svg';
+import Halal from '../Assets/halal.png';
+import HalalChecked from '../Assets/halalChecked.png';
+import { Link } from 'react-router-dom';
 
 // import {Vegan, VeganChecked} from '../Utils/PlanIconsContainer';
 
@@ -19,8 +22,8 @@ const PlannerPlan = () => {
           <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={true}/>
           <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
           <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={true}/>
+          <TagCard icon={Halal} iconChecked={HalalChecked} name={'Halal'} checked={false}/>
+          <TagCard icon={Halal} iconChecked={HalalChecked} name={'Halal'} checked={true}/>
           </div>
           <div className="planRightContainer">
             <div className="noOfContainers">
@@ -46,7 +49,7 @@ const PlannerPlan = () => {
               <div className="totalOrderRecipes">6 porcija ukupno</div>
               <div className="totalOrderPrice">Ukupna cijana: <b>60KM</b></div>
             </div>
-            <div className="planNextBtn">DALJE</div>
+            <Link to='/plannerregister'><div className="planNextBtn">DALJE</div></Link>
           </div>
         </div>
       </div>

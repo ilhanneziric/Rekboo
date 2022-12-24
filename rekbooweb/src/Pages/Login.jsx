@@ -27,7 +27,7 @@ const Login = () => {
           <input className="loginFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
           <label className="loginFormLbl">UNESITE ŠIFRU:</label>
           <input className="loginFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
-          <button className='btn loginBtn'>POTVRDI</button>
+          <button className='loginBtn'>POTVRDI</button>
         </form>
       </div>
     </div>

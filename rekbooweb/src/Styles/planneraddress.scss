@@ -104,6 +104,11 @@
 }
 
 .addressBtn{
+    @extend .btn;
     margin: 20px 0;
     width: 100%;
+}
+
+.addressBtn:hover{
+    color: white;
 }

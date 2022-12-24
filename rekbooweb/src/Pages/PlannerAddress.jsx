@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom";
 import Wizard from "../Components/Wizard"
 import '../Styles/planneraddress.scss'
 
@@ -41,7 +42,7 @@ const PlannerAddress = () => {
             <input className="addressFormInput" name="City" type="text" value={City} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">TELEFON:</label>
             <input className="addressFormInput" name="Phone" type="text" value={Phone} onChange={e => onChange(e)}/>
-            <button className='btn addressBtn'>POTVRDI</button>
+            <Link to='/plannermeals'><button className='addressBtn'>POTVRDI</button></Link>
           </form>
           </div>
           <div className="addressOrderInformationContainer">

@@ -42,6 +42,7 @@
 }
 
 .plannerRegisterBtn{
+    @extend .btn;
     margin: 20px 0;
     width: 70%;
 }

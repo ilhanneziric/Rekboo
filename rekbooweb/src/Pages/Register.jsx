@@ -30,7 +30,7 @@ const Register = () => {
             <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
             <label className="registerFormLbl">PONOVO UNESITE ŠIFRU:</label>
             <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
-            <button className='btn registerBtn'>POTVRDI</button>
+            <button className='registerBtn'>POTVRDI</button>
         </form>
     </div>
     </div>

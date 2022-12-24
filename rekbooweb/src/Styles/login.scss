@@ -43,6 +43,11 @@
 }
 
 .loginBtn{
+    @extend .btn;
     margin: 20px 0;
     width: 100%;
+}
+
+.loginBtn:hover{
+    color: white;
 }

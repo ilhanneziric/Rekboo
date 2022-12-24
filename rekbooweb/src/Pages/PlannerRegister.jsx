@@ -3,6 +3,7 @@ import Wizard from "../Components/Wizard"
 import RegisterPhoto from '../Assets/registerPhoto.png';
 import { useState } from "react";
 import Footer from "../Components/Footer";
+import { Link } from 'react-router-dom';
 
 const PlannerRegister = () => {
   const [inputs, setInputs] = useState({
@@ -48,7 +49,7 @@ const PlannerRegister = () => {
               <label className="plannerRegisterFormLbl">PONOVO UNESITE ŠIFRU:</label>
               <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>)
             }
-            <button className='btn plannerRegisterBtn'>POTVRDI</button>
+            <Link to='/planneraddress'><button className='plannerRegisterBtn'>POTVRDI</button></Link>
           </form>
         </div>
       </div>
