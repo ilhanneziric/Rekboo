@@ -11,7 +11,7 @@ const PlannerMeals = () => {
 
   return (
     <>
-    <Wizard/>
+    <Wizard level={5}/>
     <h2 className="registerTitle">ODABERITE 3 JELA</h2>
     <div className="plannerMealsContainer">
       <MealCard setShown={setShow}/>

@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 const PlannerPlan = () => {
   return (
     <>
-      <Wizard/>      
+      <Wizard level={1}/>      
       <div>
         <h2 className="planTitle">ODABERITE SVOJ PLAN</h2>
         <div className="plannerPlanContainer">

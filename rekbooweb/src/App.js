@@ -12,7 +12,7 @@ import PlannerRegister from './Pages/PlannerRegister';
 import Login from './Pages/Login';
 import Page404 from './Pages/Page404';
 import Header from './Components/Header';
-import Admin from './Pages/Admin';
+import AdminMeals from './Pages/AdminMeals';
 import Footer from './Components/Footer';
 import Register from './Pages/Register';
 
@@ -28,7 +28,7 @@ function App() {
             <Route path='/howitworks' element={<HowItWorks/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
-            <Route path='/admin' element={<Admin/>}/>
+            <Route path='/adminmeals' element={<AdminMeals/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
             <Route path='/planneraddress' element={<PlannerAddress/>}/>
             <Route path='/plannerregister' element={<PlannerRegister/>}/>

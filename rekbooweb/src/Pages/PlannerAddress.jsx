@@ -27,7 +27,7 @@ const PlannerAddress = () => {
 
   return (
     <>
-      <Wizard/>
+      <Wizard level={4}/>
       <h2 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h2>
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">

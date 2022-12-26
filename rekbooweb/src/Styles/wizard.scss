@@ -12,6 +12,12 @@
     text-align: center;
     margin-bottom: 0;
 }
+
+.wizardTitleSelected{
+    color: $green;
+    font-weight: bold;
+}
+
 .wizardContainer{
     display: flex;
     align-items: center;
