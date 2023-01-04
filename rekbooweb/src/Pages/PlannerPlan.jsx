@@ -7,12 +7,16 @@ import VeganChecked from '../Assets/veganChecked.svg';
 import Halal from '../Assets/halal.png';
 import HalalChecked from '../Assets/halalChecked.png';
 import { Link } from 'react-router-dom';
+import Header from '../Components/Header';
+import Footer from '../Components/Footer';
 
 // import {Vegan, VeganChecked} from '../Utils/PlanIconsContainer';
 
 const PlannerPlan = () => {
+  
   return (
     <>
+      <Header/>
       <Wizard level={1}/>      
       <div>
         <h2 className="planTitle">ODABERITE SVOJ PLAN</h2>
@@ -53,6 +57,7 @@ const PlannerPlan = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

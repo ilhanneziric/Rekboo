@@ -1,7 +1,12 @@
+import Footer from "../Components/Footer"
+import Header from "../Components/Header"
 
 const PlannerCheckout = () => {
   return (
-    <div>PlannerCheckout</div>
+    <>
+      <Header/>
+      <Footer/>
+    </>
   )
 }
 

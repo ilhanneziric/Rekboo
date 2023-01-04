@@ -13,6 +13,7 @@ import Login from './Pages/Login';
 import Page404 from './Pages/Page404';
 import Header from './Components/Header';
 import AdminMeals from './Pages/AdminMeals';
+import AdminOrders from './Pages/AdminOrders';
 import Footer from './Components/Footer';
 import Register from './Pages/Register';
 
@@ -20,7 +21,6 @@ function App() {
   return (
     <>
       <Router>
-      <Header/>
         <div className='container'>
           <Routes>
             <Route path='/' element={<HomePage/>}/>
@@ -29,6 +29,7 @@ function App() {
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
             <Route path='/adminmeals' element={<AdminMeals/>}/>
+            <Route path='/adminorders' element={<AdminOrders/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
             <Route path='/planneraddress' element={<PlannerAddress/>}/>
             <Route path='/plannerregister' element={<PlannerRegister/>}/>
@@ -37,7 +38,6 @@ function App() {
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>
-        <Footer/>
       </Router> 
     </>
   );

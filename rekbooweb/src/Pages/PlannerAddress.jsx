@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import Wizard from "../Components/Wizard"
 import '../Styles/planneraddress.scss'
-
 
 const PlannerAddress = () => {
   const [inputs, setInputs] = useState({
@@ -24,9 +25,10 @@ const PlannerAddress = () => {
     
     console.log(inputs);
   }
-
+  
   return (
     <>
+      <Header/>
       <Wizard level={4}/>
       <h2 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h2>
       <div className="plannerAddressContainer">
@@ -64,6 +66,7 @@ const PlannerAddress = () => {
             </div>
           </div>
         </div>
+        <Footer/>
     </>
   )
 }

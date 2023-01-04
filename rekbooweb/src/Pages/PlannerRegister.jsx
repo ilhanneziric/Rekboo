@@ -4,6 +4,7 @@ import RegisterPhoto from '../Assets/registerPhoto.png';
 import { useState } from "react";
 import Footer from "../Components/Footer";
 import { Link } from 'react-router-dom';
+import Header from '../Components/Header';
 
 const PlannerRegister = () => {
   const [inputs, setInputs] = useState({
@@ -30,8 +31,10 @@ const PlannerRegister = () => {
     
     console.log(inputs);
   } 
+  
   return (
     <>
+      <Header/>
       <Wizard level={3}/>      
       <div>
         <h2 className="plannerRegisterTitle">{title}</h2>
@@ -53,6 +56,7 @@ const PlannerRegister = () => {
           </form>
         </div>
       </div>
+      <Footer/>
     </>
   )
 }

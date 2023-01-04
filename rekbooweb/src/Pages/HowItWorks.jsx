@@ -1,7 +1,12 @@
+import Footer from "../Components/Footer"
+import Header from "../Components/Header"
 
 const HowItWorks = () => {
   return (
-    <div>HowItWorks</div>
+    <>
+      <Header/>
+      <Footer/>
+    </>  
   )
 }
 
