@@ -1,0 +1,36 @@
+@import './parent';
+
+.adminNavContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+
+.adminNavItem{
+    background-color: $green;
+    color: white;
+    padding: 10px 0;
+    border: 5px solid $green;
+    text-align: center;
+    outline: none;
+    width: 200px;
+}
+
+.adminNavItem:hover{
+    border-bottom: 5px solid $darkGreen;
+    cursor: pointer;
+}
+
+.adminNavItem:active{
+    background-color: $darkGreen;
+    border: 5px solid $darkGreen;
+}
+
+
+.activeItem{
+    background-color: $darkGreen;
+    border: 5px solid $darkGreen;
+}
+

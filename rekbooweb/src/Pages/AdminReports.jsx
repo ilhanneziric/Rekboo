@@ -1,14 +1,14 @@
-import '../Styles/adminmeals.scss'
+import '../Styles/adminreports.scss'
 import AdminNavigation from "../Components/AdminNavigation"
 import Header from "../Components/Header"
 
-const AdminMeals = () => {
+const AdminReports = () => {
   return (
     <>
-      <AdminNavigation activeItem={'meals'}/>
+      <AdminNavigation activeItem={'reports'}/>
       <Header/>
     </>
   )
 }
 
-export default AdminMeals
+export default AdminReports

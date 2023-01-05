@@ -14,6 +14,8 @@ import Page404 from './Pages/Page404';
 import Header from './Components/Header';
 import AdminMeals from './Pages/AdminMeals';
 import AdminOrders from './Pages/AdminOrders';
+import AdminUsers from './Pages/AdminUsers';
+import AdminReports from './Pages/AdminReports';
 import Footer from './Components/Footer';
 import Register from './Pages/Register';
 
@@ -30,6 +32,8 @@ function App() {
             <Route path='/register' element={<Register/>}/>
             <Route path='/adminmeals' element={<AdminMeals/>}/>
             <Route path='/adminorders' element={<AdminOrders/>}/>
+            <Route path='/adminusers' element={<AdminUsers/>}/>
+            <Route path='/adminreports' element={<AdminReports/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
             <Route path='/planneraddress' element={<PlannerAddress/>}/>
             <Route path='/plannerregister' element={<PlannerRegister/>}/>

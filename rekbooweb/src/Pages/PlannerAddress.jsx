@@ -1,9 +1,9 @@
+import '../Styles/planneraddress.scss'
 import { useState } from "react"
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Wizard from "../Components/Wizard"
-import '../Styles/planneraddress.scss'
 
 const PlannerAddress = () => {
   const [inputs, setInputs] = useState({
