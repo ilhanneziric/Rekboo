@@ -7,8 +7,6 @@ using Rekboo.Services;
 
 namespace Rekboo.Controllers
 {
-    [ApiController]
-    [Route("[controller]")]
     public class UserController : BaseCRUDController<User, UserSearchObject, UserInsertRequest, UserUpdateRequest>
     {
         public IUserService _userService;
@@ -17,8 +15,8 @@ namespace Rekboo.Controllers
             _userService = userService;
         }
 
-        [HttpPost("/login")]
         [AllowAnonymous]
+        [HttpPost("/api/User/login")]
         public IActionResult Login([FromBody] UserLoginRequest user)
         {
             var token = _userService.Login(user);
