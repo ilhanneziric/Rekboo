@@ -6,6 +6,7 @@ namespace Rekboo.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    //[Authorize(Roles = "Admin")]
     [Authorize]
     public class BaseController<T, TSearch> : Controller where T : class where TSearch : class
     {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.Configuration;
 using Rekboo.Model.Requests;
 using Rekboo.Model.SearchObjects;
 using Rekboo.Services.Database;
@@ -13,8 +14,12 @@ namespace Rekboo.Services
 {
     public class UserService : BaseCRUDService<Model.User, Database.User, UserSearchObject, UserInsertRequest, UserUpdateRequest>, IUserService
     {
-        public UserService(RekbooContext context, IMapper mapper) : base(context, mapper)
+        public ITokenService _tokenService;
+        public IConfiguration _configuration;
+        public UserService(RekbooContext context, IMapper mapper, ITokenService tokenService, IConfiguration configuration) : base(context, mapper)
         {
+            _tokenService = tokenService;
+            _configuration = configuration;
         }
 
         public override Model.User Insert(UserInsertRequest insert)
@@ -85,24 +90,31 @@ namespace Rekboo.Services
                 filteredQuery = filteredQuery.Where(x => x.City == search.City);
             }
 
+            if (!string.IsNullOrWhiteSpace(search?.Role))
+            {
+                filteredQuery = filteredQuery.Where(x => x.Role == search.Role);
+            }
+
             return filteredQuery;
         }
 
-        public Model.User Login(string email, string password)
+        public string Login(UserLoginRequest request)
         {
-            var entity = Context.Users.FirstOrDefault(x => x.Email == email);
+            var entity = Context.Users.FirstOrDefault(x => x.Email == request.Email);
             if (entity == null)
             {
                 return null;
             }
 
-            var hash = GenerateHash(entity.PasswordSalt, password);
+            var hash = GenerateHash(entity.PasswordSalt, request.Password);
             if (hash != entity.PasswordHash)
             {
                 return null;
             }
 
-            return Mapper.Map<Model.User>(entity);
+            var token = _tokenService.BuildToken(_configuration["Jwt:Key"].ToString(), _configuration["Jwt:Issuer"].ToString(), Mapper.Map<Model.User>(entity));
+
+            return token;
         }
     }
 }

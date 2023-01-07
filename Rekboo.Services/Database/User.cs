@@ -13,6 +13,7 @@ namespace Rekboo.Services.Database
         public string LastName { get; set; } = null!;
         public string PasswordHash { get; set; } = null!;
         public string PasswordSalt { get; set; } = null!;
+        public string Role { get; set; } = null!;
         public string? Email { get; set; }
         public string? Phone { get; set; }
         public string? City { get; set; }
