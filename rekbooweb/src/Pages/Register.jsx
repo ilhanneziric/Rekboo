@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import '../Styles/register.scss'
@@ -35,6 +36,7 @@ const Register = () => {
                 <label className="registerFormLbl">PONOVO UNESITE ŠIFRU:</label>
                 <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
                 <button className='registerBtn'>POTVRDI</button>
+                  <div >Imate otvoren račun? <Link to='/login'>Prijavi se</Link>.</div>
             </form>
         </div>
         </div>

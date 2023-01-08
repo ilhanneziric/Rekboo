@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 
 import HomePage from './Pages/HomePage';
 import AboutUs from './Pages/AboutUs';
@@ -11,15 +11,24 @@ import PlannerPlan from './Pages/PlannerPlan';
 import PlannerRegister from './Pages/PlannerRegister';
 import Login from './Pages/Login';
 import Page404 from './Pages/Page404';
-import Header from './Components/Header';
 import AdminMeals from './Pages/AdminMeals';
 import AdminOrders from './Pages/AdminOrders';
 import AdminUsers from './Pages/AdminUsers';
 import AdminReports from './Pages/AdminReports';
-import Footer from './Components/Footer';
 import Register from './Pages/Register';
 
+import { updIsAuthenticated } from './redux/actions/isAuthenticatedActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 function App() {
+  const dispatch = useDispatch();
+
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
+    
+  useEffect(() => {
+    dispatch(updIsAuthenticated());
+  }, []);
+
   return (
     <>
       <Router>
@@ -28,8 +37,8 @@ function App() {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/howitworks' element={<HowItWorks/>}/>
-            <Route path='/login' element={<Login/>}/>
-            <Route path='/register' element={<Register/>}/>
+            <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>{/*fix - put this logic in Login*/}
+            <Route path='/register' element={isAuthenticated ? (<Navigate to='/'/>) : (<Register/>)}/>{/*fix - put this logic in Register*/}
             <Route path='/adminmeals' element={<AdminMeals/>}/>
             <Route path='/adminorders' element={<AdminOrders/>}/>
             <Route path='/adminusers' element={<AdminUsers/>}/>

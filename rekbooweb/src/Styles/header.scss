@@ -17,3 +17,31 @@
 .loginHeaderBtn:hover{
     color: white;
 }
+
+.prileBtnContainer{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.profileHeaderBtn{
+    color: white;
+    background-color: $green;
+    border: 5px solid $green;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.profileHeaderBtn:hover{
+    border-bottom: 5px solid $darkGreen;
+    cursor: pointer;
+}
+
+.profileHeaderBtn:active{
+    background-color: $darkGreen;
+    border: 5px solid $darkGreen;
+}
+
+.logOutBtn{
+    font-size: 1rem;
+}

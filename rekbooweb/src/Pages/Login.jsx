@@ -6,6 +6,7 @@ import '../Styles/login.scss'
 import { loginValidation } from '../Utils/validations';
 import { useDispatch } from "react-redux";
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,6 @@ const Login = () => {
         setValidationError(true);
       }
   } 
-
   return (
     <>
       <Header/>
@@ -57,6 +57,7 @@ const Login = () => {
             <label className="loginFormLbl">UNESITE ŠIFRU:</label>
             <input className="loginFormInput" name="password" type="password" minLength={5} required value={password} onChange={e => onChange(e)}/>
             <button className='loginBtn'>POTVRDI</button>
+            <div >Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>
           </form>
         </div>
       </div>
