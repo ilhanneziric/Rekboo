@@ -1,15 +1,22 @@
+import axios from "axios";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import '../Styles/register.scss'
+import { registerValidation } from "../Utils/validations";
 
 const Register = () => {
+    const navigate = useNavigate();
+
     const [inputs, setInputs] = useState({
         email: '',
         password: '',
-        passwordConfirmation: ''
+        passwordConfirmation: '',
+        role: 'User'
     });
+
+    const [validationError, setValidationError] = useState(false);
     
     const { email, password, passwordConfirmation} = inputs;
 
@@ -19,7 +26,19 @@ const Register = () => {
 
     const onSubmitForm = async e => {
         e.preventDefault();    
-        console.log(inputs);
+        try {
+          var { error } = registerValidation(inputs);
+          if(error){
+            setValidationError(true);
+          }else{
+            const response = await axios.post(`https://localhost:44305/api/User`, inputs);
+            if(response.status === 200){
+                navigate('/login');
+            }
+          } 
+        } catch (err) {
+          setValidationError(true);
+        }
     } 
 
   return (
@@ -29,6 +48,7 @@ const Register = () => {
         <h1 className="registerTitle">REGISTRACIJA NOVOG RAČUNA</h1>
         <div className="registerContainer">
             <form onSubmit={onSubmitForm} className="registerForm">
+                {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
                 <label className="registerFormLbl">UNESITE E-MAIL:</label>
                 <input className="registerFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">UNESITE ŠIFRU:</label>

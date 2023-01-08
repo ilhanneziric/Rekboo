@@ -75,9 +75,19 @@ namespace Rekboo.Services
                 filteredQuery = filteredQuery.Where(x => x.Email == search.Email);
             }
 
-            if (!string.IsNullOrWhiteSpace(search?.FirstName) && !string.IsNullOrWhiteSpace(search?.LastName))
+            //if (!string.IsNullOrWhiteSpace(search?.FirstName) && !string.IsNullOrWhiteSpace(search?.LastName))
+            //{
+            //    filteredQuery = filteredQuery.Where(x => x.FirstName.Contains(search.FirstName) || x.LastName.Contains(search.LastName));
+            //}
+
+            if (!string.IsNullOrWhiteSpace(search?.FirstName))
             {
-                filteredQuery = filteredQuery.Where(x => x.FirstName.Contains(search.FirstName) || x.LastName.Contains(search.LastName));
+                filteredQuery = filteredQuery.Where(x => x.FirstName == search.FirstName);
+            }
+
+            if (!string.IsNullOrWhiteSpace(search?.LastName))
+            {
+                filteredQuery = filteredQuery.Where(x => x.LastName == search.LastName);
             }
 
             if (!string.IsNullOrWhiteSpace(search?.Phone))

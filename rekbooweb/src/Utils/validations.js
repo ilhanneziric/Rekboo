@@ -7,3 +7,13 @@ export const loginValidation = data => {
     });
     return schema.validate(data);
 };
+
+export const registerValidation = data => {
+    const schema = Joi.object({
+        email: Joi.string().required().email({ tlds: { allow: false }}),
+        password: Joi.string().min(5).required(),
+        passwordConfirmation: Joi.string().min(5).required().equal(data.password),
+        role: Joi.string().min(5).required().equal('User'),
+    });
+    return schema.validate(data);
+};

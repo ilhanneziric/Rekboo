@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Rekboo.Model;
 using Rekboo.Model.Requests;
@@ -13,6 +14,24 @@ namespace Rekboo.Controllers
         public UserController(IUserService userService) : base(userService)
         {
             _userService = userService;
+        }
+
+        //[AllowAnonymous]
+        //public override IActionResult Insert([FromBody] UserInsertRequest insert)//popraviti da vrati string, mozda dodati u onaj Model.User response, mozda staviti sve response u baseovima da se vraca Iactionresult
+        //{
+        //    base.Insert(insert);
+
+        //    var token = _userService.Login(new UserLoginRequest
+        //    {
+        //        Password = insert.Password,
+        //        Email = insert.Email,
+        //    });
+        //}
+
+        [AllowAnonymous]
+        public override User Insert([FromBody] UserInsertRequest insert)
+        {
+            return base.Insert(insert);
         }
 
         [AllowAnonymous]
