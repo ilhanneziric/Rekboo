@@ -4,9 +4,11 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { isAuthenticatedReducer } from './reducers/isAuthenticatedReducers';
+import { getUsersReducer } from './reducers/usersReducers';
 
 const reducers = combineReducers({
-    isAuthenticated: isAuthenticatedReducer
+    isAuthenticated: isAuthenticatedReducer,
+    getUsers: getUsersReducer
 });
 
 const middleware = [thunk];
