@@ -3,7 +3,8 @@ $green: #59de09;
 $darkGreen: #3E5418;
 $grey: #ececec;
 $white: #F6F6F6;
-
+$red: #d58c8c;
+$yellow: #d5d08c;
 //measures
 $wizardWidth: 9rem;
 
@@ -28,4 +29,122 @@ $wizardWidth: 9rem;
 
 a{
     text-decoration: none;
+}
+
+.editBtn{
+    background-color: $yellow;
+    color: white;
+    border: 3px solid $yellow;
+    text-align: center;
+    outline: none;
+}
+.editBtn:hover{
+    border-bottom: 3px solid $darkGreen;
+    cursor: pointer;
+}
+
+.editBtn:active{
+    background-color: $darkGreen;
+    border: 3px solid $darkGreen;
+}
+
+.deleteBtn{
+    @extend .editBtn;
+    background-color: $red;
+    border: 3px solid $red;
+}
+
+.activeBtn{
+    @extend .editBtn;
+    background-color: $green;
+    border: 3px solid $green;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    outline: transparent;
+    border: 2px solid $darkGreen;
+    margin-bottom: 10px;
+}
+
+.input:focus{
+    border: 2px solid $green;
+}
+
+.lbl{
+    display: block;
+    font-size: 1.1rem;
+}
+
+.inputText{
+    @extend .input;
+}
+
+.inputTextarea{
+    @extend .input;
+}
+
+.inputNumber{
+    width: 30%;
+    @extend .input;
+}
+
+// .lblCheckBox{
+//     display: inline-block;
+// }
+
+// .inputCheckbox{
+//     display: inline-block;
+//     margin-bottom: 5px;
+    
+// }
+
+.checkbox-rect input[type="checkbox"] {
+    display: none;
+}
+.checkbox-rect input[type="checkbox"] + label {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font: 14px/20px "Open Sans", Arial, sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.checkbox-rect input[type="checkbox"]:hover + label:hover {
+    color: rgb(23, 86, 228);
+}
+.checkbox-rect input[type="checkbox"]:hover + label:before {
+    background: $darkGreen;
+    box-shadow: inset 0px 0px 0px 2px #f7f2f2;
+}
+  .checkbox-rect input[type="checkbox"] + label:last-child {
+    margin-bottom: 0;
+}
+.checkbox-rect input[type="checkbox"] + label:before {
+    content: "";
+    display: block;
+    width: 1.4em;
+    height: 1.4em;
+    border: 1px solid #343a3f;
+    border-radius: 0.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.2s, background 0.2s ease-in-out;
+    transition: all 0.2s, background 0.2s ease-in-out;
+    background: #f3f3f3;
+}
+.checkbox-rect input[type="checkbox"]:checked + label:before {
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 0.2em;
+    border: 2px solid #fff;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    background: $green;
+    box-shadow: 0 0 0 1px #000;
 }

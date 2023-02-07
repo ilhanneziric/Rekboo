@@ -1,0 +1,15 @@
+export const GET_MEALS = "GET_MEALS";
+export const GET_MEALS_SUCCESS = "GET_MEALS_SUCCESS";
+export const GET_MEALS_ERROR = "GET_MEALS_ERROR";
+
+export const ADD_MEAL = "ADD_MEAL";
+export const ADD_MEAL_SUCCESS = "ADD_MEAL_SUCCESS";
+export const ADD_MEAL_ERROR = "ADD_MEAL_ERROR";
+
+export const EDIT_MEAL = "EDIT_MEAL";
+export const EDIT_MEAL_SUCCESS = "EDIT_MEAL_SUCCESS";
+export const EDIT_MEAL_ERROR = "EDIT_MEAL_ERROR";
+
+// export const DELETE_MEAL = "DELETE_MEAL";
+// export const DELETE_MEAL_SUCCESS = "DELETE_MEAL_SUCCESS";
+// export const DELETE_MEAL_ERROR = "DELETE_MEAL_ERROR";

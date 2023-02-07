@@ -6,7 +6,7 @@ const initialState = {
     error: null,
 };
 
-export const getUsersReducer = (state = initialState, action) => {
+export const usersReducer = (state = initialState, action) => {
     switch(action.type){
         case(actionTypes.GET_USERS):
             return {

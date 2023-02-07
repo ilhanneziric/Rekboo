@@ -14,7 +14,10 @@ namespace Rekboo.Services
     {
         public MealService(RekbooContext context, IMapper mapper) : base(context, mapper)
         {
-            //add filter implementirati
+        }
+        public override IQueryable<Meal> AddFilter(IQueryable<Meal> query, MealSearchObject search = null)
+        {
+            return base.AddFilter(query, search);
         }
     }
 }

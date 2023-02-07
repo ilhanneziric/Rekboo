@@ -4,14 +4,19 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { isAuthenticatedReducer } from './reducers/isAuthenticatedReducers';
-import { getUsersReducer } from './reducers/usersReducers';
+import { usersReducer } from './reducers/usersReducers';
+import { mealsReducer } from './reducers/mealsReducers';
 
 const reducers = combineReducers({
     isAuthenticated: isAuthenticatedReducer,
-    getUsers: getUsersReducer
+    users: usersReducer,
+    meals: mealsReducer
 });
 
-const middleware = [thunk];
+const middleware = [thunk, (getDefaultMiddleware) => getDefaultMiddleware({
+    immutableCheck: false,
+    serializableCheck: false,
+})];
 
 const store = configureStore({reducer: reducers}, composeWithDevTools(applyMiddleware(...middleware)) );
 

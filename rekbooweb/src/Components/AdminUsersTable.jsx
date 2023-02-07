@@ -4,7 +4,7 @@ import { getUsers } from '../redux/actions/usersActions'
 
 const AdminUsersTable = () => {
   const dispatch = useDispatch();
-  const usersData = useSelector(state => state.getUsers);
+  const usersData = useSelector(state => state.users);
   const {users, loading, error} = usersData;
 
   useEffect(() => {

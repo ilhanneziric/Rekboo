@@ -1,1 +1,73 @@
 @import './parent';
+
+.addNewMealBtn{
+    @extend .btn;
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 100px;
+}
+
+.imagesAdminMealModalContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.imageAdminMealModalContainer{
+    width: 50%;
+    text-align: center;
+}
+
+.imageAdminMealModal{
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fileInputAdminMealModal {
+    color: transparent;
+}
+.fileInputAdminMealModal::-webkit-file-upload-button {
+  visibility: hidden;
+  display: none;
+}
+.fileInputAdminMealModal::before {
+  content: 'Odaberi sliku';
+  @extend .activeBtn;
+  width: 79%;
+  display: inline-block;
+  padding: 5px 8px;
+}
+.fileInputAdminMealModal:active {
+  outline: 0;
+}
+
+body {
+  padding: 20px;
+}
+
+.imageAdminMealTable{
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.editBtnModal{
+  @extend .editBtn;
+  width: 100px;
+  padding: 5px 10px;
+}
+
+
+.activeBtnModal{
+  @extend .activeBtn;
+  width: 100px;
+  padding: 5px 10px;
+}
