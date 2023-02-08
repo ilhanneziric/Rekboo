@@ -45,6 +45,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
         }else{
             disptach(editMeal(inputs));
         }
+        handleClose();
     }
 
     useEffect(() => {
