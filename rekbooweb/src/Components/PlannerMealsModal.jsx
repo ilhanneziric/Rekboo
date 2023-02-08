@@ -5,10 +5,10 @@ const PlannerMealsModal = ({show, handleClose, meal = null}) => {
     <>
       <Modal show={show} onHide={handleClose} centered={true}>
         <Modal.Header>
-            <Modal.Title>{meal.name}</Modal.Title>
+            <Modal.Title>{meal?.name}</Modal.Title>
         </Modal.Header>
         <div>
-            {meal.description}
+            {meal?.description}
         </div>
         <Modal.Footer>
             <div onClick={handleClose}>OK</div>
