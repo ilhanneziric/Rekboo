@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { HashLoader } from "react-spinners";
 import { getUsers } from '../redux/actions/usersActions'
 
 const AdminUsersTable = () => {
@@ -13,7 +14,9 @@ const AdminUsersTable = () => {
 
   return (
     <>
-    <table className="table">
+    {
+      loading?<HashLoader color={"#59de09"}/>:
+      <table className="table">
         <thead>
             <tr>
                 <th>ID</th>
@@ -40,7 +43,8 @@ const AdminUsersTable = () => {
                 </tr>))
             }
         </tbody>
-    </table>
+      </table>
+    }
     </>
   )
 }

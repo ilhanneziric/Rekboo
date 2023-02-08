@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMeals, editMeal} from '../redux/actions/mealsActions'
 import AdminMealsModal from "./AdminMealsModal";
 import NoImage from '../Assets/NoImage.png';
+import HashLoader from "react-spinners/HashLoader";
 
 const AdminMealsTable = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ const AdminMealsTable = () => {
   },[dispatch]);
   return (
     <>
-    <table className="table text-center">
+    {
+      loading?<HashLoader color={"#59de09"}/>:
+      <table className="table text-center">
         <thead>
             <tr>
                 <th>ID</th>
@@ -65,9 +68,10 @@ const AdminMealsTable = () => {
                       <td><div className="activeBtn" onClick={(e) => dispatch(editMeal({...m, active: !m.active}))}>AKTIVIRAJ</div></td>
                     }
                 </tr>))
-            }
-        </tbody>
-    </table>
+              }
+          </tbody>
+      </table>
+    }
     <AdminMealsModal show={show} handleClose={handleClose} meal={meal}/>
     </>
   )
