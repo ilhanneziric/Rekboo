@@ -126,5 +126,13 @@ namespace Rekboo.Services
 
             return token;
         }
+
+        public bool ExistUser(string email)
+        {
+            var entity = Context.Users.FirstOrDefault(x => x.Email == email);
+            if (entity == null)
+                return false;
+            return true;
+        }
     }
 }

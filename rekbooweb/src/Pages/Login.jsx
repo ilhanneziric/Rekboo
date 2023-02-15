@@ -7,13 +7,14 @@ import { loginValidation } from '../Utils/validations';
 import { useDispatch } from "react-redux";
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { Link } from "react-router-dom";
+import UsersService from "../Services/UsersService";
 
 const Login = () => {
   const dispatch = useDispatch();
 
   const [inputs, setInputs] = useState({
       email: '',
-      password: '',
+      password: ''
   });
 
   const [validationError, setValidationError] = useState(false);
@@ -31,12 +32,14 @@ const Login = () => {
         if(error){
           setValidationError(true);
         }else{
-          const response = await axios.post(`https://localhost:44305/api/User/login`, inputs);
-          const parseRes = await response.data;
-          if(parseRes){
-              localStorage.setItem('token', parseRes);
-              dispatch(updIsAuthenticated());
+          const response = await UsersService.login(inputs);
+          if(response){
+            localStorage.setItem('token', response);
+          }else{  
+            localStorage.removeItem('token')
+            setValidationError(true);
           } 
+          dispatch(updIsAuthenticated());
         } 
       } catch (err) {
         localStorage.removeItem('token')

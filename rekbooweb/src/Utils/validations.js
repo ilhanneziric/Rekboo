@@ -17,3 +17,11 @@ export const registerValidation = data => {
     });
     return schema.validate(data);
 };
+
+
+export const emailValidation = data => {
+    const schema = Joi.object({
+        email: Joi.string().required().email({ tlds: { allow: false }}),
+    });
+    return schema.validate(data);
+};

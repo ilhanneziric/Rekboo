@@ -45,5 +45,12 @@ namespace Rekboo.Controllers
             }
             return Ok(token);
         }
+
+        [AllowAnonymous]
+        [HttpGet("/api/User/exist")]
+        public IActionResult ExistUser(string email)
+        {
+            return Ok(_userService.ExistUser(email));
+        }
     }
 }

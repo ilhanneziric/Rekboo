@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
+import UsersService from "../Services/UsersService";
 import '../Styles/register.scss'
 import { registerValidation } from "../Utils/validations";
 
@@ -31,9 +32,11 @@ const Register = () => {
           if(error){
             setValidationError(true);
           }else{
-            const response = await axios.post(`https://localhost:44305/api/User`, inputs);
-            if(response.status === 200){
+            const response = await UsersService.register(inputs);
+            if(response){
                 navigate('/login');
+            }else{
+              setValidationError(true);
             }
           } 
         } catch (err) {
