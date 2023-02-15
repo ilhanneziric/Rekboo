@@ -33,8 +33,19 @@ const existUser = async (email) => {
     }
 };
 
+
+const addContactDataToUser = async (userID,data) => {
+    try {
+        const response = await axios.put(API + `User/${userID}`, data, {headers})
+        return await response.data;
+    } catch (err) {
+        return false
+    }
+};
+
 export default {
     login,
     register,
-    existUser
+    existUser,
+    addContactDataToUser
 }

@@ -21,6 +21,7 @@ namespace Rekboo.Services
             var claims = new[] {
                 new Claim("email", user.Email),
                 new Claim("role", user.Role),
+                new Claim("userID", user.UserID.ToString())
             };
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));

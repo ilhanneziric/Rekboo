@@ -25,3 +25,14 @@ export const emailValidation = data => {
     });
     return schema.validate(data);
 };
+
+export const addressDataValidation = data => {
+    const schema = Joi.object({
+        FirstName: Joi.string().required(),
+        LastName: Joi.string().required(),
+        Address: Joi.string().required(),
+        City: Joi.string().required(),
+        Phone: Joi.string().required()
+    });
+    return schema.validate(data);
+};

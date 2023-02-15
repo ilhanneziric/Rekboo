@@ -1,11 +1,16 @@
 import '../Styles/planneraddress.scss'
 import { useState } from "react"
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import Wizard from "../Components/Wizard"
+import { addressDataValidation } from '../Utils/validations';
+import jwt from 'jwt-decode'
+import UsersService from '../Services/UsersService';
 
 const PlannerAddress = () => {
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     FirstName: '',
     LastName: '',
@@ -14,7 +19,7 @@ const PlannerAddress = () => {
     Phone: '',
   });
 
-  const { FirstName, LastName, Address, City, Phone} = inputs;
+  const [validationError, setValidationError] = useState(false);
 
   const onChange = e => {
       setInputs({...inputs, [e.target.name] : e.target.value});        
@@ -22,8 +27,24 @@ const PlannerAddress = () => {
 
   const onSubmitForm = async e => {
     e.preventDefault();
-    
-    console.log(inputs);
+    try{
+      var { error } = addressDataValidation(inputs);
+      if(error){
+        setValidationError(true);
+        console.log(error);
+      } else {
+        const token = localStorage.getItem("token");
+        const user = jwt(token);
+        const response = await UsersService.addContactDataToUser(user.userID, inputs);
+        if(response){
+          //ovdje dobija response objekat user sa updatetovanim podacima
+          //logic for adding data in order redux state
+          navigate('/plannermeals');
+        }
+      }
+    } catch (err) {
+      setValidationError(true);
+    }
   }
   
   return (
@@ -34,17 +55,18 @@ const PlannerAddress = () => {
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
           <form onSubmit={onSubmitForm} className="addressaddressForm">
+            {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
             <label className="addressFormLbl">IME:</label>
-            <input className="addressFormInput" name="FirstName" type="text" value={FirstName} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="FirstName" type="text" value={inputs.FirstName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">PREZIME:</label>
-            <input className="addressFormInput" name="LastName" type="text" value={LastName} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="LastName" type="text" value={inputs.LastName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">ADRESU:</label>
-            <input className="addressFormInput" name="Address" type="text" value={Address} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="Address" type="text" value={inputs.Address} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">GRAD:</label>
-            <input className="addressFormInput" name="City" type="text" value={City} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="City" type="text" value={inputs.City} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">TELEFON:</label>
-            <input className="addressFormInput" name="Phone" type="text" value={Phone} onChange={e => onChange(e)}/>
-            <Link to='/plannermeals'><button className='addressBtn'>POTVRDI</button></Link>
+            <input className="addressFormInput" name="Phone" type="text" value={inputs.Phone} onChange={e => onChange(e)}/>
+            <button className='addressBtn'>POTVRDI</button>
           </form>
           </div>
           <div className="addressOrderInformationContainer">
