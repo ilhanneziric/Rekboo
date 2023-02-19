@@ -1,10 +1,5 @@
 import axios from "axios";
-import { API } from "../config";
-
-const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-};
+import { API, getHeaders } from "../config";
 
 const login = async (data) => {
     try {
@@ -36,7 +31,7 @@ const existUser = async (email) => {
 
 const addContactDataToUser = async (userID,data) => {
     try {
-        const response = await axios.put(API + `User/${userID}`, data, {headers})
+        const response = await axios.put(API + `User/${userID}`, data, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return false

@@ -1,14 +1,9 @@
 import axios from "axios";
-import { API } from "../config";
-
-const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-};
+import { API, getHeaders } from "../config";
 
 const getAllOrders = async () => {
     try {
-        const response = await axios.get(API + 'Order', {headers})
+        const response = await axios.get(API + 'Order', {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -17,7 +12,7 @@ const getAllOrders = async () => {
 
 const addOrder = async (order) => {
     try {
-        const response = await axios.post(API + 'Order', order, {headers})
+        const response = await axios.post(API + 'Order', order, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -26,7 +21,7 @@ const addOrder = async (order) => {
 
 const editOrder = async (order) => {
     try {
-        const response = await axios.put(API + `Order/${order.orderID}`, order, {headers})
+        const response = await axios.put(API + `Order/${order.orderID}`, order, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -35,7 +30,7 @@ const editOrder = async (order) => {
 
 // const deleteOrder = async (orderID) => {//not implemented
 //     try {
-//         var response = await axios.delete(API + `Order/${orderID}`, {headers})
+//         var response = await axios.delete(API + `Order/${orderID}`, {headers: getHeaders()})
 //         return await response.data;
 //     } catch (err) {
 //         return err.message;

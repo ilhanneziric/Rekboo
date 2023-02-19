@@ -1,5 +1,5 @@
 import '../Styles/planneraddress.scss'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
@@ -7,8 +7,13 @@ import Wizard from "../Components/Wizard"
 import { addressDataValidation } from '../Utils/validations';
 import jwt from 'jwt-decode'
 import UsersService from '../Services/UsersService';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateOrder } from "../redux/actions/orderActions"
 
 const PlannerAddress = () => {
+  const dispatch = useDispatch();
+  const order = useSelector(state => state.order);
+
   const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
@@ -36,8 +41,7 @@ const PlannerAddress = () => {
         const user = jwt(token);
         const response = await UsersService.addContactDataToUser(user.userID, inputs);
         if(response){
-          //ovdje dobija response objekat user sa updatetovanim podacima
-          //logic for adding data in order redux state
+          dispatch(updateOrder({...order, userID: response.userID}));
           navigate('/plannermeals');
         }
       }
@@ -45,6 +49,12 @@ const PlannerAddress = () => {
       setValidationError(true);
     }
   }
+
+  useEffect(() => {
+    if(order === null){
+      navigate('/plannerplan');
+    }
+  }, []);
   
   return (
     <>

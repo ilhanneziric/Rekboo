@@ -1,19 +1,36 @@
 import '../Styles/plannerplan.scss'
 import Wizard from "../Components/Wizard"
 import TagCard from '../Components/TagCard'
-
 import Vegan from '../Assets/vegan.svg';
 import VeganChecked from '../Assets/veganChecked.svg';
 import Halal from '../Assets/halal.png';
 import HalalChecked from '../Assets/halalChecked.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { updateOrder } from "../redux/actions/orderActions"
 
 // import {Vegan, VeganChecked} from '../Utils/PlanIconsContainer';
 
 const PlannerPlan = () => {
+  const dispatch = useDispatch();
+  const order = useSelector(state => state.order);
+
+  const navigate = useNavigate();
   
+  const createPlan = () => {
+    var order = {
+      numberOfMeals: 4,
+      numberOfPeople: 3,
+      tags: ['vegan', 'gluten free', 'keto']
+    };
+    
+    dispatch(updateOrder(order));
+    navigate('/plannerregister');
+  }
+
   return (
     <>
       <Header/>
@@ -53,7 +70,7 @@ const PlannerPlan = () => {
               <div className="totalOrderRecipes">6 porcija ukupno</div>
               <div className="totalOrderPrice">Ukupna cijana: <b>60KM</b></div>
             </div>
-            <Link to='/plannerregister'><div className="planNextBtn">DALJE</div></Link>
+            <div className="planNextBtn" onClick={createPlan}>DALJE</div>
           </div>
         </div>
       </div>

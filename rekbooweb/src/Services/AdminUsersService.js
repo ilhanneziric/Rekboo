@@ -1,14 +1,9 @@
 import axios from "axios";
-import { API } from "../config";
-
-const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${localStorage.getItem('token')}`
-};
+import { API, getHeaders } from "../config";
 
 const getAllUsers = async () => {
     try {
-        const response = await axios.get(API + 'User', {headers})
+        const response = await axios.get(API + 'User', {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;

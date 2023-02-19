@@ -1,16 +1,20 @@
 import '../Styles/plannerregister.scss'
 import Wizard from "../Components/Wizard"
 import RegisterPhoto from '../Assets/registerPhoto.png';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../Components/Footer";
 import Header from '../Components/Header';
 import UsersService from '../Services/UsersService';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { loginValidation, registerValidation, emailValidation } from '../Utils/validations';
+import { useNavigate } from 'react-router-dom';
 
 const PlannerRegister = () => {
   const dispatch = useDispatch();
+  const order = useSelector(state => state.order);
+
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     email: '',
@@ -91,6 +95,12 @@ const PlannerRegister = () => {
       await plannerRegister();
     }
   } 
+
+  useEffect(() => {
+    if(order === null){
+      navigate('/plannerplan');
+    }
+  }, []);
   
   return (
     <>

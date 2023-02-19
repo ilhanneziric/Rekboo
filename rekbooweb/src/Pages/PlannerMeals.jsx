@@ -8,12 +8,16 @@ import PlannerMealsModal from "../Components/PlannerMealsModal"
 import { useDispatch, useSelector } from "react-redux"
 import { getMeals } from "../redux/actions/mealsActions"
 import { HashLoader } from "react-spinners"
+import { useNavigate } from "react-router-dom"
 
 const PlannerMeals = () => {
   const dispatch = useDispatch();
   const mealsData = useSelector(state => state.meals);
+  const order = useSelector(state => state.order);
   const {meals, loading, error} = mealsData;
   
+  const navigate = useNavigate();
+
   const [meal, setMeal] = useState(null);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -24,7 +28,11 @@ const PlannerMeals = () => {
   }
 
   useEffect(() => {
-    dispatch(getMeals());
+    if(order === null){
+      navigate('/plannerplan');
+    }else{
+      dispatch(getMeals());
+    }
   },[dispatch]);
   return (
     <>
