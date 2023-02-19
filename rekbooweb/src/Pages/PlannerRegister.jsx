@@ -78,10 +78,10 @@ const PlannerRegister = () => {
       } else {
         var exist = await UsersService.existUser(email);
         if(exist){
-          setTitle('REGISTRACIJA NOVOG RAČUNA');
+          setTitle('PRIJAVA RAČUNA');
           setValidEmail(true);
         } else if(!exist){
-          setTitle('PRIJAVA RAČUNA');
+          setTitle('REGISTRACIJA NOVOG RAČUNA');
           setValidEmail(false);
         }    
       }

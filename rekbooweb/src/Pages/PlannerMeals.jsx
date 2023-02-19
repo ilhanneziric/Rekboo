@@ -1,7 +1,6 @@
 import MealCard from "../Components/MealCard"
 import Wizard from "../Components/Wizard"
 import '../Styles/plannermeals.scss'
-import { Modal } from 'react-bootstrap'
 import { useEffect, useState } from "react"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"

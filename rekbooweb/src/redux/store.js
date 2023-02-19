@@ -6,11 +6,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { isAuthenticatedReducer } from './reducers/isAuthenticatedReducers';
 import { usersReducer } from './reducers/usersReducers';
 import { mealsReducer } from './reducers/mealsReducers';
+import { ordersReducer } from './reducers/ordersReducers';
+import { orderReducer } from './reducers/orderReducers';
 
 const reducers = combineReducers({
     isAuthenticated: isAuthenticatedReducer,
     users: usersReducer,
-    meals: mealsReducer
+    meals: mealsReducer,
+    orders: ordersReducer,
+    order: orderReducer
 });
 
 const middleware = [thunk, (getDefaultMiddleware) => getDefaultMiddleware({

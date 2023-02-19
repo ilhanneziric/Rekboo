@@ -31,7 +31,6 @@ const PlannerAddress = () => {
       var { error } = addressDataValidation(inputs);
       if(error){
         setValidationError(true);
-        console.log(error);
       } else {
         const token = localStorage.getItem("token");
         const user = jwt(token);
