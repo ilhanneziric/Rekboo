@@ -1,34 +1,42 @@
 import '../Styles/plannerplan.scss'
 import Wizard from "../Components/Wizard"
 import TagCard from '../Components/TagCard'
-import Vegan from '../Assets/vegan.svg';
-import VeganChecked from '../Assets/veganChecked.svg';
-import Halal from '../Assets/halal.png';
-import HalalChecked from '../Assets/halalChecked.png';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
+import { useState } from 'react';
 
-// import {Vegan, VeganChecked} from '../Utils/PlanIconsContainer';
 
 const PlannerPlan = () => {
   const dispatch = useDispatch();
-  const order = useSelector(state => state.order);
+  const [order, setOrder] = useState({
+    numberOfMeals: 2,
+    numberOfPeople: 2,
+    tags: []
+  })
 
   const navigate = useNavigate();
   
   const createPlan = () => {
-    var order = {
-      numberOfMeals: 4,
-      numberOfPeople: 3,
-      tags: ['vegan', 'gluten free', 'keto']
-    };
-    
-    dispatch(updateOrder(order));
-    navigate('/plannerregister');
+    console.log(order);
+    // dispatch(updateOrder(order));
+    // navigate('/plannerrkegister');
+  }
+
+  const addTag = (tag) => {
+    setOrder(prevState => ({
+      ...prevState,
+      tags: [...prevState.tags, tag]
+    }));
+    console.log(order);
+  }
+
+  const removeTag = (tag) => {
+    setOrder({...order, tags: order.tags.filter(str => str !== tag)})
+    console.log(order);
   }
 
   return (
@@ -39,12 +47,12 @@ const PlannerPlan = () => {
         <h2 className="planTitle">ODABERITE SVOJ PLAN</h2>
         <div className="plannerPlanContainer">
           <div className="planLeftContainer">
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={true}/>
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
-          <TagCard icon={Vegan} iconChecked={VeganChecked} name={'Vegan'} checked={false}/>
-          <TagCard icon={Halal} iconChecked={HalalChecked} name={'Halal'} checked={false}/>
-          <TagCard icon={Halal} iconChecked={HalalChecked} name={'Halal'} checked={true}/>
+            <h4 className="noOfTitle">KATEGORIJE:</h4>{/*HARDCODED | TODO -> ADD TAGS IN CACHE*/}
+            <TagCard name={'MODERNO'} addTag={addTag} removeTag={removeTag} checked={order.tags?.includes('MODERNO') === true}/>
+            <TagCard name={'ZDRAVO'} addTag={addTag} removeTag={removeTag} checked={order.tags?.includes('ZDRAVO') === true}/>
+            <TagCard name={'AZIJSKO'} addTag={addTag} removeTag={removeTag} checked={order.tags?.includes('AZIJSKO') === true}/>
+            <TagCard name={'TRADICIONALNO'} addTag={addTag} removeTag={removeTag} checked={order.tags?.includes('TRADICIONALNO') === true}/>
+            <TagCard name={'MEDITERANSKO'} addTag={addTag} removeTag={removeTag} checked={order.tags?.includes('MEDITERANSKO') === true}/>
           </div>
           <div className="planRightContainer">
             <div className="noOfContainers">

@@ -1,9 +1,7 @@
 @import './parent';
 
 .tagCardBody{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    border-radius: 20px;
     background-color: $grey;
     display: flex;
     justify-content: center;
@@ -13,14 +11,6 @@
 .tagCardContainer{
     display: inline-block;
     margin: 10px;
-}
-
-.tagCardIcon{
-    width: 50px;
-}
-
-.tagCardIconChecked{
-    background-color: $green;
 }
 
 .tagCardName{
@@ -35,8 +25,6 @@
     cursor: pointer;
 }
 
-.tagCardMark{
-    width: 20px;
-    top: 0;
-    right: 0;
+.tagCardNameChecked{
+    color: $green;
 }

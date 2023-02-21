@@ -1,16 +1,17 @@
 import '../Styles/tagCard.scss'
 
-const TagCard = ({icon, iconChecked, name,checked}) => {
+const TagCard = ({addTag, removeTag, name,checked}) => {
   return (
     <>
-    <div className="tagCardContainer">
-        {
-            checked?
-            <div className="tagCardBody tagCardChecked"><img src={iconChecked} alt="Tag card icon" className="tagCardIcon"/></div>:
-            <div className="tagCardBody"><img src={icon} alt="Tag card icon" className="tagCardIcon"/></div>
-        }        
-        <div className="tagCardName">{name}</div>
-    </div>
+    {
+      checked?
+      <div className="tagCardContainer" onClick={() => removeTag(name)}>
+            <div className="tagCardBody tagCardChecked" ><div className="tagCardName tagCardNameChecked">{name}</div></div>
+      </div>:
+      <div className="tagCardContainer" onClick={() => addTag(name)}>
+            <div className="tagCardBody"><div className="tagCardName">{name}</div></div>
+      </div>
+    }
     </>
   )
 }
