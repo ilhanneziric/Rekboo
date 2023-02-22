@@ -44,10 +44,10 @@ function App() {
             <Route path='/adminusers' element={<AdminUsers/>}/>
             <Route path='/adminreports' element={<AdminReports/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
-            <Route path='/plannerregister' element={isAuthenticated ? (<Navigate to='/planneraddress'/>) : (<PlannerRegister/>)}/>{/*add check if order(redux state) is null and navigate to plannerplan*/}
-            <Route path='/planneraddress' element={isAuthenticated ? (<PlannerAddress/>) : (<Navigate to='/plannerplan'/>)}/>{/*add check if order(redux state) is null and navigate to plannerplan*/}
+            <Route path='/plannerregister' element={isAuthenticated ? (<Navigate to='/planneraddress'/>) : (<PlannerRegister/>)}/>
+            <Route path='/planneraddress' element={isAuthenticated ? (<PlannerAddress/>) : (<Navigate to='/plannerplan'/>)}/>
             {/* <Route path='/plannercheckout' element={<PlannerCheckout/>}/> */}
-            <Route path='/plannermeals' element={isAuthenticated ? (<PlannerMeals/>) : (<Navigate to='/plannerplan'/>)}/>{/*add check if order(redux state) is null and navigate to plannerplan*/}
+            <Route path='/plannermeals' element={isAuthenticated ? (<PlannerMeals/>) : (<Navigate to='/plannerplan'/>)}/>
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>

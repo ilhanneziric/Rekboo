@@ -9,6 +9,7 @@ import { AiOutlineUser } from "react-icons/ai";
 const Header = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(state => state.isAuthenticated);
+  const order = useSelector(state => state.order);
   const [openLogOutBtn, setOpenLogOutBtn] = useState(false);
 
   const logoOut = e => {
@@ -20,7 +21,13 @@ const Header = () => {
     <>
         <Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
         {
-          (window.location.pathname !== '/login' && window.location.pathname !== '/register') ?
+          (window.location.pathname !== '/login' && 
+          window.location.pathname !== '/register' && 
+          window.location.pathname !== '/plannerplan' && 
+          window.location.pathname !== '/plannerregister' && 
+          window.location.pathname !== '/planneraddress' && 
+          window.location.pathname !== '/plannercheckout' && 
+          window.location.pathname !== '/plannermeals') ?
           (!isAuthenticated ?
           <Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link>:
           <div className="prileBtnContainer">

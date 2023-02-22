@@ -23,6 +23,8 @@ const PlannerRegister = () => {
     role: 'User'
   });
 
+  const [progress, setProgress] = useState(4);
+
   const [validationError, setValidationError] = useState(false);
   const [title, setTitle] = useState('RAČUN');
   const [validEmail, setValidEmail] = useState(null);
@@ -87,7 +89,8 @@ const PlannerRegister = () => {
         } else if(!exist){
           setTitle('REGISTRACIJA NOVOG RAČUNA');
           setValidEmail(false);
-        }    
+        }
+        setProgress(5);    
       }
     }else if(validEmail){
       await plannerLogin();
@@ -105,7 +108,7 @@ const PlannerRegister = () => {
   return (
     <>
       <Header/>
-      <Wizard level={4}/>      
+      <Wizard level={progress}/>      
       <div>
         <h2 className="plannerRegisterTitle">{title}</h2>
         <div className="plannerRegisterContainer">

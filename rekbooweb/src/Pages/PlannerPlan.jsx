@@ -45,10 +45,9 @@ const PlannerPlan = () => {
     }else if(order.tags.length === 0){
       setValidationError('Morate odabrati najmanje jednu kategoriju jela!');
     }else{
-      setValidationError('OK!');
+      dispatch(updateOrder(order));
+      navigate('/plannerregister');
     }
-    dispatch(updateOrder(order));
-    navigate('/plannerregister');
   }
 
   const addNoOfPeopleTag = (number) => { setOrder({...order, numberOfPeople: number}); }

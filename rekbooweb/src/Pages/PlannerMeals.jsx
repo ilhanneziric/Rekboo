@@ -37,7 +37,7 @@ const PlannerMeals = () => {
   return (
     <>
       <Header/>
-      <Wizard level={6}/>
+      <Wizard level={7}/>
       <h2 className="registerTitle">ODABERITE 3 JELA</h2>
       <div className="plannerMealsContainer">
         {

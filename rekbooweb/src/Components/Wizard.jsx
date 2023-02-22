@@ -1,12 +1,22 @@
 import WizardLine from "./WizardLine"
 import '../Styles/wizard.scss'
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { updIsAuthenticated } from "../redux/actions/isAuthenticatedActions";
 
 const Wizard = ({level}) => {
-    console.log(level)
+  const dispatch = useDispatch();
+  
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
+  
+  useEffect(() => {
+    dispatch(updIsAuthenticated());
+  }, []);
+
   return (
     <>
         <div className="wizardContainer">
-            {
+            {//planner plan
                 level >= 3 ?
                 <div className="wizardNav">
                     {level === 3 ? 
@@ -36,48 +46,56 @@ const Wizard = ({level}) => {
                 </div>
             }
 
-            {
+            {//planner register
+                !isAuthenticated ?
+                level >= 5 ?
+                <div className="wizardNav">
+                    {level === 5 ? 
+                    <p className="wizardTitle wizardTitleSelected">REGISTRUJ SE</p>:
+                    <p className="wizardTitle">REGISTRUJ SE</p>}
+                    <WizardLine remNumber={9}/>
+                </div>:
                 level >= 4 ?
                 <div className="wizardNav">
                     {level === 4 ? 
                     <p className="wizardTitle wizardTitleSelected">REGISTRUJ SE</p>:
                     <p className="wizardTitle">REGISTRUJ SE</p>}
-                    <WizardLine remNumber={9}/>
+                    <WizardLine remNumber={4.5}/>
                 </div>:
                     <div className="wizardNav">
                     {level === 4 ? 
                     <p className="wizardTitle wizardTitleSelected">REGISTRUJ SE</p>:
                     <p className="wizardTitle">REGISTRUJ SE</p>}
                     <WizardLine remNumber={0}/>
-                </div>
+                </div>:<></>
             }
 
-            {
-                level >= 5 ?
+            {//planner address
+                level >= 6 ?
                 <div className="wizardNav">
-                    {level === 5 ? 
+                    {level === 6 ? 
                     <p className="wizardTitle wizardTitleSelected">UNESI PODATKE</p>:
                     <p className="wizardTitle">UNESI PODATKE</p>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 <div className="wizardNav">
-                    {level === 5 ? 
+                    {level === 6 ? 
                     <p className="wizardTitle wizardTitleSelected">UNESI PODATKE</p>:
                     <p className="wizardTitle">UNESI PODATKE</p>}
                     <WizardLine remNumber={0}/>
                 </div>
             }
 
-            {
-                level >= 6 ?
+            {//planner meals
+                level >= 7 ?
                 <div className="wizardNav">
-                    {level === 6 ? 
+                    {level === 7 ? 
                     <p className="wizardTitle wizardTitleSelected">ODABERI JELA</p>:
                     <p className="wizardTitle">ODABERI JELA</p>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 <div className="wizardNav">
-                    {level === 6 ? 
+                    {level === 7 ? 
                     <p className="wizardTitle wizardTitleSelected">ODABERI JELA</p>:
                     <p className="wizardTitle">ODABERI JELA</p>}
                     <WizardLine remNumber={0}/>
