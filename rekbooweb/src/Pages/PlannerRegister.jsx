@@ -105,7 +105,7 @@ const PlannerRegister = () => {
   return (
     <>
       <Header/>
-      <Wizard level={3}/>      
+      <Wizard level={4}/>      
       <div>
         <h2 className="plannerRegisterTitle">{title}</h2>
         <div className="plannerRegisterContainer">

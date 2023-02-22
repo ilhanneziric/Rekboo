@@ -59,7 +59,7 @@ const PlannerAddress = () => {
   return (
     <>
       <Header/>
-      <Wizard level={4}/>
+      <Wizard level={5}/>
       <h2 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h2>
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
