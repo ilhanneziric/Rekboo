@@ -17,7 +17,14 @@ namespace Rekboo.Services
         }
         public override IQueryable<Meal> AddFilter(IQueryable<Meal> query, MealSearchObject search = null)
         {
-            return base.AddFilter(query, search);
+            var filteredQuery = base.AddFilter(query, search);
+
+            if (search?.Tags?.Length != null)
+            {
+                filteredQuery = filteredQuery.Where(meal => meal.Tags.Any(tag => search.Tags.Contains(tag)));
+            }
+
+            return filteredQuery;
         }
     }
 }

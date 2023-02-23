@@ -15,8 +15,7 @@ namespace Rekboo.Services.Database
         public bool Active { get; set; }
         public byte[] Photo1 { get; set; } = null!;
         public byte[] Photo2 { get; set; } = null!;
-
-        //tags/preferences
+        public string[] Tags { get; set; } = null!;
 
         public virtual ICollection<PlannerMeal>? Planners { get; set; }
     }
