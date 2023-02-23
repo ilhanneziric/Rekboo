@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { loginValidation, registerValidation, emailValidation } from '../Utils/validations';
 import { useNavigate } from 'react-router-dom';
+import { HashLoader, ClipLoader } from 'react-spinners';
 
 const PlannerRegister = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const PlannerRegister = () => {
   });
 
   const [progress, setProgress] = useState(4);
+  const [loading, setLoading] = useState(false);
 
   const [validationError, setValidationError] = useState(false);
   const [title, setTitle] = useState('RAČUN');
@@ -54,6 +56,8 @@ const PlannerRegister = () => {
       localStorage.removeItem('token')
       dispatch(updIsAuthenticated());
       setValidationError(true);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -62,6 +66,7 @@ const PlannerRegister = () => {
       var { error } = registerValidation(inputs);
       if(error){
         setValidationError(true);
+        setLoading(false);
       } else {
         const response = await UsersService.register(inputs);
         if(response){
@@ -69,9 +74,12 @@ const PlannerRegister = () => {
         } else {
           setValidationError(true);
         }
+        setLoading(false);
       }
     } catch (err) {
       setValidationError(true);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -82,6 +90,7 @@ const PlannerRegister = () => {
       if(error){
         setValidationError(true);
       } else {
+        setLoading(true);
         var exist = await UsersService.existUser(email);
         if(exist){
           setTitle('PRIJAVA RAČUNA');
@@ -90,12 +99,15 @@ const PlannerRegister = () => {
           setTitle('REGISTRACIJA NOVOG RAČUNA');
           setValidEmail(false);
         }
-        setProgress(5);    
+        setProgress(5);
+        setLoading(false);    
       }
     }else if(validEmail){
+      setLoading(true);
       await plannerLogin();
     }else{
       await plannerRegister();
+      setLoading(true);
     }
   } 
 
@@ -135,7 +147,7 @@ const PlannerRegister = () => {
               </>):
               (<></>)
             }
-            <button className='plannerRegisterBtn'>POTVRDI</button>
+            <button className='plannerRegisterBtn'>POTVRDI  {loading && <ClipLoader color={'white'} size={10}/>}</button>
           </form>
         </div>
       </div>
