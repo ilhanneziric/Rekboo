@@ -78,24 +78,24 @@ const PlannerAddress = () => {
             <button className='addressBtn'>POTVRDI</button>
           </form>
           </div>
-          <div className="addressOrderInformationContainer">
+          {/* <div className="addressOrderInformationContainer">
             <div className="orderInformationTitle">INFORMACIJE O NARUDŽBI</div>
             <div className="addressOrderContainer">
               <div className="orderInformationItemContainer">
-                <div className="orderInformationItemTitle">Gluten Free & Vegan</div>
-                <div className="orderInformationItemPlan">3 recepta u sedmici za 2 osoba </div>
-                <div className="orderInformationItemPrice">49,99KM</div>
+                <div className="orderInformationItemTitle">{order.tags.join(', ')}</div>
+                <div className="orderInformationItemPlan">{order.numberOfMeals} recepata u sedmici za {order.numberOfPeople} osoba</div>
+                <div className="orderInformationItemPrice">{order.numberOfMeals*order.numberOfPeople*5}KM</div>
               </div>
               <div className="orderInformationItemContainer">
                 <div className="orderInformationItemTitleInline">Dostava</div>
-                <div className="orderInformationItemPrice">9,99KM</div>
+                <div className="orderInformationItemPrice">5KM</div>
               </div>
               <div className="orderInformationItemContainer">
                 <div className="orderInformationItemTitleInline">Total</div>
-                <div className="orderInformationItemPriceTotal">59,99KM</div>
+                <div className="orderInformationItemPriceTotal">{order.numberOfMeals*order.numberOfPeople*5+5}KM</div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <Footer/>
     </>
