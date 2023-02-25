@@ -1,10 +1,10 @@
 import * as actionTypes from '../actionTypes/mealsActionTypes';
-import AdminMealsService from '../../Services/AdminMealsService';
+import MealsService from '../../Services/MealsService';
 
 export const getMeals = () => async(dispatch) => {
     dispatch({ type: actionTypes.GET_MEALS });
     try {
-        const data = await AdminMealsService.getAllMeals();
+        const data = await MealsService.getAllMeals();
         dispatch({ 
             type: actionTypes.GET_MEALS_SUCCESS, 
             payload: data.sort((a, b) => b.mealID-a.mealID)
@@ -20,7 +20,7 @@ export const getMeals = () => async(dispatch) => {
 export const addMeal = (meal) => async(dispatch) => {
     dispatch({ type: actionTypes.ADD_MEAL});
     try {
-        const data = await AdminMealsService.addMeal(meal);
+        const data = await MealsService.addMeal(meal);
         dispatch({ 
             type: actionTypes.ADD_MEAL_SUCCESS, 
             payload: data
@@ -36,7 +36,7 @@ export const addMeal = (meal) => async(dispatch) => {
 export const editMeal = (meal) => async(dispatch) => {
     dispatch({ type: actionTypes.EDIT_MEAL});
     try {
-        const data = await AdminMealsService.editMeal(meal);
+        const data = await MealsService.editMeal(meal);
         dispatch({ 
             type: actionTypes.EDIT_MEAL_SUCCESS, 
             payload: data
@@ -52,7 +52,7 @@ export const editMeal = (meal) => async(dispatch) => {
 // export const deleteMeal = (mealID) => async(dispatch) => {
 //     dispatch({ type: actionTypes.DELETE_MEAL});
 //     try {
-//         const data = await AdminMealsService.deleteMeal(mealID);
+//         const data = await MealsService.deleteMeal(mealID);
 //         dispatch({ 
 //             type: actionTypes.DELETE_MEAL_SUCCESS, 
 //             payload: data

@@ -38,9 +38,19 @@ const addContactDataToUser = async (userID,data) => {
     }
 };
 
+const getAllUsers = async () => {
+    try {
+        const response = await axios.get(API + 'User', {headers: getHeaders()})
+        return await response.data;
+    } catch (err) {
+        return err.message;
+    }
+};
+
 export default {
     login,
     register,
     existUser,
-    addContactDataToUser
+    addContactDataToUser,
+    getAllUsers
 }

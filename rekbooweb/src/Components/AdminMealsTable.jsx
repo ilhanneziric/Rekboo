@@ -31,7 +31,7 @@ const AdminMealsTable = () => {
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Početna slika</th>
+                <th>Glavna slika</th>
                 <th>Sporedna slika</th>
                 <th>Naziv</th>
                 <th>Opis</th>
