@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Rekboo.Model.Requests;
 using Rekboo.Model.SearchObjects;
 using Rekboo.Services.Database;
@@ -12,8 +14,10 @@ namespace Rekboo.Services
 {
     public class MealService : BaseCRUDService<Model.Meal, Database.Meal, MealSearchObject, MealUpsertRequest, MealUpsertRequest>, IMealService
     {
-        public MealService(RekbooContext context, IMapper mapper) : base(context, mapper)
+        private readonly IMemoryCache _memoryCache;
+        public MealService(RekbooContext context, IMapper mapper, IMemoryCache memoryCache) : base(context, mapper)
         {
+            _memoryCache = memoryCache;
         }
         public override IQueryable<Meal> AddFilter(IQueryable<Meal> query, MealSearchObject search = null)
         {
@@ -25,6 +29,26 @@ namespace Rekboo.Services
             }
 
             return filteredQuery;
+        }
+
+        public IEnumerable<string> GetTags()
+        {
+            var cacheKey = "mealTags";
+
+            if (!_memoryCache.TryGetValue(cacheKey, out IEnumerable<string> mealTags))
+            {
+                mealTags = new string[] { "MODERNO", "VEGETARIJANSKO", "VEGAN", /*"FITNESS",*/ "ZDRAVO", /*"AZIJSKA KUHINJA",*/ "AZIJSKO", "TRADICIONALNO", "MEDITERANSKO", "ORIJENTALNO" };
+
+                var cacheExpiryOptions = new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpiration = DateTime.Now.AddSeconds(50),
+                    Priority = CacheItemPriority.High,
+                    SlidingExpiration = TimeSpan.FromSeconds(20)
+                };
+
+                _memoryCache.Set(cacheKey, mealTags, cacheExpiryOptions);
+            }
+            return mealTags;
         }
     }
 }

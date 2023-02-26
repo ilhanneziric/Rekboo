@@ -1,10 +1,10 @@
 import * as actionTypes from '../actionTypes/mealsActionTypes';
 import MealsService from '../../Services/MealsService';
 
-export const getMeals = () => async(dispatch) => {
+export const getMeals = (params) => async(dispatch) => {
     dispatch({ type: actionTypes.GET_MEALS });
     try {
-        const data = await MealsService.getAllMeals();
+        const data = await MealsService.getAllMeals(params);
         dispatch({ 
             type: actionTypes.GET_MEALS_SUCCESS, 
             payload: data.sort((a, b) => b.mealID-a.mealID)

@@ -31,7 +31,7 @@ const PlannerMeals = () => {
     if(order === null){
       navigate('/plannerplan');
     }else{
-      dispatch(getMeals());
+      dispatch(getMeals({tags: order.tags}));
     }
   },[dispatch]);
   return (

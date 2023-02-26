@@ -1,9 +1,18 @@
 import axios from "axios";
 import { API, getHeaders } from "../config";
 
-const getAllMeals = async () => {
+const getAllMeals = async (params) => {
     try {
-        const response = await axios.get(API + 'Meal', {headers: getHeaders()})
+        const response = await axios.get(API + 'Meal?' + new URLSearchParams(params).toString(), {headers: getHeaders()})
+        return await response.data;
+    } catch (err) {
+        return err.message;
+    }
+};
+
+const getTags = async () => {
+    try {
+        const response = await axios.get(API + 'Meal/tags', {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -39,6 +48,7 @@ const editMeal = async (meal) => {
 
 export default {
     getAllMeals,
+    getTags,
     addMeal,
     editMeal,
     // deleteMeal

@@ -4,6 +4,10 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addMeal,editMeal } from '../redux/actions/mealsActions'
 import NoImage from '../Assets/NoImage.png';
+import Select from 'react-select'
+import MealsService from "../Services/MealsService";
+import '../Styles/_parent.scss';
+
 const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const disptach = useDispatch();
     const [inputs, setInputs] = useState({
@@ -12,10 +16,18 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
         calories: 0,
         active: false,
         photo1: '',
-        photo2: ''
+        photo2: '',
+        tags: []
     });
 
-    const { name, description, calories, active, photo1, photo2 } = inputs;
+    const { name, description, calories, active, photo1, photo2, tags } = inputs;
+
+    const [selectedOptions, setSelectedOptions] = useState([]);
+    const [allTags, setAllTags] = useState([]);
+
+    const handleSelectChange = (selectedTags) => {
+        setInputs({...inputs, tags: selectedTags});
+      };
 
     const onChange = e => {
         if(e.target.type === 'file'){
@@ -43,14 +55,34 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
         if(meal === null){
             disptach(addMeal(inputs));
         }else{
-            disptach(editMeal(inputs));
+            disptach(editMeal({...inputs, tags: tags.map((option) => option.value)}));
         }
         handleClose();
     }
 
+    const getTags = async () => { setAllTags(await MealsService.getTags()); }
+    
     useEffect(() => {
-        meal && setInputs(meal);
+        meal && setInputs({...meal, tags: meal?.tags.map((option) => ({ value: option, label: option }))});
+        getTags();
     }, [meal]);
+
+    const customStyles = {
+        control: (provided, state) => ({
+          ...provided,
+        //   border: '2px solid #3E5418',
+          marginBottom: '10px',
+          outline: 'none',
+          border: state.isFocused ? '2px solid #59de09' : '2px solid #3E5418',
+          boxShadow: 'none',
+          '&:hover': {
+            border: state.isFocused ? '2px solid #59de09' : '2px solid #3E5418',
+          },
+          '&:focus': {
+            border: '2px solid #59de09',
+          }
+        })
+      };
   return (
     <>
         <Modal show={show} onHide={handleClose} dialogClassName="modal-md">
@@ -89,6 +121,10 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
                 <label htmlFor="calories" className="lbl">Kalorije:</label>
                 <input type="number" name="calories" required className="inputNumber" value={calories} onChange={e => onChange(e)}/>
+
+                <label className="lbl">Kategorije:</label>
+                {/* <Select styles={customStyles} placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/> */}
+                <Select styles={customStyles} classNamePrefix="inputMultiSelect" placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/>
 
                 <div className="checkbox-rect">
                     <input type="checkbox" id="checkbox-rect1" name="active" required checked={active} onChange={e => onChange(e)}/>

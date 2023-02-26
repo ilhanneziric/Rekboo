@@ -8,7 +8,7 @@ import Footer from '../Components/Footer';
 import { useDispatch } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
 import { useEffect, useState } from 'react';
-
+import MealsService from '../Services/MealsService';
 
 const PlannerPlan = () => {
   const dispatch = useDispatch();
@@ -20,6 +20,7 @@ const PlannerPlan = () => {
 
   const [validationError, setValidationError] = useState(null);
   const [progress, setProgress] = useState(0);
+  const [tags, setTags] = useState([]);
 
   const navigate = useNavigate();
   
@@ -59,8 +60,11 @@ const PlannerPlan = () => {
   const addCategoryTag = (tag) => { setOrder(prevState => ({...prevState, tags: [...prevState.tags, tag] })); }
   const removeCategoryTag = (tag) => { setOrder({...order, tags: order.tags.filter(str => str !== tag)}); }
 
+  const getTags = async () => { setTags(await MealsService.getTags()); }
+
   useEffect(() => {
     checkProgress(); 
+    getTags();
   }, [order]);
 
   return (
@@ -79,12 +83,11 @@ const PlannerPlan = () => {
               </div>
             </div>
             <div className="noOfContainers">
-              <h4 className="noOfTitle">KATEGORIJE:</h4>{/*HARDCODED | TODO -> ADD TAGS IN CACHE*/}
-              <TagCard name={'MODERNO'} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes('MODERNO')}/>
-              <TagCard name={'ZDRAVO'} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes('ZDRAVO')}/>
-              <TagCard name={'AZIJSKO'} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes('AZIJSKO')}/>
-              <TagCard name={'TRADICIONALNO'} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes('TRADICIONALNO')}/>
-              <TagCard name={'MEDITERANSKO'} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes('MEDITERANSKO')}/>
+              <h4 className="noOfTitle">KATEGORIJE:</h4>
+              {
+                tags.length !== undefined &&
+                tags?.map((t, index) => <TagCard key={index} name={t} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes(t)}/>)
+              }
             </div>
           </div>
           <div className="planRightContainer">

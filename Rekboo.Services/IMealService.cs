@@ -11,5 +11,6 @@ namespace Rekboo.Services
 {
     public interface IMealService : ICRUDService<Meal, MealSearchObject, MealUpsertRequest, MealUpsertRequest>
     {
+        IEnumerable<string> GetTags(); 
     }
 }
