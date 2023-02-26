@@ -31,14 +31,15 @@ const PlannerMeals = () => {
     if(order === null){
       navigate('/plannerplan');
     }else{
-      dispatch(getMeals({tags: order.tags}));
+      dispatch(getMeals({tags: order.tags, active: true}));
     }
   },[dispatch]);
   return (
     <>
       <Header/>
       <Wizard level={7}/>
-      <h2 className="registerTitle">ODABERITE 3 JELA</h2>
+      {meals.length !== 0 && <h2 className="registerTitle">ODABERITE 3 JELA</h2>}
+      {meals.length === 0 && <h2 className="registerTitle">NEMAMO TRENUTNO JELA KOJA ODGOVARAJU VAŠIM PREFERENCAMA!</h2>}
       <div className="plannerMealsContainer">
         {
           loading?<HashLoader color={"#59de09"}/>:

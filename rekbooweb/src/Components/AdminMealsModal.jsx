@@ -123,7 +123,6 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                 <input type="number" name="calories" required className="inputNumber" value={calories} onChange={e => onChange(e)}/>
 
                 <label className="lbl">Kategorije:</label>
-                {/* <Select styles={customStyles} placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/> */}
                 <Select styles={customStyles} classNamePrefix="inputMultiSelect" placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/>
 
                 <div className="checkbox-rect">

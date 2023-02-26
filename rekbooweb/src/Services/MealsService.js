@@ -3,7 +3,19 @@ import { API, getHeaders } from "../config";
 
 const getAllMeals = async (params) => {
     try {
-        const response = await axios.get(API + 'Meal?' + new URLSearchParams(params).toString(), {headers: getHeaders()})
+        var queryString = '';
+        if(params){
+            queryString = Object.keys(params)
+            .map(key => {
+              if (Array.isArray(params[key])) {
+                return params[key].map(val => `${encodeURIComponent(key)}=${encodeURIComponent(val)}`).join('&');
+              }
+              return `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`;
+            })
+            .join('&');
+        }
+
+        const response = await axios.get(API + 'Meal?' + queryString, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;

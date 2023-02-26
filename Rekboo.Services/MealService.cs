@@ -23,6 +23,11 @@ namespace Rekboo.Services
         {
             var filteredQuery = base.AddFilter(query, search);
 
+            if (search?.Active != null)
+            {
+                filteredQuery = filteredQuery.Where(meal => meal.Active == search.Active);
+            }
+
             if (search?.Tags?.Length != null)
             {
                 filteredQuery = filteredQuery.Where(meal => meal.Tags.Any(tag => search.Tags.Contains(tag)));
