@@ -16,10 +16,8 @@
 }
 
 .mealCardPhoto{
-    object-fit: fill;
-    width: 300px;
-    height: 300px;
-    border-radius: 25px;
+    width: 50px;
+    border: 5px solid red;
 }
 
 .mealCardDescriptionContainer{
@@ -29,4 +27,8 @@
 .mealCardTitle{
     font-weight: bold;
     font-size: larger;
+}
+
+.image-gallery-slides {
+    border-radius: 25px;
 }

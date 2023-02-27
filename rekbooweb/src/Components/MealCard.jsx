@@ -27,11 +27,12 @@ const MealCard = ({meal}) => {
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
           <ImageGallery 
             items={images} 
+            className="custom-image-gallery"
             showThumbnails={false} 
             showPlayButton={false} 
-            showNav={showNav}/>
+            showNav={showNav}
+            />
         </div>
-    
             <div className="mealCardDescriptionContainer">
                 <div className="mealCardTitle">{meal.name}</div>
                 <div className="mealCardDescription">{meal.description}</div>    
