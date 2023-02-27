@@ -43,7 +43,8 @@ const PlannerMeals = () => {
       <div className="plannerMealsContainer">
         {
           loading?<HashLoader color={"#59de09"}/>:
-          meals?.map(m => <div key={m.mealID} onClick={(e) => openModal(m)}><MealCard meal={m}/></div>)
+          meals?.map(m => <div key={m.mealID}><MealCard meal={m}/></div>)
+          // meals?.map(m => <div key={m.mealID} onClick={(e) => openModal(m)}><MealCard meal={m}/></div>)
         }
       </div>
       <Footer/>

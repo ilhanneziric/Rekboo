@@ -45,7 +45,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
             setInputs({...inputs, [e.target.name] : e.target.checked});    
         }else if(e.target.type === 'number'){
             setInputs({...inputs, [e.target.name] : Number(e.target.value)});    
-        }else if(e.target.type === 'text'){
+        }else if(e.target.type === 'text' || e.target.type === 'textarea'){
             setInputs({...inputs, [e.target.name] : e.target.value});    
         }
     }
@@ -53,7 +53,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const onSubmitForm = async e => {
         e.preventDefault();
         if(meal === null){
-            disptach(addMeal(inputs));
+            disptach(addMeal({...inputs, tags: tags.map((option) => option.value)}));
         }else{
             disptach(editMeal({...inputs, tags: tags.map((option) => option.value)}));
         }
@@ -98,7 +98,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                             <img src={NoImage} alt="" className="imageAdminMealModal"/>:
                             <img src={`data:image/png;base64,${photo1}`} alt="" className="imageAdminMealModal"/>
                         }
-                        <label htmlFor="photo1" className="lblAdminMealModal">Početna slika</label>
+                        <label htmlFor="photo1" className="lblAdminMealModal">Glavna slika</label>
                         <input type="file" name="photo1" required className="fileInputAdminMealModal" accept="image/png, image/gif, image/jpeg" onChange={e => onChange(e)}/>
                     </div>
 
