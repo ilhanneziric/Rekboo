@@ -70,7 +70,7 @@ export const mealsReducer = (state = initialState, action) => {
         // case actionTypes.DELETE_MEAL_SUCCESS:
         //     return {
         //         loading: false,
-        //         meals: state.meals.map(o => o.mealID !== action.payload.mealID)
+        //         meals: state.meals.filter(o => o.mealID !== action.payload.mealID)
         //     };
         // case actionTypes.DELETE_MEAL_ERROR:
         //     return {

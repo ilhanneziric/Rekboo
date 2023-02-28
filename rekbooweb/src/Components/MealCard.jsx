@@ -2,25 +2,17 @@ import '../Styles/mealcard.scss'
 import ImageGallery from 'react-image-gallery';
 import { useState } from 'react';
 
-const MealCard = ({meal}) => {
+const MealCard = ({meal, add, remove, added}) => {
   const [showNav, setShowNav] = useState(false);
 
   const images = [
-    {
-      original: `data:image/png;base64,${meal.photo1}`
-    },
-    {
-      original: `data:image/png;base64,${meal.photo2}`
-    },
+    { original: `data:image/png;base64,${meal.photo1}` },
+    { original: `data:image/png;base64,${meal.photo2}` },
   ];
 
-  const handleMouseEnter = () => {
-    setShowNav(true);
-  };
+  const handleMouseEnter = () => { setShowNav(true); };
+  const handleMouseLeave = () => { setShowNav(false); };
 
-  const handleMouseLeave = () => {
-    setShowNav(false);
-  };
   return (
     <>
         <div className="mealCardContainer">
@@ -38,7 +30,12 @@ const MealCard = ({meal}) => {
                 <div className="mealCardDescription">{meal.description}</div> 
                 <div className="mealCardTagContainer">
                   { meal?.tags.map((tag, index) => <div className="mealCardTag" key={index}><b>{tag}</b></div>) }    
-                </div>   
+                </div>
+                {
+                  !added ? 
+                  <div className="mealCardDescriptionAddMealToOrder" onClick={() => add(meal)}>DODAJ</div>:   
+                  <div className="mealCardDescriptionAddMealToOrder" onClick={() => remove(meal)}>UKLONI</div>   
+                }
             </div>
             </div>
     </>

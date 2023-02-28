@@ -1,6 +1,6 @@
+import '../Styles/plannermeals.scss'
 import MealCard from "../Components/MealCard"
 import Wizard from "../Components/Wizard"
-import '../Styles/plannermeals.scss'
 import { useEffect, useState } from "react"
 import Header from "../Components/Header"
 import Footer from "../Components/Footer"
@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getMeals } from "../redux/actions/mealsActions"
 import { HashLoader } from "react-spinners"
 import { useNavigate } from "react-router-dom"
+import { updateOrder } from '../redux/actions/orderActions'
 
 const PlannerMeals = () => {
   const dispatch = useDispatch();
@@ -27,6 +28,9 @@ const PlannerMeals = () => {
     setShow(true);
   }
 
+  const addMealToOrder = (meal) => { dispatch(updateOrder({...order, meals: [...order.meals, meal]})); };
+  const removeMealFromOrder = (meal) => { dispatch(updateOrder({...order, meals: order.meals.filter(m => m.mealID !== meal.mealID)})); };
+
   useEffect(() => {
     if(order === null){
       navigate('/plannerplan');
@@ -38,15 +42,26 @@ const PlannerMeals = () => {
     <>
       <Header/>
       <Wizard level={7}/>
-      {meals.length !== 0 && <h2 className="registerTitle">ODABERITE 3 JELA</h2>}
+      {}
       {meals.length === 0 && <h2 className="registerTitle">NEMAMO TRENUTNO JELA KOJA ODGOVARAJU VAŠIM PREFERENCAMA!</h2>}
       <div className="plannerMealsContainer">
         {
           loading?<HashLoader color={"#59de09"}/>:
-          meals?.map(m => <div key={m.mealID}><MealCard meal={m}/></div>)
-          // meals?.map(m => <div key={m.mealID} onClick={(e) => openModal(m)}><MealCard meal={m}/></div>)
+          (meals.length !== 0? <h2 className="registerTitle">ODABERITE {order.numberOfMeals} JELA</h2>:
+          meals.length !== 0 && <h2 className="registerTitle">ODABERITE {order.numberOfMeals} JELA</h2>,
+          meals?.map(m => <div key={m.mealID}><MealCard meal={m} add={addMealToOrder} remove={removeMealFromOrder} added={order.meals.some(x => x.mealID === m.mealID)}/></div>))
         }
       </div>
+      {
+        (!loading && meals.length !== 0) &&
+        <div className="plannerMealsNextBtnContainer">
+          <div className="plannerMealsNextBtnData plennerMealsNextBtnDisabled">
+          <span>Odabrano <b>2/</b></span>
+          <span><b>{order.numberOfMeals}</b>   </span>
+          <span>| DALJE</span>
+          </div>
+        </div>
+      }
       <Footer/>
       <PlannerMealsModal show={show} handleClose={handleClose} meal={meal}/>
     </>

@@ -70,7 +70,7 @@ export const ordersReducer = (state = initialState, action) => {
         // case actionTypes.DELETE_ORDER_SUCCESS:
         //     return {
         //         loading: false,
-        //         orders: state.orders.map(o => o.orderID !== action.payload.orderID)
+        //         orders: state.orders.filter(o => o.orderID !== action.payload.orderID)
         //     };
         // case actionTypes.DELETE_ORDER_ERROR:
         //     return {

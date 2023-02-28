@@ -7,3 +7,30 @@
     margin: 0 3rem;
     margin-top: 2rem;
 }
+
+
+.plannerMealsNextBtnContainer{
+    text-align: center;
+    position: sticky;
+    bottom: 50px;
+    z-index: 9999;
+}
+
+.plannerMealsNextBtnData{
+    @extend .btn;
+    display: inline;
+}
+
+.plennerMealsNextBtnDisabled{
+    background-color: $greenDisabled;
+    border: 5px solid $greenDisabled;
+}
+
+.plennerMealsNextBtnDisabled:hover{
+    cursor: not-allowed;
+    border: 5px solid $greenDisabled;
+}
+
+.plennerMealsNextBtnDisabled:active{
+    background-color: $greenDisabled;
+}

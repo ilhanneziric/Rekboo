@@ -15,7 +15,8 @@ const PlannerPlan = () => {
   const [order, setOrder] = useState({
     numberOfMeals: null,
     numberOfPeople: null,
-    tags: []
+    tags: [],
+    meals: []
   })
 
   const [validationError, setValidationError] = useState(null);
