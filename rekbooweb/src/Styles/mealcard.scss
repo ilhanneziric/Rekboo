@@ -22,11 +22,25 @@
 
 .mealCardDescriptionContainer{
     padding: 10px 20px;
+    width: 100%;
 }
 
 .mealCardTitle{
     font-weight: bold;
     font-size: larger;
+}
+
+.mealCardTagContainer{
+    width: 100%;
+}
+
+.mealCardTag{
+    background-color: $grey;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    display: inline-block;
 }
 
 .image-gallery-slides {

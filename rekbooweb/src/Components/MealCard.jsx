@@ -35,7 +35,10 @@ const MealCard = ({meal}) => {
         </div>
             <div className="mealCardDescriptionContainer">
                 <div className="mealCardTitle">{meal.name}</div>
-                <div className="mealCardDescription">{meal.description}</div>    
+                <div className="mealCardDescription">{meal.description}</div> 
+                <div className="mealCardTagContainer">
+                  { meal?.tags.map((tag, index) => <div className="mealCardTag" key={index}><b>{tag}</b></div>) }    
+                </div>   
             </div>
             </div>
     </>
