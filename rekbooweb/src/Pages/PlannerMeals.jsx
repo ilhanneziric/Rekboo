@@ -53,12 +53,11 @@ const PlannerMeals = () => {
           <div className="plannerMealsNextBtnData plennerMealsNextBtnDisabled">
             <span>Odabrano <b>{order.meals.length}/</b></span>
             <span><b>{order.numberOfMeals}</b>   </span>
-            <span>| DALJE</span>
           </div>:
           <div className="plannerMealsNextBtnData">
             <span>Odabrano <b>{order.meals.length}/</b></span>
             <span><b>{order.numberOfMeals}</b>   </span>
-            <span>| DALJE</span>
+            <span className="plannerMealsNextBtnText">DALJE</span>
           </div>
           }
         </div>

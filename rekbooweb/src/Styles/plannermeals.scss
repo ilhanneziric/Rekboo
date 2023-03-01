@@ -34,3 +34,9 @@
 .plennerMealsNextBtnDisabled:active{
     background-color: $greenDisabled;
 }
+
+.plannerMealsNextBtnText{
+    border-left: 2px solid white;
+    padding-left: 7px;
+    margin-left: 5px;
+}
