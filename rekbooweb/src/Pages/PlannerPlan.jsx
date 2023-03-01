@@ -9,6 +9,7 @@ import { useDispatch } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
 import { useEffect, useState } from 'react';
 import MealsService from '../Services/MealsService';
+import { HashLoader } from 'react-spinners';
 
 const PlannerPlan = () => {
   const dispatch = useDispatch();
@@ -17,7 +18,8 @@ const PlannerPlan = () => {
     numberOfPeople: null,
     tags: [],
     meals: []
-  })
+  });
+  const [loading, setLoading] = useState(false);
 
   const [validationError, setValidationError] = useState(null);
   const [progress, setProgress] = useState(0);
@@ -61,7 +63,13 @@ const PlannerPlan = () => {
   const addCategoryTag = (tag) => { setOrder(prevState => ({...prevState, tags: [...prevState.tags, tag] })); }
   const removeCategoryTag = (tag) => { setOrder({...order, tags: order.tags.filter(str => str !== tag)}); }
 
-  const getTags = async () => { setTags(await MealsService.getTags()); }
+  const getTags = async () => {
+    setLoading(true); 
+    setTags(await MealsService.getTags()); 
+    if(tags !== null){
+      setLoading(false);
+    }
+  }
 
   useEffect(() => {
     checkProgress(); 
@@ -86,6 +94,7 @@ const PlannerPlan = () => {
             <div className="noOfContainers">
               <h4 className="noOfTitle">KATEGORIJE:</h4>
               {
+                loading ? <HashLoader color={"#59de09"}/>:
                 tags.length !== undefined &&
                 tags?.map((t, index) => <TagCard key={index} name={t} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes(t)}/>)
               }

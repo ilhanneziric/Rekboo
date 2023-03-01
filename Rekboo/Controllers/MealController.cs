@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Rekboo.Model;
 using Rekboo.Model.Requests;
 using Rekboo.Model.SearchObjects;
@@ -14,6 +15,7 @@ namespace Rekboo.Controllers
             _mealService = mealService; 
         }
 
+        [AllowAnonymous]
         [HttpGet("/api/Meal/tags")]
         public IActionResult GetCachedTags()
         {
