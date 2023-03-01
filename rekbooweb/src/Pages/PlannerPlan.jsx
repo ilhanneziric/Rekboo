@@ -64,7 +64,7 @@ const PlannerPlan = () => {
   const removeCategoryTag = (tag) => { setOrder({...order, tags: order.tags.filter(str => str !== tag)}); }
 
   const getTags = async () => {
-    setLoading(true); 
+    setLoading(false); 
     setTags(await MealsService.getTags()); 
     if(tags !== null){
       setLoading(false);
@@ -75,6 +75,13 @@ const PlannerPlan = () => {
     checkProgress(); 
     getTags();
   }, [order]);
+
+  const override = {
+    position: 'absolute',
+    zIndex: '1',
+    top: '50%',
+    left: '50%'
+  };
 
   return (
     <>
@@ -94,8 +101,9 @@ const PlannerPlan = () => {
             <div className="noOfContainers">
               <h4 className="noOfTitle">KATEGORIJE:</h4>
               {
-                loading ? <HashLoader color={"#59de09"}/>:
-                tags.length !== undefined &&
+                loading && <HashLoader color={"#59de09"} cssOverride={override}/>
+              }
+              {
                 tags?.map((t, index) => <TagCard key={index} name={t} addTag={addCategoryTag} removeTag={removeCategoryTag} checked={order.tags?.includes(t)}/>)
               }
             </div>
