@@ -11,7 +11,7 @@
 
 .mealCardContainer:hover{
     transform: scale(1.1);
-    cursor: pointer;
+    // cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.5) 0px 15px 12px;
 }
 
@@ -45,4 +45,56 @@
 
 .image-gallery-slides {
     border-radius: 25px;
+}
+
+.mealCardDescriptionFooter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mealCardKcalTime{
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.mealCardDescriptionAddMealToOrder{
+    @extend .activeBtn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    width: 100px;
+    margin-top: 5px
+}
+
+.mealCardDescriptionAddMealToOrderDisabled{
+    border: 3px solid $greenDisabled;
+    background-color: $greenDisabled;
+}
+
+.mealCardDescriptionAddMealToOrderDisabled:hover{
+    cursor: not-allowed;
+    border-bottom: 3px solid $greenDisabled;
+}
+
+.mealCardDescriptionAddMealToOrderDisabled:active{
+    border: 3px solid $greenDisabled;
+    background-color: $greenDisabled;
+}
+
+
+.mealCardDescriptionRemoveMealToOrder{
+    @extend .deleteBtn;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 3px;
+    margin-top: 5px
+}
+
+.MealCardDescriptionBtnText{
+    margin-right: 3px;
 }

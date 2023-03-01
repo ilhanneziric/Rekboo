@@ -6,7 +6,6 @@ import { addMeal,editMeal } from '../redux/actions/mealsActions'
 import NoImage from '../Assets/NoImage.png';
 import Select from 'react-select'
 import MealsService from "../Services/MealsService";
-import '../Styles/_parent.scss';
 
 const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const disptach = useDispatch();
@@ -14,13 +13,14 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
         name: '',
         description: '',
         calories: 0,
+        time: 0,
         active: false,
         photo1: '',
         photo2: '',
         tags: []
     });
 
-    const { name, description, calories, active, photo1, photo2, tags } = inputs;
+    const { name, description, calories, time, active, photo1, photo2, tags } = inputs;
 
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [allTags, setAllTags] = useState([]);
@@ -119,8 +119,17 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                 <label htmlFor="description" className="lbl">Opis:</label>
                 <textarea name="description" required className="inputTextarea" value={description} onChange={e => onChange(e)}/>
 
-                <label htmlFor="calories" className="lbl">Kalorije:</label>
-                <input type="number" name="calories" required className="inputNumber" value={calories} onChange={e => onChange(e)}/>
+                <div className="adminMealsModalCaloriesTimeContainer">
+                    <div className="adminMealsModalCaloriesTime">
+                        <label htmlFor="calories" className="adminMealsModalInputNumerbLbl">Kalorije:</label>
+                        <input type="number" name="calories" required className="adminMealsModalInputNumber" value={calories} onChange={e => onChange(e)}/>
+                    </div>
+                    <div className="adminMealsModalCaloriesTime">
+                        <label htmlFor="time" className="adminMealsModalInputNumerbLbl">Vrijeme pripreme:</label>
+                        <input type="number" name="time" required className="adminMealsModalInputNumber" value={time} onChange={e => onChange(e)}/>
+                    </div>
+
+                </div>
 
                 <label className="lbl">Kategorije:</label>
                 <Select styles={customStyles} classNamePrefix="inputMultiSelect" placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/>

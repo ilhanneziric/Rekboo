@@ -71,3 +71,13 @@ body {
   width: 100px;
   padding: 5px 10px;
 }
+
+.adminMealsModalInputNumber{
+  @extend .inputNumber;
+  width: 100%;
+}
+
+.adminMealsModalCaloriesTimeContainer{
+  display: flex;
+  justify-content: space-between;
+}

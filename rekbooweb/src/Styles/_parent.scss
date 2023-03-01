@@ -141,3 +141,7 @@ a{
     background: $green;
     box-shadow: 0 0 0 1px #000;
 }
+
+.cursorNotAllowed:hover{
+    cursor: not-allowed;
+}
