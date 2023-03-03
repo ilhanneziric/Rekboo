@@ -3,7 +3,7 @@ import { API, getHeaders } from "../config";
 
 const getAllOrders = async () => {
     try {
-        const response = await axios.get(API + 'Order', {headers: getHeaders()})
+        const response = await axios.get(API + 'Planner', {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -12,7 +12,7 @@ const getAllOrders = async () => {
 
 const addOrder = async (order) => {
     try {
-        const response = await axios.post(API + 'Order', order, {headers: getHeaders()})
+        const response = await axios.post(API + 'Planner', order, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
@@ -21,7 +21,7 @@ const addOrder = async (order) => {
 
 const editOrder = async (order) => {
     try {
-        const response = await axios.put(API + `Order/${order.orderID}`, order, {headers: getHeaders()})
+        const response = await axios.put(API + `Planner/${order.orderID}`, order, {headers: getHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;

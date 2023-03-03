@@ -30,3 +30,34 @@ export const usersReducer = (state = initialState, action) => {
             return state;
     }
 };
+
+const initialUserState = {
+    user: null,
+    loading: false,
+    error: null,
+};
+
+export const userReducer = (state = initialUserState, action) => {
+    switch(action.type){
+        case(actionTypes.GET_USER):
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
+        case actionTypes.GET_USER_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                user: action.payload,
+            };
+        case actionTypes.GET_USER_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
+        default:
+            return state;
+    }
+};

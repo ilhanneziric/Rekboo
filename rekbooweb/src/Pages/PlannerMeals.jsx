@@ -48,18 +48,18 @@ const PlannerMeals = () => {
       {
         (!loading && meals.length !== 0) &&
         <div className="plannerMealsNextBtnContainer">
-          {
+        {
           order.meals.length != order.numberOfMeals ?
           <div className="plannerMealsNextBtnData plennerMealsNextBtnDisabled">
             <span>Odabrano <b>{order.meals.length}/</b></span>
             <span><b>{order.numberOfMeals}</b>   </span>
           </div>:
-          <div className="plannerMealsNextBtnData">
+          <div className="plannerMealsNextBtnData" onClick={() => navigate('/planneroverview')}>
             <span>Odabrano <b>{order.meals.length}/</b></span>
             <span><b>{order.numberOfMeals}</b>   </span>
             <span className="plannerMealsNextBtnText">DALJE</span>
           </div>
-          }
+        }
         </div>
       }
       <Footer/>

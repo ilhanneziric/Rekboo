@@ -9,10 +9,12 @@ import jwt from 'jwt-decode'
 import UsersService from '../Services/UsersService';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
+import { ClipLoader } from 'react-spinners';
 
 const PlannerAddress = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -39,9 +41,11 @@ const PlannerAddress = () => {
       } else {
         const token = localStorage.getItem("token");
         const user = jwt(token);
+        setLoading(true);
         const response = await UsersService.addContactDataToUser(user.userID, inputs);
         if(response){
           dispatch(updateOrder({...order, userID: response.userID}));
+          setLoading(false);
           navigate('/plannermeals');
         }
       }
@@ -75,7 +79,7 @@ const PlannerAddress = () => {
             <input className="addressFormInput" name="City" type="text" value={inputs.City} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">TELEFON:</label>
             <input className="addressFormInput" name="Phone" type="text" value={inputs.Phone} onChange={e => onChange(e)}/>
-            <button className='addressBtn'>POTVRDI</button>
+            <button className='addressBtn'>POTVRDI   {loading && <ClipLoader color={'white'} size={10}/>}</button>
           </form>
           </div>
           {/* <div className="addressOrderInformationContainer">

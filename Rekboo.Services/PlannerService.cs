@@ -16,5 +16,21 @@ namespace Rekboo.Services
         {
             //add filter implementirati
         }
+
+        public override void AfterInsert(PlannerUpsertRequest insert, Planner entity)
+        {
+            var set = Context.Set<PlannerMeal>();
+            foreach (var mealID in insert.MealIDs)
+            {
+                PlannerMeal plannerMealEntity = Mapper.Map<PlannerMeal>(new PlannerMealUpsertRequest
+                {
+                    MealID = mealID,
+                    PlannerID = entity.PlannerID
+                });
+                set.Add(plannerMealEntity);
+            }
+
+            Context.SaveChanges();
+        }
     }
 }

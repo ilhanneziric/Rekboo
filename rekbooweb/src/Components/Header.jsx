@@ -27,7 +27,8 @@ const Header = () => {
           window.location.pathname !== '/plannerregister' && 
           window.location.pathname !== '/planneraddress' && 
           window.location.pathname !== '/plannercheckout' && 
-          window.location.pathname !== '/plannermeals') ?
+          window.location.pathname !== '/plannermeals' && 
+          window.location.pathname !== '/planneroverview') ?
           (!isAuthenticated ?
           <Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link>:
           <div className="prileBtnContainer">

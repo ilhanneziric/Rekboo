@@ -7,6 +7,7 @@ import HowItWorks from './Pages/HowItWorks';
 import PlannerAddress from './Pages/PlannerAddress';
 import PlannerCheckout from './Pages/PlannerCheckout';
 import PlannerMeals from './Pages/PlannerMeals';
+import PlannerOverview from './Pages/PlannerOverview';
 import PlannerPlan from './Pages/PlannerPlan';
 import PlannerRegister from './Pages/PlannerRegister';
 import Login from './Pages/Login';
@@ -20,6 +21,7 @@ import Register from './Pages/Register';
 import { updIsAuthenticated } from './redux/actions/isAuthenticatedActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+
 function App() {
   const dispatch = useDispatch();
 
@@ -48,6 +50,7 @@ function App() {
             <Route path='/planneraddress' element={isAuthenticated ? (<PlannerAddress/>) : (<Navigate to='/plannerplan'/>)}/>
             {/* <Route path='/plannercheckout' element={<PlannerCheckout/>}/> */}
             <Route path='/plannermeals' element={isAuthenticated ? (<PlannerMeals/>) : (<Navigate to='/plannerplan'/>)}/>
+            <Route path='/planneroverview' element={isAuthenticated ? (<PlannerOverview/>) : (<Navigate to='/plannerplan'/>)}/>
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>

@@ -16,3 +16,19 @@ export const getUsers = () => async(dispatch) => {
     });
   }
 }
+
+export const getUser = (userID) => async(dispatch) => {
+  dispatch({ type: actionTypes.GET_USER });
+  try {
+    const data = await UsersService.getUser(userID);
+    dispatch({ 
+      type: actionTypes.GET_USER_SUCCESS, 
+      payload: data 
+    });
+  } catch (error) {
+    dispatch({ 
+      type: actionTypes.GET_USER_ERROR, 
+      payload: error
+    });
+  }
+}

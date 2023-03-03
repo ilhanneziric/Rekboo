@@ -1,0 +1,68 @@
+@import './parent';
+
+.plannerOverviewContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 300px;
+    justify-content: center;
+}
+
+.plannerOverviewPlanContainer{
+    width: 50%;
+    background-color: $grey;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.plannerOverviewContactContainer{
+    padding: 20px;
+    width: 50%;
+}
+
+.plannerOverviewPriceContainer{
+    width: 300px;
+}
+
+.plannerOverviewPlanLbl{
+    // font-size: 0.9rem;
+    display: inline;
+}
+
+.plannerOverviewPlanData{
+    font-weight: 700;
+    display: inline;
+    font-size: 0.9rem;
+}
+
+.plannerOverviewPlanMealName{
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: block;
+}
+
+.plannerOverviewPlanDataTotalPriceContainer{
+    background-color: $grey;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px
+}
+
+.plannerOverviewOrderBtn{
+    @extend .btn;
+    width: 100%;
+    margin: 20px 40px;
+    display: block;
+}
+
+.plannerOverviewAcceptModalBtn{
+    @extend .activeBtn;
+    padding: 5px 10px;
+}
+
+.plannerOverviewAcceptModalTitle{
+    font-size: 1rem;
+}
+
+.plannerOverviewAcceptBody{
+    margin: 20px;
+}

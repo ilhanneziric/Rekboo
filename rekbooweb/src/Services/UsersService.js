@@ -47,10 +47,20 @@ const getAllUsers = async () => {
     }
 };
 
+const getUser = async (userID) => {
+    try {
+        const response = await axios.get(API + `User/${userID}`, {headers: getHeaders()})
+        return await response.data;
+    } catch (err) {
+        return err.message;
+    }
+};
+
 export default {
     login,
     register,
     existUser,
     addContactDataToUser,
-    getAllUsers
+    getAllUsers,
+    getUser
 }
