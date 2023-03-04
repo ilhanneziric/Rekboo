@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Rekboo.Model.Requests;
 using Rekboo.Model.SearchObjects;
 using Rekboo.Services.Database;
@@ -31,6 +32,12 @@ namespace Rekboo.Services
             }
 
             Context.SaveChanges();
+        }
+
+        public override IQueryable<Planner> AddInclude(IQueryable<Planner> query, PlannerSearchObject search = null)
+        {
+            query = query.Include(x => x.User).Include(x => x.Meals).ThenInclude(pm => pm.Meal);
+            return query;
         }
     }
 }

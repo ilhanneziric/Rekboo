@@ -18,7 +18,7 @@ namespace Rekboo.Services.Database
 
             modelBuilder.Entity<Planner>().HasOne(i => i.User).WithMany(u => u.Planners).HasForeignKey(p => p.UserID);
             modelBuilder.Entity<PlannerMeal>().HasOne(pm => pm.Planner).WithMany(p => p.Meals).HasForeignKey(pm => pm.PlannerID);
-            modelBuilder.Entity<PlannerMeal>().HasOne(pm => pm.Meal).WithMany(p => p.Planners).HasForeignKey(pm => pm.PlannerID);
+            modelBuilder.Entity<PlannerMeal>().HasOne(pm => pm.Meal).WithMany(p => p.Planners).HasForeignKey(pm => pm.MealID);
         }
 
         public DbSet<User> Users { get; set; } = null!;
