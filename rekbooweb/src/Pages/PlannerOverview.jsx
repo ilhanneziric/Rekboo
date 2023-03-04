@@ -39,8 +39,9 @@ const PlannerOverview = () => {
   useEffect(() => {
     if(order === null){
       navigate('/plannerplan');
+    }else{
+        dispatch(getUser(order.userID));
     }
-    dispatch(getUser(order.userID));
   },[dispatch]);
   return (
   <>
@@ -54,19 +55,19 @@ const PlannerOverview = () => {
                 <p className="plannerOverviewPlanLbl">Plan: </p><div className="plannerOverviewPlanData">{order?.tags?.join(', ')}</div>
             </div>
             <div className="plannerOverviewPlanDataContainer">    
-                <p className="plannerOverviewPlanLbl">Broj odabranih jela: </p><div className="plannerOverviewPlanData">{order.numberOfMeals}</div>
+                <p className="plannerOverviewPlanLbl">Broj odabranih jela: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals}</div>
             </div>
             <div className="plannerOverviewPlanDataContainer">    
-                <p className="plannerOverviewPlanLbl">Broj osoba: </p><div className="plannerOverviewPlanData">{order.numberOfPeople}</div>
+                <p className="plannerOverviewPlanLbl">Broj osoba: </p><div className="plannerOverviewPlanData">{order?.numberOfPeople}</div>
             </div>
             <div className="plannerOverviewPlanDataContainer">    
-                <p className="plannerOverviewPlanLbl">Ukupan broj porcija: </p><div className="plannerOverviewPlanData">{order.numberOfMeals*order.numberOfPeople}</div>
+                <p className="plannerOverviewPlanLbl">Ukupan broj porcija: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople}</div>
             </div>
             <div className="plannerOverviewPlanDataContainer">    
                 <p className="plannerOverviewPlanLbl">Odabrana jela: </p>
                 <div className="plannerOverviewPlanMealsContainer">
                     {
-                        order.meals.map((m, index) => <div key={index} className="plannerOverviewPlanMealName">- {m.name}</div>)
+                        order?.meals.map((m, index) => <div key={index} className="plannerOverviewPlanMealName">- {m.name}</div>)
                     }
                 </div>
             </div>
@@ -92,13 +93,13 @@ const PlannerOverview = () => {
 
     <div className="plannerOverviewContactContainer">
         <div className="plannerOverviewPlanDataContainer">    
-            <p className="plannerOverviewPlanLbl">Cijena namirnica: </p><div className="plannerOverviewPlanData">{order.numberOfMeals*order.numberOfPeople*5}KM</div>
+            <p className="plannerOverviewPlanLbl">Cijena namirnica: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5}KM</div>
         </div>
         <div className="plannerOverviewPlanDataContainer">    
             <p className="plannerOverviewPlanLbl">Cijena dostave i pakovanja: </p><div className="plannerOverviewPlanData">10KM</div>
         </div>
         <div className="plannerOverviewPlanDataTotalPriceContainer">    
-            <p className="plannerOverviewPlanLbl">Ukupna cijena: </p><div className="plannerOverviewPlanData">{order.numberOfMeals*order.numberOfPeople*5+10}KM</div>
+            <p className="plannerOverviewPlanLbl">Ukupna cijena: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5+10}KM</div>
         </div>
     </div>
     <div className="plannerOverviewOrderBtn" onClick={() => acceptOrder()}>NARUČI {postLoading && <ClipLoader color={'white'} size={10}/>}</div>
