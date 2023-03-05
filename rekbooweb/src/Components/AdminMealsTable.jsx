@@ -39,8 +39,8 @@ const AdminMealsTable = () => {
       <thead>
           <tr>
               <th>ID</th>
-              <th>Glavna slika</th>
-              <th>Sporedna slika</th>
+              {/* <th>Glavna slika</th> */}
+              {/* <th>Sporedna slika</th> */}
               <th>Naziv</th>
               <th>Opis</th>
               <th>Kalorije</th>
@@ -52,7 +52,7 @@ const AdminMealsTable = () => {
           {            
               meals?.map((m, index) => (<tr key={index}>
                   <td>{m.mealID}</td>
-                  <td>
+                  {/* <td>
                     {
                       m.photo1 === '' || m.photo1 === undefined?
                       <img src={NoImage} alt="" className="imageAdminMealTable"/>:
@@ -65,7 +65,7 @@ const AdminMealsTable = () => {
                       <img src={NoImage} alt="" className="imageAdminMealTable"/>:
                       <img src={`data:image/png;base64,${m.photo2}`} alt="" className="imageAdminMealTable"/>
                     }
-                  </td>
+                  </td> */}
                   <td>{m.name}</td>
                   <td>{m.description}</td>
                   <td>{m.calories}</td>

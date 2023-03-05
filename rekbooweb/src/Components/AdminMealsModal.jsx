@@ -141,7 +141,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
             </Modal.Body>
             <Modal.Footer>
-                <div className="editBtnModal" onClick={handleClose}>ODUSTANI</div>
+                <div className="editBtnModal" onClick={handleClose}>NAZAD</div>
                 <div className="activeBtnModal" onClick={onSubmitForm}>SPASI</div>
             </Modal.Footer>
         </Modal>
