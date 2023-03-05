@@ -3,6 +3,7 @@ import WizardLine from "./WizardLine"
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { updIsAuthenticated } from "../redux/actions/isAuthenticatedActions";
+import { Link } from 'react-router-dom';
 
 const Wizard = ({level}) => {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ const Wizard = ({level}) => {
                 <div className="wizardNav">
                     {level === 3 ? 
                     <p className="wizardTitle wizardTitleSelected">PLAN</p>:
-                    <p className="wizardTitle">PLAN</p>}
+                    <Link to='/plannerplan'><p className="wizardTitle wizardTitleLink">PLAN</p></Link>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 level >= 2 ?
@@ -52,7 +53,7 @@ const Wizard = ({level}) => {
                 <div className="wizardNav">
                     {level === 5 ? 
                     <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
-                    <p className="wizardTitle">REGISTRACIJA</p>}
+                    <Link to='/plannerregister'><p className="wizardTitle wizardTitleLink">REGISTRACIJA</p></Link>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 level >= 4 ?
@@ -75,7 +76,7 @@ const Wizard = ({level}) => {
                 <div className="wizardNav">
                     {level === 6 ? 
                     <p className="wizardTitle wizardTitleSelected">KONTAKT</p>:
-                    <p className="wizardTitle">KONTAKT</p>}
+                    <Link to='/planneraddress'><p className="wizardTitle wizardTitleLink">KONTAKT</p></Link>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 <div className="wizardNav">
@@ -91,7 +92,7 @@ const Wizard = ({level}) => {
                 <div className="wizardNav">
                     {level === 7 ? 
                     <p className="wizardTitle wizardTitleSelected">JELA</p>:
-                    <p className="wizardTitle">JELA</p>}
+                    <Link to='/plannermeals'><p className="wizardTitle wizardTitleLink">JELA</p></Link>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 <div className="wizardNav">
@@ -107,7 +108,7 @@ const Wizard = ({level}) => {
                 <div className="wizardNav">
                     {level === 8 ? 
                     <p className="wizardTitle wizardTitleSelected">NARUDŽBA</p>:
-                    <p className="wizardTitle">NARUDŽBA</p>}
+                    <Link to='/planneroverview'><p className="wizardTitle wizardTitleLink">NARUDŽBA</p></Link>}
                     <WizardLine remNumber={9}/>
                 </div>:
                 <div className="wizardNav">

@@ -10,10 +10,12 @@ import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { loginValidation, registerValidation, emailValidation } from '../Utils/validations';
 import { useNavigate } from 'react-router-dom';
 import { HashLoader, ClipLoader } from 'react-spinners';
+import { updStep } from "../redux/actions/stepActions"
 
 const PlannerRegister = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);
+  const step = useSelector(state => state.step);
 
   const navigate = useNavigate();
 
@@ -109,14 +111,16 @@ const PlannerRegister = () => {
       await plannerRegister();
       setLoading(true);
     }
-  } 
-
+  }
+  
   useEffect(() => {
-    if(order === null){
+    if((step === 1 || step >= 2) && order !== null){
+      dispatch(updStep(2));
+    }else{
       navigate('/plannerplan');
     }
   }, []);
-  
+
   return (
     <>
       <Header/>

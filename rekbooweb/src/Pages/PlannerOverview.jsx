@@ -9,10 +9,12 @@ import { getUser } from '../redux/actions/usersActions';
 import PlannerOverviewAcceptModal from '../Components/PlannerOverviewAcceptModal';
 import OrdersService from '../Services/OrdersService';
 import { ClipLoader } from 'react-spinners';
+import { updStep } from "../redux/actions/stepActions"
 
 const PlannerOverview = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);  
+  const step = useSelector(state => state.step);
   const userData = useSelector(state => state.user);
   const {user, loading, error} = userData;  
   const navigate = useNavigate();
@@ -35,14 +37,15 @@ const PlannerOverview = () => {
         setShow(true);
     }
   }
-
+  
   useEffect(() => {
-    if(order === null){
-      navigate('/plannerplan');
+    if((step === 4) && order !== null){
+      dispatch(updStep(5));
+      dispatch(getUser(order.userID));
     }else{
-        dispatch(getUser(order.userID));
+      navigate('/plannerplan');
     }
-  },[dispatch]);
+  }, []);
   return (
   <>
     <Header/>

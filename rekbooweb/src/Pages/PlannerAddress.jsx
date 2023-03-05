@@ -10,10 +10,12 @@ import UsersService from '../Services/UsersService';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
 import { ClipLoader } from 'react-spinners';
+import { updStep } from "../redux/actions/stepActions"
 
 const PlannerAddress = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);
+  const step = useSelector(state => state.step);
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -55,11 +57,13 @@ const PlannerAddress = () => {
   }
 
   useEffect(() => {
-    if(order === null){
+    if((step === 1 || step === 2 || step >= 3) && order !== null){
+      dispatch(updStep(3));
+    }else{
       navigate('/plannerplan');
     }
   }, []);
-  
+
   return (
     <>
       <Header/>

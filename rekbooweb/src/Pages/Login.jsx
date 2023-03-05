@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { Link } from "react-router-dom";
 import UsersService from "../Services/UsersService";
+import { updStep } from '../redux/actions/stepActions';
+import { useEffect } from "react";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -47,6 +49,10 @@ const Login = () => {
         setValidationError(true);
       }
   } 
+
+  useEffect(() => {
+    dispatch(updStep(0));
+  }, []);
   return (
     <>
       <Header/>

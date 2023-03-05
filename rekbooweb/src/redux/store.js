@@ -8,6 +8,7 @@ import { usersReducer, userReducer } from './reducers/usersReducers';
 import { mealsReducer } from './reducers/mealsReducers';
 import { ordersReducer } from './reducers/ordersReducers';
 import { orderReducer } from './reducers/orderReducers';
+import { stepReducer } from './reducers/stepReducers';
 
 const reducers = combineReducers({
     isAuthenticated: isAuthenticatedReducer,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
     meals: mealsReducer,
     orders: ordersReducer,
     order: orderReducer,
-    user: userReducer
+    user: userReducer,
+    step: stepReducer
 });
 
 const middleware = [thunk, (getDefaultMiddleware) => getDefaultMiddleware({

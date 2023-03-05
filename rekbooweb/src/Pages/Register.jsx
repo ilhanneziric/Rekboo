@@ -6,9 +6,13 @@ import Header from "../Components/Header";
 import UsersService from "../Services/UsersService";
 import '../Styles/register.scss'
 import { registerValidation } from "../Utils/validations";
+import { updStep } from '../redux/actions/stepActions';
+import { useDispatch } from 'react-redux';
+import { useEffect } from "react";
 
 const Register = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [inputs, setInputs] = useState({
         email: '',
@@ -43,7 +47,10 @@ const Register = () => {
           setValidationError(true);
         }
     } 
-
+    
+    useEffect(() => {
+      dispatch(updStep(0));
+    }, []);
   return (
     <>
         <Header/>

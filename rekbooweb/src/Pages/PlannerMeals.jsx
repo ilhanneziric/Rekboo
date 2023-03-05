@@ -9,11 +9,13 @@ import { getMeals } from "../redux/actions/mealsActions"
 import { HashLoader } from "react-spinners"
 import { useNavigate } from "react-router-dom"
 import { updateOrder } from '../redux/actions/orderActions'
+import { updStep } from "../redux/actions/stepActions"
 
 const PlannerMeals = () => {
   const dispatch = useDispatch();
   const mealsData = useSelector(state => state.meals);
   const order = useSelector(state => state.order);
+  const step = useSelector(state => state.step);
   const {meals, loading, error} = mealsData;
   
   const navigate = useNavigate();
@@ -22,12 +24,13 @@ const PlannerMeals = () => {
   const removeMealFromOrder = (meal) => { dispatch(updateOrder({...order, meals: order.meals.filter(m => m.mealID !== meal.mealID)})); };
 
   useEffect(() => {
-    if(order === null){
-      navigate('/plannerplan');
-    }else{
+    if((step === 3 || step >= 4) && order !== null){
+      dispatch(updStep(4));
       dispatch(getMeals({tags: order.tags, active: true}));
+    }else{
+      navigate('/plannerplan');
     }
-  },[dispatch]);
+  }, []);
   return (
     <>
       <Header/>

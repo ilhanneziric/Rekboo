@@ -5,14 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { updateOrder } from "../redux/actions/orderActions"
+import { updStep } from "../redux/actions/stepActions"
 import { useEffect, useState } from 'react';
 import MealsService from '../Services/MealsService';
 import { HashLoader } from 'react-spinners';
 
 const PlannerPlan = () => {
   const dispatch = useDispatch();
+  const step = useSelector(state => state.step);
   const [order, setOrder] = useState({
     numberOfMeals: null,
     numberOfPeople: null,
@@ -83,6 +85,11 @@ const PlannerPlan = () => {
     left: '50%'
   };
 
+  useEffect(() => {
+    if(step === 0 || step >= 1){
+      dispatch(updStep(1));
+    }
+  }, []);
   return (
     <>
       <Header/>
