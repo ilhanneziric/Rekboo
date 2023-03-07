@@ -15,6 +15,7 @@ const PlannerOverview = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);  
   const step = useSelector(state => state.step);
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
   const userData = useSelector(state => state.user);
   const {user, loading, error} = userData;  
   const navigate = useNavigate();
@@ -39,7 +40,7 @@ const PlannerOverview = () => {
   }
   
   useEffect(() => {
-    if((step === 4) && order !== null){
+    if((step === 4) && order !== null && isAuthenticated){
       dispatch(updStep(5));
       dispatch(getUser(order.userID));
     }else{

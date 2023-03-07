@@ -39,18 +39,18 @@ function App() {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/howitworks' element={<HowItWorks/>}/>
-            <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>{/*fix - put this logic in Login*/}
-            <Route path='/register' element={isAuthenticated ? (<Navigate to='/'/>) : (<Register/>)}/>{/*fix - put this logic in Register*/}
+            <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>
+            <Route path='/register' element={isAuthenticated ? (<Navigate to='/'/>) : (<Register/>)}/>
             <Route path='/adminmeals' element={<AdminMeals/>}/>
             <Route path='/adminorders' element={<AdminOrders/>}/>
             <Route path='/adminusers' element={<AdminUsers/>}/>
             <Route path='/adminreports' element={<AdminReports/>}/>
             <Route path='/plannerplan' element={<PlannerPlan/>}/>
-            <Route path='/plannerregister' element={isAuthenticated ? (<Navigate to='/planneraddress'/>) : (<PlannerRegister/>)}/>
-            <Route path='/planneraddress' element={isAuthenticated ? (<PlannerAddress/>) : (<Navigate to='/plannerplan'/>)}/>
+            <Route path='/plannerregister' element={<PlannerRegister/>}/>
+            <Route path='/planneraddress' element={<PlannerAddress/>}/>
             {/* <Route path='/plannercheckout' element={<PlannerCheckout/>}/> */}
-            <Route path='/plannermeals' element={isAuthenticated ? (<PlannerMeals/>) : (<Navigate to='/plannerplan'/>)}/>
-            <Route path='/planneroverview' element={isAuthenticated ? (<PlannerOverview/>) : (<Navigate to='/plannerplan'/>)}/>
+            <Route path='/plannermeals' element={<PlannerMeals/>}/>
+            <Route path='/planneroverview' element={<PlannerOverview/>}/>
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>

@@ -13,9 +13,10 @@ import { updStep } from "../redux/actions/stepActions"
 
 const PlannerMeals = () => {
   const dispatch = useDispatch();
-  const mealsData = useSelector(state => state.meals);
   const order = useSelector(state => state.order);
   const step = useSelector(state => state.step);
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
+  const mealsData = useSelector(state => state.meals);
   const {meals, loading, error} = mealsData;
   
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ const PlannerMeals = () => {
   const removeMealFromOrder = (meal) => { dispatch(updateOrder({...order, meals: order.meals.filter(m => m.mealID !== meal.mealID)})); };
 
   useEffect(() => {
-    if((step === 3 || step >= 4) && order !== null){
+    if((step === 3 || step >= 4) && order !== null && isAuthenticated){
       dispatch(updStep(4));
       dispatch(getMeals({tags: order.tags, active: true}));
     }else{

@@ -16,6 +16,8 @@ const PlannerAddress = () => {
   const dispatch = useDispatch();
   const order = useSelector(state => state.order);
   const step = useSelector(state => state.step);
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
+
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -57,7 +59,8 @@ const PlannerAddress = () => {
   }
 
   useEffect(() => {
-    if((step === 1 || step === 2 || step >= 3) && order !== null){
+    console.log('address');
+    if((step === 1 || step === 2 || step >= 3) && order !== null && isAuthenticated){
       dispatch(updStep(3));
     }else{
       navigate('/plannerplan');

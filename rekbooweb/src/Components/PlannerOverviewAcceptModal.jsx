@@ -1,6 +1,7 @@
 import { Modal } from 'react-bootstrap'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { updateOrder } from '../redux/actions/orderActions';
 import { updStep } from '../redux/actions/stepActions';
 
 const PlannerOverviewAcceptModal = ({show, handleClose}) => {
@@ -10,6 +11,7 @@ const PlannerOverviewAcceptModal = ({show, handleClose}) => {
   const submit = () => {
     handleClose();
     dispatch(updStep(0));
+    dispatch(updateOrder(null));
     navigate('/');
   }
 
