@@ -26,16 +26,10 @@ namespace Rekboo.Services
 
             Context.SaveChanges();
 
-            AfterInsert(insert, entity);
-
             return Mapper.Map<T>(entity);
         }
 
         public virtual void BeforeInsert(TInsert insert, TDb entity)
-        {
-        }
-
-        public virtual void AfterInsert(TInsert insert, TDb entity)
         {
         }
 

@@ -19,6 +19,7 @@ namespace Rekboo.Services
             CreateMap<Database.PlannerMeal, Model.PlannerMeal>();
             CreateMap<Database.PlannerMeal, Model.Meal>()
                 .ForMember(d => d.MealID, opt => opt.MapFrom(s => s.MealID));
+            CreateMap<Database.Planner, Model.Planner>();
             CreateMap<Database.Planner, Model.Planner>()
                 .ForMember(des => des.Meals, opt => opt.MapFrom(x => x.Meals.Select(x => x.Meal.Name)));
 

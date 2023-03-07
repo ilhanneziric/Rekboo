@@ -18,20 +18,23 @@ namespace Rekboo.Services
             //add filter implementirati
         }
 
-        public override void AfterInsert(PlannerUpsertRequest insert, Planner entity)
+        public override Model.Planner Insert(PlannerUpsertRequest insert)
         {
-            var set = Context.Set<PlannerMeal>();
+            var result = base.Insert(insert);
+            
             foreach (var mealID in insert.MealIDs)
             {
                 PlannerMeal plannerMealEntity = Mapper.Map<PlannerMeal>(new PlannerMealUpsertRequest
                 {
                     MealID = mealID,
-                    PlannerID = entity.PlannerID
+                    PlannerID = result.PlannerID
                 });
-                set.Add(plannerMealEntity);
+                Context.PlannerMeals.Add(plannerMealEntity);
             }
 
             Context.SaveChanges();
+
+            return result;
         }
 
         public override IQueryable<Planner> AddInclude(IQueryable<Planner> query, PlannerSearchObject search = null)

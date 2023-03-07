@@ -115,21 +115,17 @@ const PlannerRegister = () => {
   }
   
   useEffect(() => {
-    console.log('register');
     if((step === 1 || step >= 2) && order !== null){
       if(isAuthenticated){
         if(step === 1){
-          console.log('kec je');
           navigate('/planneraddress');
         }else if(step >= 2){
-          console.log('vise od 2 ili je kao 2');
           navigate('/plannerplan');
         }
       }else{
         dispatch(updStep(2));
       }
     }else{
-      console.log('order je vjerovatno null');
       navigate('/plannerplan');
     }
   }, []);

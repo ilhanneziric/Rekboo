@@ -59,7 +59,6 @@ const PlannerAddress = () => {
   }
 
   useEffect(() => {
-    console.log('address');
     if((step === 1 || step === 2 || step >= 3) && order !== null && isAuthenticated){
       dispatch(updStep(3));
     }else{
