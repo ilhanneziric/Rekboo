@@ -42,6 +42,7 @@ const AdminOrdersTable = () => {
               <th>Naručioc</th>
               <th>Broj jela</th>
               <th>Broj osoba</th>
+              <th>Cijena</th>
               <th>Detalji</th>
           </tr>
       </thead>
@@ -57,6 +58,7 @@ const AdminOrdersTable = () => {
                   </td>
                   <td>{p.numberOfRecipes}</td>
                   <td>{p.numberOfPeople}</td>
+                  <td>{p.numberOfPeople*p.numberOfRecipes*5+10}KM</td>
                   <td><div className="editBtn" onClick={(e) => openModal(p)}>DETALJI</div></td>
               </tr>))
             }

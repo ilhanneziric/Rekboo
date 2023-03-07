@@ -49,8 +49,8 @@ const AdminOrdersModal = ({show, handleClose, order = null}) => {
               </div>              
               <div className="adminOrdersModalDataPriceContainer">
                 <div className="adminOrdersModalDataLabel">Ukupna cijena narudžbe: </div>
-                <div className="adminOrdersModalData">40KM</div>
-              </div>              
+                <div className="adminOrdersModalData">{order?.numberOfPeople*order?.numberOfRecipes*5+10}KM</div>
+              </div>          
             </Modal.Body>
             <Modal.Footer>
                 <div className="activeBtnModal" onClick={handleClose}>U REDU</div>
