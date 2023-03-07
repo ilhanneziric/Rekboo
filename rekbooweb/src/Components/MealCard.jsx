@@ -1,6 +1,7 @@
 import '../Styles/mealcard.scss'
 import ImageGallery from 'react-image-gallery';
 import { BiTimeFive, BiMinusCircle, BiPlusCircle } from 'react-icons/bi';
+import { BsCheck } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
 import { useEffect, useRef, useState } from 'react';
 import { HashLoader } from "react-spinners"
@@ -86,7 +87,11 @@ const MealCard = ({meal, add, remove, added, fullOrder}) => {
         </div>:
         <div className="mealCardLoaderImage"><HashLoader color={"#59de09"}/></div>}
         <div className="mealCardDescriptionContainer">
-          <div className="mealCardTitle">{meal.name}</div>
+          {
+            added?
+            <div className="mealCardTitle">{meal.name}<BsCheck color='#59de09' size={'1.5rem'}/></div>:
+            <div className="mealCardTitle">{meal.name}</div>
+          }
           <div className="mealCardDescription">{meal.description}</div> 
           <div className="mealCardTagContainer">
             { meal?.tags.map((tag, index) => <div className="mealCardTag" key={index}><b>{tag}</b></div>) }    
