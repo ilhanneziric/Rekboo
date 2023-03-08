@@ -17,6 +17,7 @@ import AdminOrders from './Pages/AdminOrders';
 import AdminUsers from './Pages/AdminUsers';
 import AdminReports from './Pages/AdminReports';
 import Register from './Pages/Register';
+import UserOrders from './Pages/UserOrders';
 
 import { updIsAuthenticated } from './redux/actions/isAuthenticatedActions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,6 +40,7 @@ function App() {
             <Route path='/' element={<HomePage/>}/>
             <Route path='/aboutus' element={<AboutUs/>}/>
             <Route path='/howitworks' element={<HowItWorks/>}/>
+            <Route path='/userorders' element={<UserOrders/>}/>
             <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>
             <Route path='/register' element={isAuthenticated ? (<Navigate to='/'/>) : (<Register/>)}/>
             <Route path='/adminmeals' element={<AdminMeals/>}/>

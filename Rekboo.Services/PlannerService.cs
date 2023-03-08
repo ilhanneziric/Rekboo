@@ -15,7 +15,18 @@ namespace Rekboo.Services
     {
         public PlannerService(RekbooContext context, IMapper mapper) : base(context, mapper)
         {
-            //add filter implementirati
+        }
+
+        public override IQueryable<Planner> AddFilter(IQueryable<Planner> query, PlannerSearchObject search = null)
+        {
+            var filteredQuery = base.AddFilter(query, search);
+
+            if (search?.UserID != null)
+            {
+                filteredQuery = filteredQuery.Where(x => x.UserID == search.UserID);
+            }
+
+            return filteredQuery;
         }
 
         public override Model.Planner Insert(PlannerUpsertRequest insert)

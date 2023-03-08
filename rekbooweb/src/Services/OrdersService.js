@@ -10,6 +10,15 @@ const getAllOrders = async () => {
     }
 };
 
+const getOrdersByUserId = async (userID) => {
+    try {
+        const response = await axios.get(API + `Planner?UserID=${userID}`, {headers: getHeaders()})
+        return await response.data;
+    } catch (err) {
+        return err.message;
+    }
+};
+
 const addOrder = async (order) => {
     try {
         const response = await axios.post(API + 'Planner', order, {headers: getHeaders()})
@@ -41,5 +50,6 @@ export default {
     getAllOrders,
     addOrder,
     editOrder,
+    getOrdersByUserId,
     // deleteOrder
 }

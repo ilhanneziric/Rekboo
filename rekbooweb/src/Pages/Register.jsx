@@ -1,10 +1,9 @@
-import axios from "axios";
+import '../Styles/register.scss'
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import UsersService from "../Services/UsersService";
-import '../Styles/register.scss'
 import { registerValidation } from "../Utils/validations";
 import { updStep } from '../redux/actions/stepActions';
 import { useDispatch } from 'react-redux';

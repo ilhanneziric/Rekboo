@@ -26,6 +26,24 @@ export const ordersReducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload,
             };
+            case(actionTypes.GET_USER_ORDERS):
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
+        case actionTypes.GET_USER_ORDERS_SUCCESS:
+            return {
+                ...state,
+                loading: false,
+                orders: action.payload,
+            };
+        case actionTypes.GET_ORDERS_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload,
+            };
         case(actionTypes.ADD_ORDER):
             return {
                 ...state,

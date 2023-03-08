@@ -23,6 +23,7 @@ const PlannerOverviewAcceptModal = ({show, handleClose}) => {
         </Modal.Header>
         <div className='plannerOverviewAcceptBody'>
           Uspješno ste izvršili narudžbu sedmičnog plana prehrane.
+          Plaćanje se vrši pri preuzimanju paketa!
         </div>
         <Modal.Footer>
             <div onClick={submit} className='plannerOverviewAcceptModalBtn'>U REDU</div>

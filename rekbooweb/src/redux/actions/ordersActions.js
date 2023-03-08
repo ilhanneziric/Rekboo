@@ -17,6 +17,22 @@ export const getOrders = () => async(dispatch) => {
     }
 }
 
+export const getUserOrders = (userID) => async(dispatch) => {
+    dispatch({ type: actionTypes.GET_USER_ORDERS });
+    try {
+        const data = await OrdersService.getOrdersByUserId(userID);
+        dispatch({ 
+            type: actionTypes.GET_USER_ORDERS_SUCCESS, 
+            payload: data.sort((a, b) => b.orderID-a.orderID)
+        });
+    } catch (error) {
+        dispatch({ 
+            type: actionTypes.GET_USER_ORDERS_ERROR, 
+            payload: error 
+        });
+    }
+}
+
 export const addOrder = (order) => async(dispatch) => {
     dispatch({ type: actionTypes.ADD_ORDER});
     try {

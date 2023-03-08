@@ -22,6 +22,12 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    width: 120px;
+}
+
+.profileHeaderBtnContainer{
+    display: flex;
+    justify-content: center;
 }
 
 .profileHeaderBtn{

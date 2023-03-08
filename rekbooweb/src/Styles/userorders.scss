@@ -1,0 +1,50 @@
+@import './parent';
+
+.userOrdersContainer{
+    margin: 7rem 5rem;
+}
+
+.userOrdersTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
+
+//user order card
+.userOrderContainer{
+    background-color: $grey;
+    border-radius: 25px;
+    margin: 2rem 5rem;
+    padding: 20px;
+    display: flex;
+}
+
+.userOrderContainerMainPart{
+    width: 80%;
+}
+
+.userOrderContainerPlan{
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.userOrderContainerRightPart{
+    width: 20%;
+}
+
+.userOrderContainerRightPartContainer{
+    width: 100%;
+    height: 33%;
+    display: flex;
+}
+
+.userOrderContainerRightPartItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userOrderContainerRightPartitemData{
+    margin-left: 5px;
+}
