@@ -29,10 +29,11 @@ const UserOrders = () => {
   }, []);
 
   const override = {
-    position: 'absolute',
+    // position: 'absolute',
     zIndex: '1',
     top: '50%',
-    left: '50%'
+    left: '50%',
+    marginTop: '100px'
   };
   return (
     <>
