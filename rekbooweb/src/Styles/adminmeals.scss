@@ -81,3 +81,10 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
+.AdminMealsModalValidationError{
+  display: block;
+  color: red;
+  width: 100%;
+  text-align: right;
+}

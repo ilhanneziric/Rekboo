@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi, { string } from 'joi'
 
 export const loginValidation = data => {
     const schema = Joi.object({
@@ -28,11 +28,26 @@ export const emailValidation = data => {
 
 export const addressDataValidation = data => {
     const schema = Joi.object({
-        FirstName: Joi.string().required(),
-        LastName: Joi.string().required(),
-        Address: Joi.string().required(),
-        City: Joi.string().required(),
-        Phone: Joi.string().required()
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
+        address: Joi.string().required(),
+        city: Joi.string().required(),
+        phone: Joi.string().required()
+    });
+    return schema.validate(data);
+};
+
+export const mealValidation = data => {
+    const schema = Joi.object({
+        mealID: Joi.number(),
+        active: Joi.bool().required(),
+        calories: Joi.number().min(1).required(),
+        description: Joi.string().required(),
+        name: Joi.string().required(),
+        photo1: Joi.string().required(),
+        photo2: Joi.string().required(),
+        tags: Joi.array().min(1).required(),
+        time: Joi.number().min(1).required()
     });
     return schema.validate(data);
 };

@@ -6,6 +6,7 @@ import { addMeal,editMeal } from '../redux/actions/mealsActions'
 import NoImage from '../Assets/NoImage.png';
 import Select from 'react-select'
 import MealsService from "../Services/MealsService";
+import { mealValidation } from "../Utils/validations";
 
 const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const disptach = useDispatch();
@@ -24,6 +25,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
     const [selectedOptions, setSelectedOptions] = useState([]);
     const [allTags, setAllTags] = useState([]);
+    const [validationError, setValidationError] = useState(null);
 
     const handleSelectChange = (selectedTags) => {
         setInputs({...inputs, tags: selectedTags});
@@ -52,12 +54,20 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
     const onSubmitForm = async e => {
         e.preventDefault();
-        if(meal === null){
-            disptach(addMeal({...inputs, tags: tags.map((option) => option.value)}));
+        var mealData = {...inputs, tags: tags.map((option) => option.value)}; 
+        var { error } = mealValidation(mealData);
+        if(error){
+            setValidationError(error.toString());
         }else{
-            disptach(editMeal({...inputs, tags: tags.map((option) => option.value)}));
+            setValidationError(null);
+            if(meal === null){
+                disptach(addMeal(mealData));
+            }else{
+                disptach(editMeal(mealData));
+            }
+            handleClose();
         }
-        handleClose();
+
     }
 
     const getTags = async () => { setAllTags(await MealsService.getTags()); }
@@ -143,6 +153,8 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
             <Modal.Footer>
                 <div className="editBtnModal" onClick={handleClose}>NAZAD</div>
                 <div className="activeBtnModal" onClick={onSubmitForm}>SPASI</div>
+                {validationError && <p className="AdminMealsModalValidationError">{validationError}</p>}
+                
             </Modal.Footer>
         </Modal>
     </>
