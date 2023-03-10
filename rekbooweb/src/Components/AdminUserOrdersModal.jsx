@@ -31,7 +31,9 @@ const AdminUserOrdersModal = ({show, handleClose, user = null}) => {
             <Modal.Body>
                 {    
                     loading ? <HashLoader color={"#59de09"} cssOverride={override}/> : 
-                    orders?.map((o, index) => <UserOrder order={o} key={index}/>)
+                        orders?.length === 0 ?
+                            <p>Ovaj korisnik nema narudžbe!</p>:
+                            orders?.map((o, index) => <UserOrder order={o} key={index}/>)
                 }
             </Modal.Body>
             <Modal.Footer>

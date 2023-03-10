@@ -7,7 +7,6 @@ import { getUserOrders } from '../redux/actions/ordersActions';
 import { useEffect } from 'react';
 import { updStep } from "../redux/actions/stepActions"
 import jwt from 'jwt-decode'
-import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { useNavigate } from 'react-router-dom';
 import { HashLoader } from 'react-spinners';
 
@@ -42,7 +41,9 @@ const UserOrders = () => {
         <h1 className="userOrdersTitle">MOJE NARUDŽBE</h1>
         {
             loading ? <HashLoader color={"#59de09"} cssOverride={override}/> : 
-            orders?.map((o, index) => <UserOrder order={o} key={index}/>)
+              orders?.length === 0 ?
+                <><br /><p className="userOrdersTitle">NEMATE OSTVARENIH NARUDŽBI!</p></>:
+                orders?.map((o, index) => <UserOrder order={o} key={index}/>)
         }
     </div>
     <Footer/>
