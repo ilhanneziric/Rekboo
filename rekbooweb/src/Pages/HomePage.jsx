@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom"
+import '../Styles/homepage.scss'
 import Footer from "../Components/Footer"
 import Header from "../Components/Header"
-import '../Styles/homepage.scss'
 import { updStep } from '../redux/actions/stepActions';
 import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
+import HomePagePhoto from '../Assets/HomePagePhoto.jpeg';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -15,13 +15,11 @@ const HomePage = () => {
   return (
     <>
       <Header/>
-      <div className="navcontainer">
-        <Link to='/plannerplan'><div className="plannerplan">Plan</div></Link>
-        <Link to='/plannerregister'><div className="plannerplan">Register</div></Link>
-        <Link to='/planneraddress'><div className="plannerplan">Address</div></Link>
-        <Link to='/plannermeals'><div className="plannerplan">Meals</div></Link>  
-        <Link to='/planneroverview'><div className="planner">Orders</div></Link>  
-      </div>
+        <div className="homePagePhotoContainer">
+          <img src={HomePagePhoto} alt="" className='homePagePhoto'/>
+          <div className="homePagePhotoGreenGradient"></div>
+          <div className="homePagePhotoWhiteGradient"></div>
+        </div>
       <Footer/>
     </>
   )

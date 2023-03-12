@@ -5,6 +5,7 @@ import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { Link, useNavigate } from 'react-router-dom';
 import LogoWithName from '../Assets/LogoWithName.png';
 import { AiOutlineUser } from "react-icons/ai";
+import Navigation from './Navigation';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,9 @@ const Header = () => {
   }
   return (
     <>
+    <div className="headerContainer">
         <Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
+        <Navigation/>
         {
           (window.location.pathname !== '/login' && 
           window.location.pathname !== '/register' && 
@@ -37,10 +40,13 @@ const Header = () => {
             <div className="profileHeaderBtnContainer">
               <AiOutlineUser className='profileHeaderBtn' onClick={() => setOpenLogOutBtn(!openLogOutBtn)}/>
             </div>
-            {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => navigate('/userorders')}>Moje narudžbe</div>}
-            {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => logoOut(e)}>Odjava</div>}
-          </div>):(<></>)
+            <div className="profileHeaderBtnLoader">
+              {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => navigate('/userorders')}>Moje narudžbe</div>}
+              {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => logoOut(e)}>Odjava</div>}
+            </div>
+            </div>):(<></>)
         }
+    </div>
     </>
   )
 }

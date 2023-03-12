@@ -1,7 +1,7 @@
 @import './parent';
 
 .logo{
-    width: 100px;
+    width: 70px;
     position: absolute;
     left: 20px;
     top: 20px;
@@ -35,7 +35,7 @@
     background-color: $green;
     border: 5px solid $green;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .profileHeaderBtn:hover{
@@ -49,5 +49,7 @@
 }
 
 .logOutBtn{
+    position: relative;
     font-size: 1rem;
+    z-index: 2;
 }

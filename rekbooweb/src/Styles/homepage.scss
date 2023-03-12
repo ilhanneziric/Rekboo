@@ -1,8 +1,36 @@
 @import './parent';
 
-.navcontainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 300px;;
+.homePagePhotoContainer{
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    z-index: 1;
+}
+
+.homePagePhoto{
+    display: block;
+    width: 70%;
+    height: auto;
+    margin-left: 500px;
+}
+
+.homePagePhotoGreenGradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(89,222,9);
+    background: linear-gradient(90deg, rgba(89,222,9,1) 13%, rgba(255,255,255,0) 100%);
+}
+
+
+.homePagePhotoWhiteGradient{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255,255,255);
+background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
 }

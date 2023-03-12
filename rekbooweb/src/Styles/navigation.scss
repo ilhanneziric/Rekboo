@@ -1,0 +1,19 @@
+@import './parent';
+
+.navigationContainer{
+    margin: 40px 0;
+    margin-left: 150px;
+}
+
+.navigationItem{
+    display: inline;
+    margin-right: 30px;
+    color: $darkGreen;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.navigationItem:hover{
+    color: $green;
+    cursor: pointer;
+}

@@ -11,6 +11,10 @@ $yellow: #d5d08c;
 //measures
 $wizardWidth: 9rem;
 
+body{
+    background-color: $grey;
+}
+
 .btn{
     background-color: $green;
     color: white;
