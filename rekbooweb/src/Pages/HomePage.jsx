@@ -5,6 +5,7 @@ import { updStep } from '../redux/actions/stepActions';
 import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import HomePagePhoto from '../Assets/HomePagePhoto.jpeg';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,10 @@ const HomePage = () => {
     <>
       <Header/>
         <div className="homePagePhotoContainer">
+          <div className="homePagePhotoTextBtnContainer">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum quasi animi itaque?
+            <Link to='/plannerplan'><div className="homePagePhotoBtn">KREIRAJ PLAN</div></Link>
+          </div>
           <img src={HomePagePhoto} alt="" className='homePagePhoto'/>
           <div className="homePagePhotoGreenGradient"></div>
           <div className="homePagePhotoWhiteGradient"></div>
