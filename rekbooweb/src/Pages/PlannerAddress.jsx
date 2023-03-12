@@ -76,15 +76,15 @@ const PlannerAddress = () => {
           <form onSubmit={onSubmitForm} className="addressaddressForm">
             {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
             <label className="addressFormLbl">IME:</label>
-            <input className="addressFormInput" name="FirstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="firstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">PREZIME:</label>
-            <input className="addressFormInput" name="LastName" type="text" value={inputs.lastName} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="lastName" type="text" value={inputs.lastName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">ADRESU:</label>
-            <input className="addressFormInput" name="Address" type="text" value={inputs.address} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="address" type="text" value={inputs.address} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">GRAD:</label>
-            <input className="addressFormInput" name="City" type="text" value={inputs.city} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="city" type="text" value={inputs.city} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">TELEFON:</label>
-            <input className="addressFormInput" name="Phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
+            <input className="addressFormInput" name="phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
             <button className='addressBtn'>POTVRDI   {loading && <ClipLoader color={'white'} size={10}/>}</button>
           </form>
           </div>

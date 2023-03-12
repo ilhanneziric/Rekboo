@@ -24,7 +24,6 @@ const Header = () => {
     <>
     <div className="headerContainer">
         <Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
-        <Navigation/>
         {
           (window.location.pathname !== '/login' && 
           window.location.pathname !== '/register' && 
@@ -34,7 +33,8 @@ const Header = () => {
           window.location.pathname !== '/plannercheckout' && 
           window.location.pathname !== '/plannermeals' && 
           window.location.pathname !== '/planneroverview') ?
-          (!isAuthenticated ?
+          <><Navigation/>
+          {!isAuthenticated ?
           <Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link>:
           <div className="prileBtnContainer">
             <div className="profileHeaderBtnContainer">
@@ -44,7 +44,8 @@ const Header = () => {
               {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => navigate('/userorders')}>Moje narudžbe</div>}
               {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => logoOut(e)}>Odjava</div>}
             </div>
-            </div>):(<></>)
+            </div>}</>
+            :(<></>)
         }
     </div>
     </>
