@@ -20,7 +20,7 @@ const PlannerOverview = () => {
   const {user, loading, error} = userData;  
   const navigate = useNavigate();
   const [postLoading, setPostLoading] = useState(false);
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
   const acceptOrder = async () => {

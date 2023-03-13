@@ -1,10 +1,10 @@
 import '../Styles/wizardLine.scss'
 
-const WizardLine = ({remNumber}) => {
+const WizardLine = ({widthPercent}) => {
   return (
     <div className="wizardLineContainer">
         <div className="wizardLineBack"></div>
-        <div className="wizardLineFront" style={{width: `${remNumber}rem`}}></div>
+        <div className="wizardLineFront" style={{width: `${widthPercent}%`}}></div>
     </div>
   )
 }

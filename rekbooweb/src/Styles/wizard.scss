@@ -1,13 +1,11 @@
 @import './parent';
 
 .wizardNav{
-    display: inline;
-    width: $wizardWidth;//this is same as wizaed line width
+    width: 150px;
     margin: 50px 10px;
 }
 
 .wizardTitle{
-    // margin: 70px 50px;
     display: block;
     text-align: center;
     margin-bottom: 0;
@@ -29,4 +27,59 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-width: 1050px) {
+    .wizardNav{
+        margin: 100px 10px 20px 10px;
+    }  
+}
+
+@media only screen and (max-width: 900px) {
+    .wizardNav{
+        width: 130px;
+    }  
+}
+
+@media only screen and (max-width: 770px) {
+    .wizardNav{
+        width: 100px;
+    }  
+
+    .wizardTitle{
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .wizardNav{
+        width: 80px;
+    }  
+
+    .wizardTitle{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .wizardNav{
+        width: 60px;
+    }  
+
+    .wizardTitle{
+        font-size: 0.6rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .wizardNav{
+        width: 40px;
+        margin: 80px 10px 10px 10px;
+    }  
+
+    // .w
+
+    .wizardTitle{
+        font-size: 0.5rem;
+    }
 }
