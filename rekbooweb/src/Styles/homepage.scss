@@ -41,11 +41,18 @@
     z-index: 2;
     width: 30%;
     padding-left: 30px;
-    font-size: 1.3rem;
+}
+
+.homePagePhotoText{
+    margin-top: 150px;
+    font-size: 2rem;
+    font-weight: 500;
     color: white;
+
 }
 
 .homePagePhotoBtn{
+    font-size: 1.5rem;
     margin: 50px;
     color: $green;
     background-color: white;

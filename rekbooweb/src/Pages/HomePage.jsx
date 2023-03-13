@@ -18,7 +18,9 @@ const HomePage = () => {
       <Header/>
         <div className="homePagePhotoContainer">
           <div className="homePagePhotoTextBtnContainer">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum quasi animi itaque?
+            <div className="homePagePhotoText">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum quasi animi itaque?
+            </div>
             <Link to='/plannerplan'><div className="homePagePhotoBtn">KREIRAJ PLAN</div></Link>
           </div>
           <img src={HomePagePhoto} alt="" className='homePagePhoto'/>

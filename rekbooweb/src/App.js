@@ -39,7 +39,7 @@ function App() {
         <div className=''>
           <Routes>
             <Route path='/' element={<HomePage/>}/>
-            <Route path='/aboutus' element={<AboutUs/>}/>
+            {/* <Route path='/aboutus' element={<AboutUs/>}/> */}
             <Route path='/howitworks' element={<HowItWorks/>}/>
             <Route path='/userorders' element={<UserOrders/>}/>
             <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>
