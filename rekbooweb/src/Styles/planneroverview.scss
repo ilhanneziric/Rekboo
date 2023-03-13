@@ -1,5 +1,11 @@
 @import './parent';
 
+.plannerOverviewTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
 .plannerOverviewContainer{
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +30,6 @@
 }
 
 .plannerOverviewPlanLbl{
-    // font-size: 0.9rem;
     display: inline;
 }
 
@@ -65,4 +70,92 @@
 
 .plannerOverviewAcceptBody{
     margin: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .plannerOverviewContainer{
+        margin: 40px 200px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .plannerOverviewContainer{
+        margin: 40px 100px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .plannerOverviewPlanContainer{
+        width: 100%;
+    }
+
+    .plannerOverviewContactContainer{
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .plannerOverviewContainer{
+        margin: 40px 30px;
+    }
+    
+    .plannerOverviewPlanContainer{
+        width: 100%;
+    }
+
+    .plannerOverviewContactContainer{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .plannerOverviewPlanLbl{
+        font-size: 0.9rem;
+    }    
+
+    .plannerOverviewPlanData{
+        font-size: 0.8rem;
+    }
+
+    .plannerOverviewTitle{
+        font-size: 1.2rem;
+    }
+
+    .plannerOverviewOrderBtn{
+        font-size: 0.9rem;
+    }
+
+    .plannerOverviewPlanMealName{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .plannerOverviewContainer{
+        margin: 20px 10px;
+    }
+
+    .plannerOverviewPlanContainer{
+        padding: 10px;
+    }
+
+    .plannerOverviewPlanLbl{
+        font-size: 0.8rem;
+    }    
+
+    .plannerOverviewPlanData{
+        font-size: 0.7rem;
+    }
+
+    .plannerOverviewOrderBtn{
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    .plannerOverviewPlanMealName{
+        font-size: 0.7rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
 }

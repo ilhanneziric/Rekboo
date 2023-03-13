@@ -20,7 +20,7 @@ const PlannerOverview = () => {
   const {user, loading, error} = userData;  
   const navigate = useNavigate();
   const [postLoading, setPostLoading] = useState(false);
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
   const handleClose = () => setShow(false);
 
   const acceptOrder = async () => {
@@ -51,7 +51,7 @@ const PlannerOverview = () => {
   <>
     <Header/>
     <Wizard level={8}/>
-    <h2 className="registerTitle">PREGLED NARUDŽBE</h2>
+    <h2 className="plannerOverviewTitle">PREGLED NARUDŽBE</h2>
 
     <div className="plannerOverviewContainer">
         <div className="plannerOverviewPlanContainer">
