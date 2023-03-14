@@ -108,3 +108,81 @@
 .MealCardDescriptionBtnText{
     margin-right: 3px;
 }
+
+@media only screen and (max-width: 840px) {
+    .mealCardContainer{
+        width: 250px;
+        margin: 20px;
+    }
+
+    .mealCardTitle{
+        font-size: 0.9rem;
+    }
+
+    .mealCardDescriptionContainer{
+        padding: 10px;
+    }
+
+    .mealCardDescription{
+        font-size: 0.9rem;
+    }
+
+    .mealCardTag{
+        font-size: 0.6rem;
+    }
+
+    .mealCardKcalTime{
+        font-size: 0.8rem;
+    }
+
+    .mealCardDescriptionAddMealToOrder{
+        width: 80px;
+    }
+
+    .mealCardDescriptionRemoveMealToOrder{
+        width: 80px;
+    }
+
+    .MealCardDescriptionBtnText{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .mealCardContainer{
+        width: 250px;
+        margin: 20px;
+    }
+
+    .mealCardTitle{
+        font-size: 0.9rem;
+    }
+
+    .mealCardDescriptionContainer{
+        padding: 10px;
+    }
+
+    .mealCardDescription{
+        font-size: 0.9rem;
+    }
+
+    .mealCardTag{
+        font-size: 0.6rem;
+    }
+
+    .mealCardKcalTime{
+        font-size: 0.8rem;
+    }
+
+    .mealCardDescriptionAddMealToOrder{
+        width: 80px;
+    }
+
+    .mealCardDescriptionRemoveMealToOrder{
+        width: 80px;
+    }
+
+    .MealCardDescriptionBtnText{
+        font-size: 0.8rem;
+    }
+}

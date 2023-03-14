@@ -1,5 +1,11 @@
 @import './parent';
 
+.plannerMealsTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
 .plannerMealsContainer{
     display: flex;
     flex-wrap: wrap;
@@ -40,4 +46,20 @@
     border-left: 2px solid white;
     padding-left: 7px;
     margin-left: 5px;
+}
+
+@media only screen and (max-width: 700px) {
+    .plannerMealsContainer{
+        margin: 0.7rem 1rem;
+    }
+
+    .plannerMealsTitle{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .plannerMealsTitle{
+        font-size: 1.2rem;
+    }
 }
