@@ -1,5 +1,12 @@
 @import './parent';
 
+.plannerAddressTitle{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+}
+
+
 .plannerAddressContainer{
     display: flex;
     justify-content: center;
@@ -12,16 +19,6 @@
     padding: 50px;
     margin: 50px 50px 50px 0;
     width: 300px;
-}
-
-.addressaddressForm{
-    width: 400px;
-    height: 100%;
-}
-
-.addressFormContainer{
-    margin-right: 30px;
-    width: 400px;
 }
 
 .addressOrderInformationContainer{
@@ -65,12 +62,6 @@
     margin: 120px 0;
 }
 
-.addressTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
-}
-
 .addressContainer{
     display: flex;
     justify-content: center;
@@ -79,7 +70,7 @@
 }
 
 .addressForm{
-    width: 300px;
+    width: 400px;
     height: 100%;
 }
 
@@ -111,4 +102,67 @@
 
 .addressBtn:hover{
     color: white;
+}
+
+@media only screen and (max-width: 700px) {
+    .plannerAddressTitle{
+        font-size: 1.5rem;
+    }
+
+    .addressFormLbl{
+        font-size: 0.9rem;
+    }
+
+    .addressFormInput{
+        height: 2.3em;
+        margin-bottom: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .addressBtn{
+        margin: 20px 0;
+        width: 100%;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .addressForm{
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .plannerAddressTitle{
+        font-size: 1.2rem;
+    }
+
+    .addressFormLbl{
+        font-size: 0.8rem;
+    }
+
+    .addressFormInput{
+        height: 2.1em;
+        margin-bottom: 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .addressBtn{
+        margin: 20px 0;
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .plannerAddressTitle{
+        font-size: 1rem;
+    }
+    
+    .addressForm{
+        width: 250px;
+    }
+
+    .addressBtn{
+        font-size: 0.8rem;
+    }
 }

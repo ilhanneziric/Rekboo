@@ -70,10 +70,10 @@ const PlannerAddress = () => {
     <>
       <Header/>
       <Wizard level={6}/>
-      <h2 className="addressTitle">UNESITE KONTAKT INFORMACIJE</h2>
+      <h2 className="plannerAddressTitle">UNESITE KONTAKT INFORMACIJE</h2>
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
-          <form onSubmit={onSubmitForm} className="addressaddressForm">
+          <form onSubmit={onSubmitForm} className="addressForm">
             {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
             <label className="addressFormLbl">IME:</label>
             <input className="addressFormInput" name="firstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
@@ -107,7 +107,7 @@ const PlannerAddress = () => {
             </div>
           </div> */}
         </div>
-        <Footer/>
+        {/* <Footer/> */}
     </>
   )
 }

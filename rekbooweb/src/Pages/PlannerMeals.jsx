@@ -66,7 +66,7 @@ const PlannerMeals = () => {
         }
         </div>
       }
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }
