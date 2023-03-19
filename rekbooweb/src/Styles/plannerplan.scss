@@ -92,3 +92,134 @@
     padding: 2px 5px;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 1000px) {
+    .planTitle{
+        font-size: 1.5rem;
+    }
+
+    .noOfTitle{
+        font-size: 1.2rem;
+    } 
+    
+    .planLeftContainer{
+        width: 300px;
+        margin-right: 60px;
+    }
+    
+    .planRightContainer{
+        width: 300px;
+        margin-left: 60px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .planTitle{
+        font-size: 1.3rem;
+    }
+
+    .noOfTitle{
+        font-size: 1rem;
+    } 
+    
+    .planLeftContainer{
+        margin-right: 50px;
+    }
+    
+    .planRightContainer{
+        margin-left: 50px;
+    }
+
+    .plannerPlanContainer{
+        margin: 30px 0;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .planLeftContainer{
+        margin: 0;
+        width: 100%;
+    }
+    
+    .planRightContainer{
+        margin: 0;
+        width: 100%;
+    }
+
+    .noOfContainers{
+        margin-bottom: 40px;
+    }
+
+    .plannerPlanContainer{
+        flex-direction: column;
+        margin: 40px 30px;
+    }    
+
+    .noOfContainers{
+        margin-bottom: 25px;
+    }
+
+    .noOfCardContainer{
+        margin-bottom: 0px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .planTitle{
+        font-size: 1.2rem;
+    }
+
+    .noOfTitle{
+        font-size: 0.8rem;
+    }
+
+    .totalOrderChosenPlan{
+        font-size: 0.8rem;
+    }
+
+    .totalOrderRecipes, .totalOrderDelivery{
+        font-size: 0.9rem;
+    }
+
+    .totalOrderPriceDescription{
+        font-size: 0.7rem;
+    }
+
+    .noOfContainers{
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .noOfTitle{
+        font-size: 0.7rem;
+    }
+
+    .totalOrderChosenPlan{
+        font-size: 0.7rem;
+    }
+
+    .totalOrderRecipes, .totalOrderDelivery{
+        font-size: 0.8rem;
+    }
+
+    .totalOrderPriceDescription{
+        font-size: 0.6rem;
+    }
+
+    .planNextBtn{
+        padding: 1px 3px;
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    .plannerPlanContainer{
+        margin: 40px 15px;
+    }    
+
+    .totalOrderPrice{
+        padding: 5px;
+        margin: 0;
+        font-size: 0.9rem;        
+    }
+}

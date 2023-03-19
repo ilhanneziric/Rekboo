@@ -28,3 +28,34 @@
 .tagCardNameChecked{
     color: $green;
 }
+
+@media only screen and (max-width: 1000px) {
+    .tagCardName{
+        font-size: 0.9rem;
+    }
+
+    .tagCardChecked, .tagCardBody:hover{
+        outline: 4px solid $green;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .tagCardName{
+        font-size: 0.8rem;
+        margin: 7px;
+    }
+
+    .tagCardChecked, .tagCardBody:hover{
+        outline: 3px solid $green;
+    }
+
+    .tagCardContainer{
+        margin: 7px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .tagCardName{
+        font-size: 0.7rem;
+    }
+}

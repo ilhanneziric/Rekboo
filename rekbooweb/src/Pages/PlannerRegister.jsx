@@ -164,7 +164,7 @@ const PlannerRegister = () => {
           </form>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }
