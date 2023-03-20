@@ -46,3 +46,91 @@
     margin: 20px 0;
     width: 70%;
 }
+
+
+@media only screen and (max-width: 950px) {
+    .plannerRegisterForm{
+        width: 400px;
+    }
+    
+    .plannerRegisterPhoto{
+        width: 400px;
+    }
+
+    .plannerRegisterFormInput{
+        width: 100%;
+        height: 2em;
+    }
+
+    .plannerRegisterBtn{
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+
+
+@media only screen and (max-width: 850px) {    
+    .plannerRegisterPhoto{
+        width: 300px;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .plannerRegisterTitle{
+        font-size: 1.5rem;
+    }
+
+    .plannerRegisterPhoto{
+        display: none;
+    }
+
+    .plannerRegisterForm{
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .plannerRegisterTitle{
+        font-size: 1.2rem;
+    }
+
+    .plannerRegisterBtn, .plannerRegisterFormLbl{
+        font-size: 0.9rem;
+    }
+
+    .plannerRegisterFormInput{
+        font-size: 1rem;
+    }
+
+    .plannerRegisterForm{
+        width: 350px;
+    }
+
+    .plannerRegisterForm{
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .plannerRegisterTitle{
+        font-size: 1rem;
+    }
+
+    .plannerRegisterBtn, .plannerRegisterFormLbl{
+        font-size: 0.8rem;
+    }
+
+    .plannerRegisterFormInput{
+        font-size: 0.9rem;
+    }
+
+    .plannerRegisterForm{
+        width: 300px;
+    }
+
+    .plannerRegisterForm{
+        margin-top: 30px;
+    }
+}
