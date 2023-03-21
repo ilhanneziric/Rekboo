@@ -27,7 +27,7 @@ const HomePage = () => {
           <div className="homePagePhotoGreenGradient"></div>
           <div className="homePagePhotoWhiteGradient"></div>
         </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

@@ -23,7 +23,6 @@ const Header = () => {
   return (
     <>
     <div className="headerContainer">
-        <Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
         {
           (window.location.pathname !== '/login' && 
           window.location.pathname !== '/register' && 
@@ -33,7 +32,8 @@ const Header = () => {
           window.location.pathname !== '/plannercheckout' && 
           window.location.pathname !== '/plannermeals' && 
           window.location.pathname !== '/planneroverview') ?
-          <><Navigation/>
+          <><Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
+          <Navigation/>
           {!isAuthenticated ?
           <Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link>:
           <div className="prileBtnContainer">
@@ -45,7 +45,7 @@ const Header = () => {
               {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => logoOut(e)}>Odjava</div>}
             </div>
             </div>}</>
-            :(<></>)
+            :(<><Link to='/'><img className='plannerLogo' src={LogoWithName} alt="logo"/></Link></>)
         }
     </div>
     </>
