@@ -47,7 +47,7 @@ const Wizard = ({level}) => {
                 </div>
             }
 
-            {//planner register
+            {/* {//planner register
                 !isAuthenticated ?
                 level >= 5 ?
                 <div className="wizardNav">
@@ -69,6 +69,29 @@ const Wizard = ({level}) => {
                     <p className="wizardTitle">REGISTRACIJA</p>}
                     <WizardLine widthPercent={0}/>
                 </div>:<></>
+            } */}
+
+            {//planner register
+                level >= 5 ?
+                <div className="wizardNav">
+                    {level === 5 ? 
+                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
+                    <Link to='/plannerregister'><p className="wizardTitle wizardTitleLink">REGISTRACIJA</p></Link>}
+                    <WizardLine widthPercent={100}/>
+                </div>:
+                level >= 4 ?
+                <div className="wizardNav">
+                    {level === 4 ? 
+                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
+                    <p className="wizardTitle">REGISTRACIJA</p>}
+                    <WizardLine widthPercent={50}/>
+                </div>:
+                    <div className="wizardNav">
+                    {level === 4 ? 
+                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
+                    <p className="wizardTitle">REGISTRACIJA</p>}
+                    <WizardLine widthPercent={0}/>
+                </div>
             }
 
             {//planner address

@@ -117,9 +117,9 @@ const PlannerRegister = () => {
   useEffect(() => {
     if((step === 1 || step >= 2) && order !== null){
       if(isAuthenticated){
-        if(step === 1){
+        if(step === 1 || step === 2){
           navigate('/planneraddress');
-        }else if(step >= 2){
+        }else if(step > 2){
           navigate('/plannerplan');
         }
       }else{
@@ -128,7 +128,7 @@ const PlannerRegister = () => {
     }else{
       navigate('/plannerplan');
     }
-  }, []);
+  }, [isAuthenticated]);
 
   return (
     <>
