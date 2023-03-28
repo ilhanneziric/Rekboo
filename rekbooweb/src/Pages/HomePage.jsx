@@ -16,21 +16,21 @@ const HomePage = () => {
   return (
     <>
       <Header/>
-        <div className="homePageMainContiner3">
-          <div className="homePageTextContainer3">
-            <div className="homePagePhotoText3">
+        <div className="homePageMainContiner">
+          <div className="homePageTextContainer">
+            <div className="homePagePhotoText">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum quasi animi itaque?
             </div>
-            <Link to='/plannerplan'><div className="homePagePhotoBtn3">KREIRAJ PLAN</div></Link>
+            <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>KREIRAJ PLAN</div></Link>
           </div>
-          <div className="homePagePhotoContainer3">
-              <img src={HomePagePhoto} alt="" className='homePagePhoto3'/>
-              <div className="homePagePhotoGreenGradient3"></div>
-              <div className="homePagePhotoWhiteGradient3"></div>
+          <div className="homePagePhotoContainer">
+              <img src={HomePagePhoto} alt="" className='homePagePhoto'/>
+              <div className="homePagePhotoGreenGradient"></div>
+              <div className="homePagePhotoWhiteGradient"></div>
           </div>
         </div>
 
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

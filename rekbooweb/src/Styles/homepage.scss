@@ -4,23 +4,23 @@
     display: flex;
 }
 
-.homePageMainContiner3{
+.homePageMainContiner{
     display: flex;
     background: rgb(89,222,9);
 }
 
-.homePagePhotoContainer3{
+.homePagePhotoContainer{
     position: relative;
     float: right;
     width: 70%;
 }
 
-.homePagePhoto3{
+.homePagePhoto{
     width: 100%;
     height: 100%;
 }
 
-.homePagePhotoGreenGradient3{
+.homePagePhotoGreenGradient{
     position: absolute;
     top: 0;
     left: 0;
@@ -30,8 +30,7 @@
     background: linear-gradient(90deg, rgba(89,222,9,1) 0%, rgba(255,255,255,0) 50%);
 }
 
-
-.homePagePhotoWhiteGradient3{
+.homePagePhotoWhiteGradient{
     position: absolute;
     top: 0;
     left: 0;
@@ -41,7 +40,7 @@
     background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
 }
 
-.homePageTextContainer3{
+.homePageTextContainer{
     background: rgb(89,222,9);
     width: 30%;
     display: flex;
@@ -49,7 +48,7 @@
     justify-content: center;
 }
 
-.homePagePhotoText3{
+.homePagePhotoText{
     margin-left: 30px;
     font-size: 2rem;
     font-weight: 500;
@@ -57,23 +56,150 @@
 }
 
 
-.homePagePhotoBtn3{
+.homePagePhotoBtnContainer{
     font-size: 1.5rem;
     margin: 50px;
-    color: $green;
-    background-color: white;
     text-align: center;
     padding: 5px;
     font-weight: 500;
+}
+
+.homePagePhotoBtn{
+    color: $green;
+    background-color: white;
     border: 5px solid white;
 }
 
-.homePagePhotoBtn3:hover{
+.homePagePhotoBtn:hover{
     border-bottom: 5px solid $darkGreen;
     cursor: pointer;
 }
 
-.homePagePhotoBtn3:active{
+.homePagePhotoBtn:active{
     border: 5px solid $darkGreen;
     background-color: $darkGreen;
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .homePagePhotoText{
+        margin-left: 25px;
+        font-size: 1.6rem;
+    }
+
+    .homePagePhotoBtnContainer{
+        font-size: 1.3rem;
+        margin: 40px;
+    }   
+}
+
+@media only screen and (max-width: 1000px) {
+    .homePagePhotoText{
+        margin-left: 25px;
+        font-size: 1.3rem;
+    }
+
+    .homePagePhotoBtnContainer{
+        font-size: 1.1rem;
+    }   
+}
+
+@media only screen and (max-width: 800px) {
+    .homePagePhotoText{
+        margin-left: 0;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .homePagePhotoBtn{
+        font-size: 1.5rem;
+    } 
+    
+    .homePageMainContiner{
+        flex-direction: column-reverse;
+    }
+
+    .homePagePhotoContainer{
+        float: left;
+        width: 100%;
+    }
+
+    .homePageTextContainer{
+        width: 100%;
+        padding: 0 100px;
+    }
+
+    .homePagePhotoWhiteGradient{
+        background: rgb(255,255,255);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
+    }
+
+    .homePagePhotoGreenGradient{
+        background: rgb(89,222,9);
+        background: linear-gradient(0deg, rgba(89,222,9,1) 0%, rgba(255,255,255,0) 50%);
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .homePagePhotoText{
+        font-size: 1.3rem;
+    }
+
+    .homePagePhotoBtn{
+        font-size: 1.1rem;
+    }   
+
+    .homePageTextContainer{
+        padding: 0 80px;
+    }
+
+    .homePagePhotoBtnContainer{
+        margin: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .homePageMainContiner{
+        margin-top: 20px;
+    }
+    
+    .homePagePhotoText{
+        font-size: 1.1rem;
+    }
+
+    .homePagePhotoBtn{
+        font-size: 0.9rem;
+    }   
+   
+    .homePageTextContainer{
+        padding: 0 60px;
+    }
+
+    .homePagePhotoBtnContainer{
+        margin: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .homePageMainContiner{
+        margin-top: 20px;
+    }
+    
+    .homePagePhotoText{
+        font-size: 0.9rem;
+    }
+
+    .homePagePhotoBtn{
+        font-size: 0.7rem;
+    }   
+
+    .homePageTextContainer{
+        padding: 0 50px;
+    }   
+    
+    .homePagePhotoBtnContainer{
+        margin: 20px;
+    }
 }
