@@ -1,31 +1,37 @@
 @import './parent';
 
-.homePagePhotoContainer{
+.homePageContainer{
+    display: flex;
+}
+
+.homePageMainContiner3{
+    display: flex;
+    background: rgb(89,222,9);
+}
+
+.homePagePhotoContainer3{
     position: relative;
-    overflow: hidden;
-    height: auto;
-    z-index: 1;
-    background-color: $grey;
-}
-
-.homePagePhoto{
-    display: inline-block;
+    float: right;
     width: 70%;
-    height: auto;
 }
 
-.homePagePhotoGreenGradient{
+.homePagePhoto3{
+    width: 100%;
+    height: 100%;
+}
+
+.homePagePhotoGreenGradient3{
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgb(89,222,9);
-    background: linear-gradient(90deg, rgba(89,222,9,1) 13%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(90deg, rgba(89,222,9,1) 0%, rgba(255,255,255,0) 50%);
 }
 
 
-.homePagePhotoWhiteGradient{
+.homePagePhotoWhiteGradient3{
     position: absolute;
     top: 0;
     left: 0;
@@ -35,22 +41,23 @@
     background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
 }
 
-.homePagePhotoTextBtnContainer{
-    position: relative;
-    display: inline-block;
-    z-index: 2;
+.homePageTextContainer3{
+    background: rgb(89,222,9);
     width: 30%;
-    padding-left: 30px;
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
 }
 
-.homePagePhotoText{
+.homePagePhotoText3{
+    margin-left: 30px;
     font-size: 2rem;
     font-weight: 500;
     color: white;
-
 }
 
-.homePagePhotoBtn{
+
+.homePagePhotoBtn3{
     font-size: 1.5rem;
     margin: 50px;
     color: $green;
@@ -61,12 +68,12 @@
     border: 5px solid white;
 }
 
-.homePagePhotoBtn:hover{
+.homePagePhotoBtn3:hover{
     border-bottom: 5px solid $darkGreen;
     cursor: pointer;
 }
 
-.homePagePhotoBtn:active{
+.homePagePhotoBtn3:active{
     border: 5px solid $darkGreen;
     background-color: $darkGreen;
 }
