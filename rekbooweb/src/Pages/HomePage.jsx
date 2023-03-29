@@ -19,9 +19,9 @@ const HomePage = () => {
         <div className="homePageMainContiner">
           <div className="homePageTextContainer">
             <div className="homePagePhotoText">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum quasi animi itaque?
+              Uz REKBOO kuhanje nikad nije bilo jednostavnije
             </div>
-            <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>KREIRAJ PLAN</div></Link>
+            <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>PROBAJ REKBOO</div></Link>
           </div>
           <div className="homePagePhotoContainer">
               <img src={HomePagePhoto} alt="" className='homePagePhoto'/>

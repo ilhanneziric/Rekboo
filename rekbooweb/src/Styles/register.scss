@@ -51,3 +51,45 @@
 .registerBtn:hover{
     color: white;
 }
+
+
+@media only screen and (max-width: 400px) {
+    .registerTitle{
+        font-size: 1.2rem;
+    }
+
+    .registerFormInput{
+        height: 2.2em;
+        margin-bottom: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .registerFormLbl{
+        font-size: 0.9rem;
+    }
+
+    .registerBtn{
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    .registerLoginInfo{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 350px) { 
+    .registerTitle{
+        font-size: 1rem;
+    }
+    
+    .registerContainerAll{
+        margin: 120px 20px;
+    }
+
+    .registerFormInput{
+        height: 2.3em;
+        font-size: 0.9rem;
+    }
+}
