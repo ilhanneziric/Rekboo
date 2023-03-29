@@ -1,8 +1,8 @@
+import '../Styles/login.scss'
 import axios from "axios";
 import { useState } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
-import '../Styles/login.scss'
 import { loginValidation } from '../Utils/validations';
 import { useDispatch } from "react-redux";
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
@@ -66,11 +66,11 @@ const Login = () => {
             <label className="loginFormLbl">UNESITE ŠIFRU:</label>
             <input className="loginFormInput" name="password" type="password" minLength={5} required value={password} onChange={e => onChange(e)}/>
             <button className='loginBtn'>POTVRDI</button>
-            <div >Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>
+            <div className='loginRegisterInfo'>Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>
           </form>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

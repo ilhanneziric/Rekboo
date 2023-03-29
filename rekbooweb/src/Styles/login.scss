@@ -51,3 +51,41 @@
 .loginBtn:hover{
     color: white;
 }
+
+
+@media only screen and (max-width: 400px) {
+    .loginTitle{
+        font-size: 1.2rem;
+    }
+
+    .loginFormInput{
+        height: 2.2em;
+        margin-bottom: 1.3rem;
+        font-size: 1rem;
+    }
+
+    .loginFormLbl{
+        font-size: 0.9rem;
+    }
+
+    .loginBtn{
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+
+    .loginRegisterInfo{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {   
+    .loginContainerAll{
+        margin: 120px 20px;
+    }
+
+    .loginFormInput{
+        height: 2.3em;
+        font-size: 0.9rem;
+    }
+}
