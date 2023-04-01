@@ -1,6 +1,6 @@
 import '../Styles/fullScreenNavigation.scss'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 
 const FullScreenNavigation = ({setOpenMenu}) => {
@@ -8,21 +8,25 @@ const FullScreenNavigation = ({setOpenMenu}) => {
   const navigate = useNavigate();
   const isAuthenticated = useSelector(state => state.isAuthenticated);
   
-  const logoOut = e => {
-    e.preventDefault();
+  const logoOut = () => {
     localStorage.removeItem('token');
     dispatch(updIsAuthenticated());
     setOpenMenu(false);
     navigate('/');
   }
+
+  const goTo = (dest) => {
+    setOpenMenu(false);
+    navigate(`/${dest}`);
+  }
   return (
     <>
         <div className="fullScreenNavigationContainer">
-            {!isAuthenticated && <Link to='/login'><div className="fullScreenNavigationItem">PRIJAVA</div></Link>}
-            <Link to='/plannerplan'><div className="fullScreenNavigationItem">PROBAJ REKBOO</div></Link>
-            {isAuthenticated && <Link to='/userorders'><div className="fullScreenNavigationItem">MOJE NARUDŽBE</div></Link>}
-            <Link to='/howitworks'><div className="fullScreenNavigationItem">KAKO RADI REKBOO</div></Link>
-            {isAuthenticated && <div className="fullScreenNavigationItem" onClick={(e) => logoOut(e)}>ODJAVA</div>}
+            {!isAuthenticated && <div className="fullScreenNavigationItem" onClick={() => goTo('login')}>PRIJAVA</div>}
+            <div className="fullScreenNavigationItem" onClick={() => goTo('plannerplan')}>PROBAJ REKBOO</div>
+            {isAuthenticated && <div className="fullScreenNavigationItem" onClick={() => goTo('userorders')}>MOJE NARUDŽBE</div>}
+            <div className="fullScreenNavigationItem" onClick={() => goTo('howitworks')}>KAKO RADI REKBOO</div>
+            {isAuthenticated && <div className="fullScreenNavigationItem" onClick={logoOut}>ODJAVA</div>}
         </div>
     </>
   )
