@@ -2,13 +2,14 @@ import '../Styles/homepage.scss'
 import Footer from "../Components/Footer"
 import Header from "../Components/Header"
 import { updStep } from '../redux/actions/stepActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
 import HomePagePhoto from '../Assets/HomePagePhoto.jpeg';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
 
   useEffect(() => {
     dispatch(updStep(0));
@@ -22,7 +23,10 @@ const HomePage = () => {
             <div className="homePagePhotoText">
               Uz REKBOO kuhanje nikad nije bilo jednostavnije
             </div>
-            <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>PROBAJ REKBOO</div></Link>
+            <div className="homePagePhotoBtnContainer">
+              <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>PROBAJ REKBOO</div></Link>
+              {!isAuthenticated && <Link to='/login' className="homePagePhotoBtnContainer"><div className='homePagePhotoLoginBtn'>PRIJAVA</div></Link>}
+            </div>
           </div>
           <div className="homePagePhotoContainer">
               <img src={HomePagePhoto} alt="" className='homePagePhoto'/>

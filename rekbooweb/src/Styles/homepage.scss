@@ -1,9 +1,5 @@
 @import './parent';
 
-.homePageContainer{
-    margin-top: 100px;
-}
-
 .homePageMainContiner{
     display: flex;
     background: rgb(89,222,9);
@@ -55,16 +51,12 @@
     color: white;
 }
 
-
-.homePagePhotoBtnContainer{
+.homePagePhotoBtn{
     font-size: 1.5rem;
-    margin: 50px;
+    margin:  50px 50px 0 50px;
     text-align: center;
     padding: 5px;
     font-weight: 500;
-}
-
-.homePagePhotoBtn{
     color: $green;
     background-color: white;
     border: 5px solid white;
@@ -80,6 +72,17 @@
     background-color: $darkGreen;
 }
 
+.homePagePhotoLoginBtn{
+    @extend .homePagePhotoBtn;
+    margin:  10px 50px 0 50px;
+    background-color: transparent;
+    border: 3px solid white;
+    color: white;
+}
+
+.homePagePhotoLoginBtn:hover{
+    border-bottom: 5px solid $darkGreen;
+}
 
 @media only screen and (max-width: 1100px) {
     .homePagePhotoText{
@@ -87,7 +90,7 @@
         font-size: 1.6rem;
     }
 
-    .homePagePhotoBtnContainer{
+    .homePagePhotoBtn{
         font-size: 1.3rem;
         margin: 40px;
     }   
@@ -99,7 +102,7 @@
         font-size: 1.3rem;
     }
 
-    .homePagePhotoBtnContainer{
+    .homePagePhotoBtn{
         font-size: 1.1rem;
     }   
 }
@@ -154,12 +157,21 @@
         padding: 0 80px;
     }
 
-    .homePagePhotoBtnContainer{
-        margin: 40px;
+    .homePagePhotoBtn{
+        margin: 40px 40px 5px 40px;
+    }
+
+    .homePagePhotoLoginBtn{
+        margin-top: 10px;
+        margin-bottom: 40px;
     }
 }
 
 @media only screen and (max-width: 500px) {
+    .homePageContainer{
+        margin-top: 100px;
+    }
+
     .homePageMainContiner{
         margin-top: 20px;
     }
@@ -176,8 +188,13 @@
         padding: 0 60px;
     }
 
-    .homePagePhotoBtnContainer{
-        margin: 30px;
+    .homePagePhotoBtn{
+        margin: 30px 30px 5px 30px;
+    }
+
+    .homePagePhotoLoginBtn{
+        margin-top: 10px;
+        margin-bottom: 30px;
     }
 }
 
@@ -199,7 +216,12 @@
         padding: 0 50px;
     }   
     
-    .homePagePhotoBtnContainer{
-        margin: 20px;
+    .homePagePhotoBtn{
+        margin: 20px 20px 5px 20px;
+    }
+
+    .homePagePhotoLoginBtn{
+        margin-top: 7px;
+        margin-bottom: 30px;
     }
 }
