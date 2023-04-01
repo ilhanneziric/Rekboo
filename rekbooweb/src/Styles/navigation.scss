@@ -50,11 +50,14 @@
     }
 
     .navigationContainer{
-        // margin: 90px 20px 0 20px;
         margin: 90px 0 0 0;
         display: flex;
         justify-content: center;
     }    
+
+    .navigationContainer{
+        display: none;
+    }
 }
 
 

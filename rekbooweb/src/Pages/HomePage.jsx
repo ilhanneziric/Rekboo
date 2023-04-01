@@ -16,6 +16,7 @@ const HomePage = () => {
   return (
     <>
       <Header/>
+      <div className="homePageContainer">
         <div className="homePageMainContiner">
           <div className="homePageTextContainer">
             <div className="homePagePhotoText">
@@ -29,6 +30,7 @@ const HomePage = () => {
               <div className="homePagePhotoWhiteGradient"></div>
           </div>
         </div>
+      </div>
 
       {/* <Footer/> */}
     </>

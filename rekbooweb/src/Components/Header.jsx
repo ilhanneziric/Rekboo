@@ -6,12 +6,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import LogoWithName from '../Assets/LogoWithName.png';
 import { AiOutlineUser } from "react-icons/ai";
 import Navigation from './Navigation';
+import FullScreenNavigation from './FullScreenNavigation';
+import { Sling as Hamburger } from 'hamburger-react'
 
 const Header = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(state => state.isAuthenticated);
   const order = useSelector(state => state.order);
   const [openLogOutBtn, setOpenLogOutBtn] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false)
   const navigate = useNavigate();
 
   const logoOut = e => {
@@ -22,6 +25,8 @@ const Header = () => {
   }
   return (
     <>
+    { openMenu && <FullScreenNavigation setOpenMenu={setOpenMenu}/> }
+
     <div className="headerContainer">
         {
           (window.location.pathname !== '/login' && 
@@ -34,8 +39,9 @@ const Header = () => {
           window.location.pathname !== '/planneroverview') ?
           <><Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
           <Navigation/>
-          {!isAuthenticated ?
-          <Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link>:
+          {
+          !isAuthenticated ?
+          <><Link to='/login'><div className='loginHeaderBtn'>PRIJAVA</div></Link></>:
           <div className="prileBtnContainer">
             <div className="profileHeaderBtnContainer">
               <AiOutlineUser className='profileHeaderBtn' onClick={() => setOpenLogOutBtn(!openLogOutBtn)}/>
@@ -44,7 +50,15 @@ const Header = () => {
               {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => navigate('/userorders')}>Moje narudžbe</div>}
               {openLogOutBtn && <div className="profileHeaderBtn logOutBtn" onClick={(e) => logoOut(e)}>Odjava</div>}
             </div>
-            </div>}</>
+            </div>}
+            <div className="hamburgerMenuContainer">
+            {
+              openMenu?
+              <Hamburger toggled={openMenu} toggle={setOpenMenu} color="white"/>:
+              <Hamburger toggled={openMenu} toggle={setOpenMenu} color="#59de09"/>
+            }
+            </div>
+            </>
             :(<><Link to='/'><img className='plannerLogo' src={LogoWithName} alt="logo"/></Link></>)
         }
     </div>
