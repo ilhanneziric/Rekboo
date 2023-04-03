@@ -21,7 +21,7 @@ const HomePage = () => {
         <div className="homePageMainContiner">
           <div className="homePageTextContainer">
             <div className="homePagePhotoText">
-              Uz REKBOO kuhanje nikad nije bilo jednostavnije
+              Uz REKBOO kuhanje nikad nije bilo jednostavnije!
             </div>
             <div className="homePagePhotoBtnContainer">
               <Link to='/plannerplan' className="homePagePhotoBtnContainer"><div className='homePagePhotoBtn'>PROBAJ REKBOO</div></Link>
