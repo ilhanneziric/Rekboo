@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Rekboo.Services
 {
@@ -133,6 +134,24 @@ namespace Rekboo.Services
             if (entity == null)
                 return false;
             return true;
+        }
+
+        public Model.User SetAdmin(int id)
+        {
+            var set = Context.Set<User>();
+            var entity = set.Find(id);
+            if (entity != null)
+            {
+                entity.Role = "Admin";
+            }
+            else
+            {
+                return null;
+            }
+
+            Context.SaveChanges();
+
+            return Mapper.Map<Model.User>(entity);
         }
     }
 }

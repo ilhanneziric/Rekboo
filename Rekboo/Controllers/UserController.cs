@@ -52,5 +52,12 @@ namespace Rekboo.Controllers
         {
             return Ok(_userService.ExistUser(email));
         }
+
+        [HttpPatch("/api/User/admin/{userID}")]
+        public IActionResult AdminUser(int userID)
+        {
+            return Ok(_userService.SetAdmin(userID));
+        }
+
     }
 }

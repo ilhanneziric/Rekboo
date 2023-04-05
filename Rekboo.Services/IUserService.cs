@@ -13,5 +13,6 @@ namespace Rekboo.Services
     {
         string Login(UserLoginRequest request);
         bool ExistUser(string email);
+        User SetAdmin(int id);
     }
 }
