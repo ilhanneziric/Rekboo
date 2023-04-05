@@ -14,7 +14,7 @@ const HowItWorks = () => {
   }, []);
   return (
     <>
-      <Header/>
+      {window.location.pathname === '/howitworks' && <Header/>}
       <div className="howItWorksContainer">
         <div className="stepperContainer">
             <img className="stepper" src={Stepper} alt="step by step" />

@@ -118,6 +118,10 @@
         font-size: 1.5rem;
     } 
     
+    .homePagePhotoBtnContainer{
+        margin-bottom: 20px;
+    }
+    
     .homePageMainContiner{
         flex-direction: column-reverse;
     }
@@ -129,7 +133,6 @@
 
     .homePageTextContainer{
         width: 100%;
-        padding: 0 100px;
     }
 
     .homePagePhotoWhiteGradient{
@@ -153,17 +156,12 @@
         font-size: 1.1rem;
     }   
 
-    .homePageTextContainer{
-        padding: 0 80px;
-    }
-
     .homePagePhotoBtn{
         margin: 40px 40px 5px 40px;
     }
 
     .homePagePhotoLoginBtn{
         margin-top: 10px;
-        margin-bottom: 40px;
     }
 }
 
@@ -183,10 +181,6 @@
     .homePagePhotoBtn{
         font-size: 0.9rem;
     }   
-   
-    .homePageTextContainer{
-        padding: 0 60px;
-    }
 
     .homePagePhotoBtn{
         margin: 30px 30px 5px 30px;
@@ -194,7 +188,6 @@
 
     .homePagePhotoLoginBtn{
         margin-top: 10px;
-        margin-bottom: 30px;
     }
 }
 
@@ -211,10 +204,6 @@
     .homePagePhotoBtn{
         font-size: 0.7rem;
     }   
-
-    .homePageTextContainer{
-        padding: 0 50px;
-    }   
     
     .homePagePhotoBtn{
         margin: 20px 20px 5px 20px;
@@ -222,6 +211,5 @@
 
     .homePagePhotoLoginBtn{
         margin-top: 7px;
-        margin-bottom: 30px;
     }
 }
