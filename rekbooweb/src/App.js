@@ -27,6 +27,7 @@ function App() {
   const dispatch = useDispatch();
 
   const isAuthenticated = useSelector(state => state.isAuthenticated);
+  const isAdmin = useSelector(state => state.isAdmin);
     
   useEffect(() => {
     dispatch(updIsAuthenticated());
@@ -44,6 +45,7 @@ function App() {
             <Route path='/userorders' element={<UserOrders/>}/>
             <Route path='/login' element={isAuthenticated ? (<Navigate to='/'/>) : (<Login/>)}/>
             <Route path='/register' element={isAuthenticated ? (<Navigate to='/'/>) : (<Register/>)}/>
+            <Route path='/adminlogin' element={isAdmin ? (<Navigate to='/adminmeals'/>) : (<Login/>)}/>
             <Route path='/adminmeals' element={<AdminMeals/>}/>
             <Route path='/adminorders' element={<AdminOrders/>}/>
             <Route path='/adminusers' element={<AdminUsers/>}/>

@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { isAuthenticatedReducer } from './reducers/isAuthenticatedReducers';
+import { isAuthenticatedReducer, isAdminReducer } from './reducers/isAuthenticatedReducers';
 import { usersReducer, userReducer } from './reducers/usersReducers';
 import { mealsReducer } from './reducers/mealsReducers';
 import { ordersReducer } from './reducers/ordersReducers';
@@ -12,6 +12,7 @@ import { stepReducer } from './reducers/stepReducers';
 
 const reducers = combineReducers({
     isAuthenticated: isAuthenticatedReducer,
+    isAdmin: isAdminReducer,
     users: usersReducer,
     meals: mealsReducer,
     orders: ordersReducer,

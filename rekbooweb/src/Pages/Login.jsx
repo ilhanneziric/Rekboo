@@ -57,7 +57,7 @@ const Login = () => {
     <>
       <Header/>
       <div className="loginContainerAll">
-        <h1 className="loginTitle">PRIJAVA NA RAČUN</h1>
+        {window.location.pathname === '/adminlogin' ? <h1 className="loginTitle">PRIJAVA NA ADMIN RAČUN</h1> : <h1 className="loginTitle">PRIJAVA NA RAČUN</h1>}
         <div className="loginContainer">
           <form onSubmit={onSubmitForm} className="loginForm">
             {validationError && <p style={{color: 'red'}}>Pogrešan email ili šifra!</p>}
