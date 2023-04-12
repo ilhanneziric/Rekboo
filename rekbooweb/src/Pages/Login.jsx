@@ -60,10 +60,10 @@ const Login = () => {
         {window.location.pathname === '/adminlogin' ? <h1 className="loginTitle">PRIJAVA NA ADMIN RAČUN</h1> : <h1 className="loginTitle">PRIJAVA NA RAČUN</h1>}
         <div className="loginContainer">
           <form onSubmit={onSubmitForm} className="loginForm">
-            {validationError && <p style={{color: 'red'}}>Pogrešan email ili šifra!</p>}
+            {validationError && <p style={{color: 'red'}}>Pogrešan email ili lozinka!</p>}
             <label className="loginFormLbl">UNESITE E-MAIL:</label>
             <input className="loginFormInput" name="email" type="email" required value={email} onChange={e => onChange(e)}/>
-            <label className="loginFormLbl">UNESITE ŠIFRU:</label>
+            <label className="loginFormLbl">UNESITE LOZINKU:</label>
             <input className="loginFormInput" name="password" type="password" minLength={5} required value={password} onChange={e => onChange(e)}/>
             <button className='loginBtn'>POTVRDI</button>
             <div className='loginRegisterInfo'>Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>

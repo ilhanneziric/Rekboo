@@ -150,12 +150,12 @@ const PlannerRegister = () => {
             }
             {
               validEmail == false? (<>
-              <label className="plannerRegisterFormLbl">UNESITE ŠIFRU:</label>
+              <label className="plannerRegisterFormLbl">UNESITE LOZINKU:</label>
               <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
-              <label className="plannerRegisterFormLbl">PONOVO UNESITE ŠIFRU:</label>
+              <label className="plannerRegisterFormLbl">PONOVO UNESITE LOZINKU:</label>
               <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>):
               validEmail == true?(<>
-                <label className="plannerRegisterFormLbl">UNESITE ŠIFRU:</label>
+                <label className="plannerRegisterFormLbl">UNESITE LOZINKU:</label>
                 <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
               </>):
               (<></>)
