@@ -29,6 +29,15 @@
     color: $green;
 }
 
+.tagCardNameDisabled{
+    color: $greyDisabled;
+}
+
+.tagCardBodyDisabled:hover{
+    cursor: not-allowed;
+    outline: none;
+}
+
 @media only screen and (max-width: 1000px) {
     .tagCardName{
         font-size: 0.9rem;

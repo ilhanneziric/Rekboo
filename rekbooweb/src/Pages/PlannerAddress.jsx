@@ -79,7 +79,7 @@ const PlannerAddress = () => {
             <input className="addressFormInput" name="firstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">PREZIME:</label>
             <input className="addressFormInput" name="lastName" type="text" value={inputs.lastName} onChange={e => onChange(e)}/>
-            <label className="addressFormLbl">ADRESU:</label>
+            <label className="addressFormLbl">ADRESA:</label>
             <input className="addressFormInput" name="address" type="text" value={inputs.address} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">GRAD:</label>
             <input className="addressFormInput" name="city" type="text" value={inputs.city} onChange={e => onChange(e)}/>

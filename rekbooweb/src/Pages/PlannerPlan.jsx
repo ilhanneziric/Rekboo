@@ -102,7 +102,7 @@ const PlannerPlan = () => {
               <h4 className="noOfTitle">BROJ OSOBA:</h4>
               <div className="noOfCardContainer">
                 <TagCard name={'2'} addTag={addNoOfPeopleTag} removeTag={removeNoOfPeopleTag} checked={order.numberOfPeople === '2'}/>
-                <TagCard name={'4'} addTag={addNoOfPeopleTag} removeTag={removeNoOfPeopleTag} checked={order.numberOfPeople === '4'}/>
+                <TagCard name={'4'} addTag={addNoOfPeopleTag} removeTag={removeNoOfPeopleTag} checked={order.numberOfPeople === '4'} disabled={true}/>
               </div>
             </div>
             <div className="noOfContainers">
@@ -120,10 +120,10 @@ const PlannerPlan = () => {
               <h4 className="noOfTitle">BROJ RECEPATA SEDMIČNO:</h4>
               <div className="noOfCardContainer">
                 <TagCard name={'2'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '2'}/>
-                <TagCard name={'3'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '3'}/>
-                <TagCard name={'4'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '4'}/>
-                <TagCard name={'5'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '5'}/>
-                <TagCard name={'6'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '6'}/>
+                <TagCard name={'3'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '3'} disabled={true}/>
+                <TagCard name={'4'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '4'} disabled={true}/>
+                <TagCard name={'5'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '5'} disabled={true}/>
+                <TagCard name={'6'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '6'} disabled={true}/>
             </div>
             </div>
             <div className="totalOrderContainer">

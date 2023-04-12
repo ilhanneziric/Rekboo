@@ -1,15 +1,23 @@
 import '../Styles/tagCard.scss'
 
-const TagCard = ({addTag, removeTag, name,checked}) => {
+const TagCard = ({addTag, removeTag, name,checked, disabled = false}) => {
   return (
     <>
     {
       checked?
       <div className="tagCardContainer" onClick={() => removeTag(name)}>
-            <div className="tagCardBody tagCardChecked" ><div className="tagCardName tagCardNameChecked">{name}</div></div>
+            {
+              disabled?
+              <div className="tagCardBody tagCardChecked tagCardBodyDisabled" ><div className="tagCardName tagCardNameChecked tagCardNameDisabled">{name}</div></div>:
+              <div className="tagCardBody tagCardChecked" ><div className="tagCardName tagCardNameChecked">{name}</div></div>
+            }
       </div>:
       <div className="tagCardContainer" onClick={() => addTag(name)}>
-            <div className="tagCardBody"><div className="tagCardName">{name}</div></div>
+        {
+          disabled?
+          <div className="tagCardBody tagCardBodyDisabled"><div className="tagCardName tagCardNameDisabled">{name}</div></div>:
+          <div className="tagCardBody"><div className="tagCardName">{name}</div></div>
+        }
       </div>
     }
     </>
