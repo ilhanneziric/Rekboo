@@ -1,215 +1,160 @@
 @import './parent';
 
-.homePageMainContiner{
-    display: flex;
-    background: rgb(89,222,9);
-}
 
-.homePagePhotoContainer{
+.homePagePhotoContainer2{
     position: relative;
-    float: right;
-    width: 70%;
-}
-
-.homePagePhoto{
-    width: 100%;
-    height: 100%;
-}
-
-.homePagePhotoGreenGradient{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(89,222,9);
-    background: linear-gradient(90deg, rgba(89,222,9,1) 0%, rgba(255,255,255,0) 50%);
-}
-
-.homePagePhotoWhiteGradient{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(255,255,255);
-    background: linear-gradient(-90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
-}
-
-.homePageTextContainer{
-    background: rgb(89,222,9);
-    width: 30%;
-    display: flex;
-    flex-direction: column;    
-    justify-content: center;
-}
-
-.homePagePhotoText{
-    margin-left: 30px;
-    font-size: 2rem;
-    font-weight: 500;
-    color: white;
-}
-
-.homePagePhotoBtn{
-    font-size: 1.5rem;
-    margin:  50px 50px 0 50px;
     text-align: center;
-    padding: 5px;
-    font-weight: 500;
-    color: $green;
-    background-color: white;
-    border: 5px solid white;
 }
 
-.homePagePhotoBtn:hover{
+.homePagePhoto2{
+    width: 100%;
+}
+
+.homePageImg2, .homePageImg3, .homePageImg4{
+    display: none;
+}
+
+.homePageTextAndButtonContainer2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.homePageTextContainer2{
+    font-size: 2rem;
+    font-weight: 600;
+    color: $darkGreen;
+}
+
+.homePageButtonsContainer2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.homePagePhotoBtn2{
+    @extend .btn;
+    width: 300px;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.homePagePhotoBtn2:hover{
     border-bottom: 5px solid $darkGreen;
     cursor: pointer;
 }
 
-.homePagePhotoBtn:active{
+.homePagePhotoBtn2:active{
     border: 5px solid $darkGreen;
     background-color: $darkGreen;
 }
 
-.homePagePhotoLoginBtn{
-    @extend .homePagePhotoBtn;
-    margin:  10px 50px 0 50px;
+.homePagePhotoLoginBtn2{
+    @extend .homePagePhotoBtn2;
     background-color: transparent;
-    border: 3px solid white;
-    color: white;
+    color: $green;
+    font-weight: 700;
 }
 
-.homePagePhotoLoginBtn:hover{
+.homePagePhotoLoginBtn2:hover{
     border-bottom: 5px solid $darkGreen;
 }
 
 @media only screen and (max-width: 1100px) {
-    .homePagePhotoText{
-        margin-left: 25px;
-        font-size: 1.6rem;
+    .homePageTextContainer2{
+        font-size: 1.2rem;
     }
 
-    .homePagePhotoBtn{
-        font-size: 1.3rem;
-        margin: 40px;
-    }   
-}
-
-@media only screen and (max-width: 1000px) {
-    .homePagePhotoText{
-        margin-left: 25px;
-        font-size: 1.3rem;
+    .homePagePhotoBtn2{
+        width: 200px;
+        margin: 10px;
+        font-size: 1rem;
     }
-
-    .homePagePhotoBtn{
-        font-size: 1.1rem;
-    }   
 }
 
 @media only screen and (max-width: 800px) {
-    .homePagePhotoText{
-        margin-left: 0;
-        font-size: 1.5rem;
-        text-align: center;
+    .homePageTextContainer2{
+        font-size: 1rem;
     }
 
-    .homePagePhotoBtn{
-        font-size: 1.5rem;
-    } 
-    
-    .homePagePhotoBtnContainer{
-        margin-bottom: 20px;
-    }
-    
-    .homePageMainContiner{
-        flex-direction: column-reverse;
-    }
-
-    .homePagePhotoContainer{
-        float: left;
-        width: 100%;
-    }
-
-    .homePageTextContainer{
-        width: 100%;
-    }
-
-    .homePagePhotoWhiteGradient{
-        background: rgb(255,255,255);
-        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 10%);
-    }
-
-    .homePagePhotoGreenGradient{
-        background: rgb(89,222,9);
-        background: linear-gradient(0deg, rgba(89,222,9,1) 0%, rgba(255,255,255,0) 50%);
+    .homePagePhotoBtn2{
+        width: 200px;
+        margin: 7px;
+        font-size: 0.8rem;
     }
 }
 
-
 @media only screen and (max-width: 700px) {
-    .homePagePhotoText{
-        font-size: 1.3rem;
+    .homePagePhoto2{
+        display: none;
     }
 
-    .homePagePhotoBtn{
-        font-size: 1.1rem;
-    }   
-
-    .homePagePhotoBtn{
-        margin: 40px 40px 5px 40px;
+    .homePageImg2{
+        width: 100%;
+        display: block;
     }
 
-    .homePagePhotoLoginBtn{
-        margin-top: 10px;
+    .homePageTextContainer2{
+        font-size: 0.9rem;
+    }
+
+    .homePagePhotoBtn2{
+        width: 150px;
+        margin: 5px;
+        font-size: 0.7rem;
     }
 }
 
 @media only screen and (max-width: 500px) {
-    .homePageContainer{
+    .homePageImg2{
+        display: none;
+    }
+
+    .homePageImg3{
+        width: 100%;
+        display: block;
+    }
+
+    .homePagePhotoContainer2{
         margin-top: 100px;
-    }
-
-    .homePageMainContiner{
-        margin-top: 20px;
-    }
-    
-    .homePagePhotoText{
-        font-size: 1.1rem;
-    }
-
-    .homePagePhotoBtn{
-        font-size: 0.9rem;
-    }   
-
-    .homePagePhotoBtn{
-        margin: 30px 30px 5px 30px;
-    }
-
-    .homePagePhotoLoginBtn{
-        margin-top: 10px;
     }
 }
 
 
 @media only screen and (max-width: 400px) {
-    .homePageMainContiner{
-        margin-top: 20px;
+    .homePageImg3{
+        display: none;
     }
-    
-    .homePagePhotoText{
+
+    .homePageImg4{
+        width: 100%;
+        display: block;
+    }
+
+    .homePageTextAndButtonContainer2{
+        width: 250px;//dovde sam doso
+    }
+
+
+    .homePageTextContainer2{
         font-size: 0.9rem;
     }
 
-    .homePagePhotoBtn{
+    .homePagePhotoBtn2{
+        width: 150px;
+        margin: 5px;
+        padding: 5px;
         font-size: 0.7rem;
-    }   
-    
-    .homePagePhotoBtn{
-        margin: 20px 20px 5px 20px;
+        border: 2px solid $green;
     }
 
-    .homePagePhotoLoginBtn{
-        margin-top: 7px;
+    .homePagePhotoBtn2:hover{
+        border-bottom: 2px solid $darkGreen;
+    }
+
+    .homePagePhotoBtn2:active{
+        border: 2px solid $darkGreen;
     }
 }

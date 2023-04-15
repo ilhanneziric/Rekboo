@@ -15,7 +15,7 @@ const HowItWorks = () => {
   return (
     <>
       {window.location.pathname === '/howitworks' && <Header/>}
-      <div className="howItWorksContainer">
+      <div className={window.location.pathname !== '/howitworks' ? "howItWorksContainer2" : "howItWorksContainer"}>
         <div className="stepperContainer">
             <img className="stepper" src={Stepper} alt="step by step" />
         </div>
