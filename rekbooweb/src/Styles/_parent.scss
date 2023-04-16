@@ -1,5 +1,7 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
 
 //colors
 $green: #59de09;
@@ -12,9 +14,12 @@ $white: #F6F6F6;
 $red: #d58c8c;
 $yellow: #d5d08c;
 
-// body{
-//     background-color: $grey;
-// }
+body{
+    // background-color: $grey;
+    // font-family: 'Righteous', cursive;
+    // font-family: 'Dongle', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
 
 .css-1p3m7a8-multiValue{
     background-color: $grey;
@@ -30,7 +35,6 @@ $yellow: #d5d08c;
 }
 
 .btn:hover{
-    border-bottom: 5px solid $darkGreen;
     cursor: pointer;
 }
 
@@ -51,7 +55,6 @@ a{
     outline: none;
 }
 .editBtn:hover{
-    border-bottom: 3px solid $darkGreen;
     cursor: pointer;
 }
 

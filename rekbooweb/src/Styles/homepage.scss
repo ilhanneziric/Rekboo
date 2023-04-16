@@ -42,7 +42,6 @@
 }
 
 .homePagePhotoBtn2:hover{
-    border-bottom: 5px solid $darkGreen;
     cursor: pointer;
 }
 
@@ -56,10 +55,6 @@
     background-color: transparent;
     color: $green;
     font-weight: 700;
-}
-
-.homePagePhotoLoginBtn2:hover{
-    border-bottom: 5px solid $darkGreen;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -148,10 +143,6 @@
         padding: 5px;
         font-size: 0.7rem;
         border: 2px solid $green;
-    }
-
-    .homePagePhotoBtn2:hover{
-        border-bottom: 2px solid $darkGreen;
     }
 
     .homePagePhotoBtn2:active{
