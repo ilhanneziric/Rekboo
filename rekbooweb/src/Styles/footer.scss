@@ -1,38 +1,11 @@
 @import './parent';
 
-.stepperContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+.footerContainer{
+    background-color: $green;
+    margin-top: 10px;
 }
 
-.stepper{
-    width: 800px;
-}
-
-
-@media only screen and (max-width: 800px) {
-    .stepper{
-        width: 600px;
-    }
-}
-
-
-@media only screen and (max-width: 650px) {
-    .stepper{
-        width: 400px;
-    }
-}
-
-@media only screen and (max-width: 450px) {
-    .stepper{
-        width: 300px;
-    }
-}
-
-@media only screen and (max-width: 350px) {
-    .stepper{
-        width: 250px;
-    }
+.copyRightContainer{
+    color: white;
+    padding: 20px;
 }

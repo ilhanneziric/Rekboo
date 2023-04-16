@@ -18,6 +18,17 @@
     margin: 10px;
 }
 
+.stepperContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.stepper{
+    width: 800px;
+}
+
 @media only screen and (max-width: 800px) {
     .howItWorksContainer{
         margin-top: 120px;
@@ -26,6 +37,10 @@
     .howItWorksContainer2{
         margin-top: 30px;
     }
+
+    .stepper{
+        width: 600px;
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -33,11 +48,27 @@
         font-size: 0.9rem;
         width: 250px;
     }
+
+    .stepper{
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .stepper{
+        width: 300px;
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .howItWorksContainer{
         margin-top: 90px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .stepper{
+        width: 250px;
     }
 }
 

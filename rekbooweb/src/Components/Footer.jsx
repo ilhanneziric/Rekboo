@@ -1,11 +1,12 @@
-import Stepper from '../Assets/stepbystep.png'
 import '../Styles/footer.scss'
 
 const Footer = () => {
   return (
     <>
-        <div className="stepperContainer">
-            <img className="stepper" src={Stepper} alt="step by step" />
+        <div className="footerContainer">
+          <div className="copyRightContainer">
+            Copyright © {new Date().getFullYear()} Rekboo Sva prava zadržana.
+          </div>
         </div>
     </>
   )
