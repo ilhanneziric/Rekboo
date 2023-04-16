@@ -18,38 +18,43 @@ const Register = () => {
         email: '',
         password: '',
         passwordConfirmation: '',
-        role: 'User'
+        role: 'User',
+        terms: false
     });
     const [loading, setLoading] = useState(false);
 
     const [validationError, setValidationError] = useState(false);
     
-    const { email, password, passwordConfirmation} = inputs;
+    const { email, password, passwordConfirmation, terms} = inputs;
 
     const onChange = e => {
+      if(e.target.type === 'checkbox'){
+        setInputs({...inputs, [e.target.name] : e.target.checked});    
+      }else{
         setInputs({...inputs, [e.target.name] : e.target.value});        
+      }
     }
 
     const onSubmitForm = async e => {
-        setLoading(true);
-        e.preventDefault();    
-        try {
-          var { error } = registerValidation(inputs);
-          if(error){
-            setValidationError(true);
-          }else{
-            const response = await UsersService.register(inputs);
-            if(response){
-                navigate('/login');
-            }else{
-              setValidationError(true);
-            }
-          } 
-          setLoading(false);
-        } catch (err) {
+      setLoading(true);
+      e.preventDefault();    
+      try {
+        var { error } = registerValidation(inputs);
+        if(error){
           setValidationError(true);
-          setLoading(false);
-        }
+        }else{
+          const response = await UsersService.register(inputs);
+          if(response){
+              navigate('/login');
+          }else{
+            setValidationError(true);
+          }
+        } 
+        setLoading(false);
+      } catch (err) {
+        setValidationError(true);
+        setLoading(false);
+      }
     } 
     
     useEffect(() => {
@@ -69,8 +74,10 @@ const Register = () => {
                 <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">Potvrdite lozinku:</label>
                 <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
-                <button className='registerBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
-                  <div className='registerLoginInfo'>Imate otvoren račun? <Link to='/login'>Prijavi se</Link>.</div>
+                <input className="registerFormInputCheckbox" name="terms" type="checkbox" value={terms} onChange={e => onChange(e)}/>
+                <label className="registerFormTermsLbl">Prihvatam <Link to='/'>uslove korištenja</Link>!</label>
+                <button className={inputs.terms ? 'registerBtn' : 'registerBtnDisabled'}>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
+                <div className='registerLoginInfo'>Imate otvoren račun? <Link to='/login'>Prijavi se</Link>.</div>
             </form>
         </div>
         </div>

@@ -32,6 +32,7 @@ body{
     border: 5px solid $green;
     text-align: center;
     outline: none;
+    font-weight: bold;
 }
 
 .btn:hover{
@@ -99,6 +100,12 @@ a{
 
 .inputText{
     @extend .input;
+}
+
+.inputCheckbox{
+    accent-color: $green;
+    width: 15px;
+    height: 15px;
 }
 
 .inputTextarea{

@@ -8,6 +8,7 @@
     text-align: center;
     color: $darkGreen;
     margin: 0;
+    font-weight: bold;
 }
 
 .registerContainer{
@@ -26,8 +27,18 @@
     @extend .lbl;
 }
 
+.registerFormTermsLbl{
+    @extend .registerFormLbl;
+    display: inline-block;
+    margin-left: 5px
+}
+
 .registerFormInput{
     @extend .inputText;
+}
+
+.registerFormInputCheckbox{
+    @extend .inputCheckbox;
 }
 
 .registerBtn{
@@ -36,8 +47,16 @@
     width: 100%;
 }
 
-.registerBtn:hover{
-    color: white;
+.registerBtnDisabled{
+    @extend .registerBtn;
+}
+
+.registerBtnDisabled:hover{
+    cursor: not-allowed;
+}
+
+.registerLoginInfo{
+    font-size: 0.8rem;
 }
 
 
@@ -59,10 +78,6 @@
     .registerBtn{
         font-size: 0.9rem;
         padding: 5px 10px;
-    }
-
-    .registerLoginInfo{
-        font-size: 0.8rem;
     }
 }
 

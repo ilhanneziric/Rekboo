@@ -14,6 +14,7 @@ export const registerValidation = data => {
         password: Joi.string().min(5).required(),
         passwordConfirmation: Joi.string().min(5).required().equal(data.password),
         role: Joi.string().min(5).required().equal('User'),
+        terms: Joi.boolean().invalid(false)
     });
     return schema.validate(data);
 };
