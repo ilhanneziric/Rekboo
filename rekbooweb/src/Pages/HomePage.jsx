@@ -27,7 +27,7 @@ const HomePage = () => {
           <img src={HomePageImg3} alt="" className='homePageImg3'/>
           <img src={HomePageImg4} alt="" className='homePageImg4'/>
           <div className="homePageTextAndButtonContainer2">
-            <div className="homePageTextContainer2">Uz REKBOO kuhanje nikad nije bilo jednostavnije!</div>
+            <div className="homePageTextContainer2">Uz REKBOO kuhanje nikad nije bilo JEDNOSTAVNIJE</div>
             <div className="homePageButtonsContainer2">
               <Link to='/plannerplan'><div className='homePagePhotoBtn2'>PROBAJ REKBOO</div></Link>
               {!isAuthenticated && <Link to='/login'><div className='homePagePhotoLoginBtn2'>PRIJAVA</div></Link>}

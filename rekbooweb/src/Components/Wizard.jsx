@@ -75,21 +75,21 @@ const Wizard = ({level}) => {
                 level >= 5 ?
                 <div className="wizardNav">
                     {level === 5 ? 
-                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
-                    <Link to='/plannerregister'><p className="wizardTitle wizardTitleLink">REGISTRACIJA</p></Link>}
+                    <p className="wizardTitle wizardTitleSelected">PRIJAVA</p>:
+                    <Link to='/plannerregister'><p className="wizardTitle wizardTitleLink">PRIJAVA</p></Link>}
                     <WizardLine widthPercent={100}/>
                 </div>:
                 level >= 4 ?
                 <div className="wizardNav">
                     {level === 4 ? 
-                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
-                    <p className="wizardTitle">REGISTRACIJA</p>}
+                    <p className="wizardTitle wizardTitleSelected">PRIJAVA</p>:
+                    <p className="wizardTitle">PRIJAVA</p>}
                     <WizardLine widthPercent={50}/>
                 </div>:
                     <div className="wizardNav">
                     {level === 4 ? 
-                    <p className="wizardTitle wizardTitleSelected">REGISTRACIJA</p>:
-                    <p className="wizardTitle">REGISTRACIJA</p>}
+                    <p className="wizardTitle wizardTitleSelected">PRIJAVA</p>:
+                    <p className="wizardTitle">PRIJAVA</p>}
                     <WizardLine widthPercent={0}/>
                 </div>
             }

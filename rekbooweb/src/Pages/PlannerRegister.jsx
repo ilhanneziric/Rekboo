@@ -8,7 +8,7 @@ import UsersService from '../Services/UsersService';
 import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { loginValidation, registerValidation, emailValidation } from '../Utils/validations';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HashLoader, ClipLoader } from 'react-spinners';
 import { updStep } from "../redux/actions/stepActions"
 
@@ -24,7 +24,8 @@ const PlannerRegister = () => {
     email: '',
     password: '',
     passwordConfirmation: '',
-    role: 'User'
+    role: 'User',
+    terms: false
   });
 
   const [progress, setProgress] = useState(4);
@@ -34,13 +35,18 @@ const PlannerRegister = () => {
   const [title, setTitle] = useState('RAČUN');
   const [validEmail, setValidEmail] = useState(null);
 
-  const { email, password, passwordConfirmation} = inputs;
+  const { email, password, passwordConfirmation, terms} = inputs;
 
   const onChange = e => {
+    if(e.target.type === 'checkbox'){
+      setInputs({...inputs, [e.target.name] : e.target.checked});    
+    }else{
       setInputs({...inputs, [e.target.name] : e.target.value});        
+    }       
   }
 
   const plannerLogin = async () =>{
+    setLoading(true);
     try{
       var { error } = loginValidation({email, password});
       if(error){
@@ -65,11 +71,11 @@ const PlannerRegister = () => {
   }
 
   const plannerRegister = async () => {
+    setLoading(true);
     try{
       var { error } = registerValidation(inputs);
       if(error){
         setValidationError(true);
-        setLoading(false);
       } else {
         const response = await UsersService.register(inputs);
         if(response){
@@ -77,8 +83,8 @@ const PlannerRegister = () => {
         } else {
           setValidationError(true);
         }
-        setLoading(false);
       }
+      setLoading(false);
     } catch (err) {
       setValidationError(true);
     } finally {
@@ -103,14 +109,12 @@ const PlannerRegister = () => {
           setValidEmail(false);
         }
         setProgress(5);
-        setLoading(false);    
       }
+      setLoading(false);    
     }else if(validEmail){
-      setLoading(true);
       await plannerLogin();
     }else{
       await plannerRegister();
-      setLoading(true);
     }
   }
   
@@ -153,7 +157,10 @@ const PlannerRegister = () => {
               <label className="plannerRegisterFormLbl">Lozinka:</label>
               <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
               <label className="plannerRegisterFormLbl">Potvrdite lozinku:</label>
-              <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>):
+              <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
+              <input className="registerFormInputCheckbox" name="terms" type="checkbox" value={terms} onChange={e => onChange(e)}/>
+              <label className="registerFormTermsLbl">Prihvatam <Link to='/'>uslove korištenja</Link>!</label>
+              </>):
               validEmail == true?(<>
                 <label className="plannerRegisterFormLbl">Lozinka:</label>
                 <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
