@@ -106,7 +106,7 @@ const PlannerOverview = () => {
             <p className="plannerOverviewPlanLbl">Ukupna cijena: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5+10}KM</div>
         </div>
     </div>
-    <div className="plannerOverviewOrderBtn" onClick={() => acceptOrder()}>NARUČI {postLoading && <ClipLoader color={'white'} size={10}/>}</div>
+    <div className="plannerOverviewOrderBtn" onClick={() => acceptOrder()}>{postLoading ? <ClipLoader color={'white'} size={15}/> : 'NARUČI'}</div>
     </div>
 
 

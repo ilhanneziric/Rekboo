@@ -8,6 +8,7 @@ import { registerValidation } from "../Utils/validations";
 import { updStep } from '../redux/actions/stepActions';
 import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
+import { ClipLoader } from 'react-spinners';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Register = () => {
         passwordConfirmation: '',
         role: 'User'
     });
+    const [loading, setLoading] = useState(false);
 
     const [validationError, setValidationError] = useState(false);
     
@@ -29,6 +31,7 @@ const Register = () => {
     }
 
     const onSubmitForm = async e => {
+        setLoading(true);
         e.preventDefault();    
         try {
           var { error } = registerValidation(inputs);
@@ -42,8 +45,10 @@ const Register = () => {
               setValidationError(true);
             }
           } 
+          setLoading(false);
         } catch (err) {
           setValidationError(true);
+          setLoading(false);
         }
     } 
     
@@ -64,7 +69,7 @@ const Register = () => {
                 <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">Potvrdite lozinku:</label>
                 <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
-                <button className='registerBtn'>POTVRDI</button>
+                <button className='registerBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
                   <div className='registerLoginInfo'>Imate otvoren račun? <Link to='/login'>Prijavi se</Link>.</div>
             </form>
         </div>

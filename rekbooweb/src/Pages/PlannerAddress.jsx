@@ -85,7 +85,7 @@ const PlannerAddress = () => {
             <input className="addressFormInput" name="city" type="text" value={inputs.city} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">Telefon:</label>
             <input className="addressFormInput" name="phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
-            <button className='addressBtn'>POTVRDI   {loading && <ClipLoader color={'white'} size={10}/>}</button>
+            <button className='addressBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
           </form>
           </div>
           {/* <div className="addressOrderInformationContainer">

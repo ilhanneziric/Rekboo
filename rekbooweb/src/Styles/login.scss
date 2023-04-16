@@ -22,6 +22,10 @@
     height: 100%;
 }
 
+.loginRegisterInfo{
+    font-size: 0.8rem
+}
+
 .loginFormLbl{
     @extend .lbl;
 }
@@ -59,10 +63,6 @@
     .loginBtn{
         font-size: 0.9rem;
         padding: 5px 10px;
-    }
-
-    .loginRegisterInfo{
-        font-size: 0.8rem;
     }
 }
 

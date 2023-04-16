@@ -160,7 +160,7 @@ const PlannerRegister = () => {
               </>):
               (<></>)
             }
-            <button className='plannerRegisterBtn'>POTVRDI  {loading && <ClipLoader color={'white'} size={10}/>}</button>
+            <button className='plannerRegisterBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
           </form>
         </div>
       </div>

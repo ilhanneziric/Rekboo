@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import UsersService from "../Services/UsersService";
 import { updStep } from '../redux/actions/stepActions';
 import { useEffect } from "react";
+import { ClipLoader } from 'react-spinners';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Login = () => {
       email: '',
       password: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const [validationError, setValidationError] = useState(false);
   
@@ -28,6 +30,7 @@ const Login = () => {
   }
 
   const onSubmitForm = async e => {
+      setLoading(true);
       e.preventDefault();    
       try {
         var { error } = loginValidation(inputs);
@@ -43,10 +46,12 @@ const Login = () => {
           } 
           dispatch(updIsAuthenticated());
         } 
+        setLoading(false);
       } catch (err) {
         localStorage.removeItem('token')
         dispatch(updIsAuthenticated());
         setValidationError(true);
+        setLoading(false);
       }
   } 
 
@@ -65,7 +70,7 @@ const Login = () => {
             <input className="loginFormInput" name="email" type="email" required value={email} onChange={e => onChange(e)}/>
             <label className="loginFormLbl">Lozinka:</label>
             <input className="loginFormInput" name="password" type="password" minLength={5} required value={password} onChange={e => onChange(e)}/>
-            <button className='loginBtn'>POTVRDI</button>
+            <button className='loginBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
             <div className='loginRegisterInfo'>Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>
           </form>
         </div>
