@@ -142,7 +142,7 @@ const PlannerRegister = () => {
           </div>
           <form onSubmit={onSubmitForm} className="plannerRegisterForm">
             {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
-            <label className="plannerRegisterFormLbl">UNESITE E-MAIL:</label>
+            <label className="plannerRegisterFormLbl">E-mail:</label>
             {
               validEmail === null?
               <input className="plannerRegisterFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>:
@@ -150,12 +150,12 @@ const PlannerRegister = () => {
             }
             {
               validEmail == false? (<>
-              <label className="plannerRegisterFormLbl">UNESITE LOZINKU:</label>
+              <label className="plannerRegisterFormLbl">Lozinka:</label>
               <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
-              <label className="plannerRegisterFormLbl">PONOVO UNESITE LOZINKU:</label>
+              <label className="plannerRegisterFormLbl">Potvrdite lozinku:</label>
               <input className="plannerRegisterFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/></>):
               validEmail == true?(<>
-                <label className="plannerRegisterFormLbl">UNESITE LOZINKU:</label>
+                <label className="plannerRegisterFormLbl">Lozinka:</label>
                 <input className="plannerRegisterFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
               </>):
               (<></>)

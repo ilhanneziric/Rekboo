@@ -75,15 +75,15 @@ const PlannerAddress = () => {
           <div className="addressFormContainer">
           <form onSubmit={onSubmitForm} className="addressForm">
             {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
-            <label className="addressFormLbl">IME:</label>
+            <label className="addressFormLbl">Ime:</label>
             <input className="addressFormInput" name="firstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
-            <label className="addressFormLbl">PREZIME:</label>
+            <label className="addressFormLbl">Prezime:</label>
             <input className="addressFormInput" name="lastName" type="text" value={inputs.lastName} onChange={e => onChange(e)}/>
-            <label className="addressFormLbl">ADRESA:</label>
+            <label className="addressFormLbl">Adresa:</label>
             <input className="addressFormInput" name="address" type="text" value={inputs.address} onChange={e => onChange(e)}/>
-            <label className="addressFormLbl">GRAD:</label>
+            <label className="addressFormLbl">Grad:</label>
             <input className="addressFormInput" name="city" type="text" value={inputs.city} onChange={e => onChange(e)}/>
-            <label className="addressFormLbl">TELEFON:</label>
+            <label className="addressFormLbl">Telefon:</label>
             <input className="addressFormInput" name="phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
             <button className='addressBtn'>POTVRDI   {loading && <ClipLoader color={'white'} size={10}/>}</button>
           </form>

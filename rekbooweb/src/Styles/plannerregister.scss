@@ -22,23 +22,12 @@
 }
 
 .plannerRegisterFormLbl{
-    display: block;
+    @extend .lbl;
 }
 
 .plannerRegisterFormInput{
-    display: block;
+    @extend .inputText;
     width: 70%;
-    height: 2.5em;
-    outline: transparent;
-    border: 2px solid $darkGreen;
-    padding: 5px 10px;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-}
-
-.plannerRegisterFormInput:focus{
-    outline: 2px solid $green;
-    border: 2px solid $green;
 }
 
 .plannerRegisterBtn{

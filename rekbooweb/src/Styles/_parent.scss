@@ -1,10 +1,12 @@
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 //colors
 $green: #59de09;
 $greenDisabled: #b8d3a7;
 $darkGreen: #3E5418;
 $grey: #ececec;
+$greyDarker: #d6d4d4;
 $greyDisabled: #bdbdbd;
 $white: #F6F6F6;
 $red: #d58c8c;
@@ -13,6 +15,10 @@ $yellow: #d5d08c;
 // body{
 //     background-color: $grey;
 // }
+
+.css-1p3m7a8-multiValue{
+    background-color: $grey;
+}
 
 .btn{
     background-color: $green;
@@ -69,19 +75,23 @@ a{
 .input{
     display: block;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     outline: transparent;
-    border: 2px solid $darkGreen;
+    border: none;
     margin-bottom: 10px;
+    background-color: $grey;
+    font-weight: 500;
 }
 
 .input:focus{
-    border: 2px solid $green;
+    background-color: $greyDarker;
 }
 
 .lbl{
     display: block;
-    font-size: 1.1rem;
+    color: $darkGreen;
+    font-weight: 500;
+    font-family: 'Righteous', cursive;
 }
 
 .inputText{
@@ -106,12 +116,11 @@ a{
     padding-left: 35px;
     margin-bottom: 5px;
     margin-top: 20px;
-    font: 14px/20px "Open Sans", Arial, sans-serif;
-    font-size: 1.1rem;
     cursor: pointer;
+    @extend .lbl;
 }
 .checkbox-rect input[type="checkbox"]:hover + label:hover {
-    color: rgb(23, 86, 228);
+    color: $green;
 }
 .checkbox-rect input[type="checkbox"]:hover + label:before {
     background: $darkGreen;
@@ -125,8 +134,7 @@ a{
     display: block;
     width: 1.4em;
     height: 1.4em;
-    border: 1px solid #343a3f;
-    border-radius: 0.2em;
+    border: none;
     position: absolute;
     left: 0;
     top: 0;
@@ -137,12 +145,9 @@ a{
 .checkbox-rect input[type="checkbox"]:checked + label:before {
     width: 1.3em;
     height: 1.3em;
-    border-radius: 0.2em;
-    border: 2px solid #fff;
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
     background: $green;
-    box-shadow: 0 0 0 1px #000;
 }
 
 .cursorNotAllowed:hover{

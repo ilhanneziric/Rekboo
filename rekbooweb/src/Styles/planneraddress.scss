@@ -73,23 +73,11 @@
 }
 
 .addressFormLbl{
-    display: block;
+    @extend .lbl;
 }
 
 .addressFormInput{
-    display: block;
-    width: 100%;
-    height: 2.5em;
-    outline: transparent;
-    border: 2px solid $darkGreen;
-    padding: 5px 5px;
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-}
-
-.addressFormInput:focus{
-    outline: 2px solid $green;
-    border: 2px solid $green;
+    @extend .inputText;
 }
 
 .addressBtn{

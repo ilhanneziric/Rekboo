@@ -80,16 +80,22 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const customStyles = {
         control: (provided, state) => ({
           ...provided,
-        //   border: '2px solid #3E5418',
           marginBottom: '10px',
           outline: 'none',
-          border: state.isFocused ? '2px solid #59de09' : '2px solid #3E5418',
+          borderRadius: '0',
+          border: state.isFocused ? 'none' : 'none',
+          backgroundColor: state.isFocused ? '#d6d4d4' : '#ececec',
           boxShadow: 'none',
           '&:hover': {
-            border: state.isFocused ? '2px solid #59de09' : '2px solid #3E5418',
+            border: state.isFocused ? 'none' : 'none',
+            backgroundColor: state.isFocused ? '#d6d4d4' : '#ececec',
           },
           '&:focus': {
-            border: '2px solid #59de09',
+            backgroundColor: '#d6d4d4',
+          },
+          '.css-1p3m7a8-multiValue': {
+            backgroundColor: '#d6d4d4',
+            fontWeight: '500'
           }
         })
       };
@@ -108,7 +114,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                             <img src={NoImage} alt="" className="imageAdminMealModal"/>:
                             <img src={`data:image/png;base64,${photo1}`} alt="" className="imageAdminMealModal"/>
                         }
-                        <label htmlFor="photo1" className="lblAdminMealModal">Glavna slika</label>
+                        <label htmlFor="photo1" className="lbl">Glavna slika</label>
                         <input type="file" name="photo1" required className="fileInputAdminMealModal" accept="image/png, image/gif, image/jpeg" onChange={e => onChange(e)}/>
                     </div>
 
@@ -118,7 +124,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                             <img src={NoImage} alt="" className="imageAdminMealModal"/>:
                             <img src={`data:image/png;base64,${photo2}`} alt="" className="imageAdminMealModal" />
                         }
-                        <label htmlFor="photo2" className="lblAdminMealModal">Sporedna slika</label>
+                        <label htmlFor="photo2" className="lbl">Sporedna slika</label>
                         <input type="file" name="photo2" required className="fileInputAdminMealModal" accept="image/png, image/gif, image/jpeg" onChange={e => onChange(e)}/>
                     </div>
                 </div>
@@ -131,18 +137,18 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
                 <div className="adminMealsModalCaloriesTimeContainer">
                     <div className="adminMealsModalCaloriesTime">
-                        <label htmlFor="calories" className="adminMealsModalInputNumerbLbl">Kalorije:</label>
+                        <label htmlFor="calories" className="lbl">Kalorije:</label>
                         <input type="number" name="calories" required className="adminMealsModalInputNumber" value={calories} onChange={e => onChange(e)}/>
                     </div>
                     <div className="adminMealsModalCaloriesTime">
-                        <label htmlFor="time" className="adminMealsModalInputNumerbLbl">Vrijeme pripreme:</label>
+                        <label htmlFor="time" className="lbl">Vrijeme pripreme:</label>
                         <input type="number" name="time" required className="adminMealsModalInputNumber" value={time} onChange={e => onChange(e)}/>
                     </div>
 
                 </div>
 
                 <label className="lbl">Kategorije:</label>
-                <Select styles={customStyles} classNamePrefix="inputMultiSelect" placeholder={'Odaberi kategorije jela'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/>
+                <Select styles={customStyles} classNamePrefix="inputMultiSelect" placeholder={'Odaberi'} options={allTags.map((option) => ({ value: option, label: option }))} value={tags} onChange={handleSelectChange} isMulti={true}/>
 
                 <div className="checkbox-rect">
                     <input type="checkbox" id="checkbox-rect1" name="active" required checked={active} onChange={e => onChange(e)}/>

@@ -58,11 +58,11 @@ const Register = () => {
         <div className="registerContainer">
             <form onSubmit={onSubmitForm} className="registerForm">
                 {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
-                <label className="registerFormLbl">UNESITE E-MAIL:</label>
+                <label className="registerFormLbl">E-mail:</label>
                 <input className="registerFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
-                <label className="registerFormLbl">UNESITE LOZINKU:</label>
+                <label className="registerFormLbl">Lozinka:</label>
                 <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
-                <label className="registerFormLbl">PONOVO UNESITE LOZINKU:</label>
+                <label className="registerFormLbl">Potvrdite lozinku:</label>
                 <input className="registerFormInput" name="passwordConfirmation" type="password" value={passwordConfirmation} onChange={e => onChange(e)}/>
                 <button className='registerBtn'>POTVRDI</button>
                   <div className='registerLoginInfo'>Imate otvoren račun? <Link to='/login'>Prijavi se</Link>.</div>
