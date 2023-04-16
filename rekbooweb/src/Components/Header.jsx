@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { Link, useNavigate } from 'react-router-dom';
 import LogoWithName from '../Assets/LogoWithName.png';
+import LogoHorisWithName from '../Assets/LogoHorisName.png';
 import { AiOutlineUser } from "react-icons/ai";
 import Navigation from './Navigation';
 import FullScreenNavigation from './FullScreenNavigation';
@@ -38,6 +39,7 @@ const Header = () => {
           window.location.pathname !== '/plannermeals' && 
           window.location.pathname !== '/planneroverview') ?
           <><Link to='/'><img className='logo' src={LogoWithName} alt="logo"/></Link>
+          <Link to='/'><img className='logoHorisontal' src={LogoHorisWithName} alt="logo"/></Link>
           <Navigation/>
           {
           !isAuthenticated ?

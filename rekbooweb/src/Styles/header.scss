@@ -7,6 +7,14 @@
     top: 20px;
 }
 
+.logoHorisontal{
+    width: 150px;
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    display: none;
+}
+
 .plannerLogo{
     @extend .logo;
 }
@@ -103,6 +111,14 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .logo{
+        display: none;
+    }
+    
+    .logoHorisontal, .plannerLogo{
+        display: block;
+    }    
+    
     .loginHeaderBtn{
         display: none;
     }
