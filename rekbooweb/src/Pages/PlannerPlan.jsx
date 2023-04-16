@@ -135,7 +135,7 @@ const PlannerPlan = () => {
               <div className="totalOrderPrice">Ukupna cijena narudžbe: <b>{order.numberOfMeals*order.numberOfPeople*5+10}KM</b></div>
             </div>
             <div className="planNextBtn" onClick={createPlan}>DALJE</div>
-            {validationError && <p style={{color: 'red'}}>{validationError}</p>}
+            {validationError && <p className='err'>{validationError}</p>}
           </div>
         </div>
       </div>

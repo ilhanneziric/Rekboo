@@ -141,7 +141,7 @@ const PlannerRegister = () => {
             <img className="plannerRegisterPhoto" src={RegisterPhoto} alt="Register Photo" />
           </div>
           <form onSubmit={onSubmitForm} className="plannerRegisterForm">
-            {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
+            {validationError && <p className='err'>Imate grešku u unesenim vrijednostima!</p>}
             <label className="plannerRegisterFormLbl">E-mail:</label>
             {
               validEmail === null?

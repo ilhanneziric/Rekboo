@@ -57,7 +57,7 @@ const Register = () => {
         <h1 className="registerTitle">REGISTRACIJA NOVOG RAČUNA</h1>
         <div className="registerContainer">
             <form onSubmit={onSubmitForm} className="registerForm">
-                {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
+                {validationError && <p className='err'>Imate grešku u unesenim vrijednostima!</p>}
                 <label className="registerFormLbl">E-mail:</label>
                 <input className="registerFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">Lozinka:</label>

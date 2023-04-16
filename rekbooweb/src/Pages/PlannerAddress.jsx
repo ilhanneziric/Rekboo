@@ -74,7 +74,7 @@ const PlannerAddress = () => {
       <div className="plannerAddressContainer">
           <div className="addressFormContainer">
           <form onSubmit={onSubmitForm} className="addressForm">
-            {validationError && <p style={{color: 'red'}}>Imate grešku u unesenim vrijednostima!</p>}
+            {validationError && <p className='err'>Imate grešku u unesenim vrijednostima!</p>}
             <label className="addressFormLbl">Ime:</label>
             <input className="addressFormInput" name="firstName" type="text" value={inputs.firstName} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">Prezime:</label>

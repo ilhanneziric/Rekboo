@@ -60,7 +60,7 @@ const Login = () => {
         {window.location.pathname === '/adminlogin' ? <h1 className="loginTitle">PRIJAVA NA ADMIN RAČUN</h1> : <h1 className="loginTitle">PRIJAVA NA RAČUN</h1>}
         <div className="loginContainer">
           <form onSubmit={onSubmitForm} className="loginForm">
-            {validationError && <p style={{color: 'red'}}>Pogrešan email ili lozinka!</p>}
+            {validationError && <p className="err">Pogrešan email ili lozinka!</p>}
             <label className="loginFormLbl">E-mail:</label>
             <input className="loginFormInput" name="email" type="email" required value={email} onChange={e => onChange(e)}/>
             <label className="loginFormLbl">Lozinka:</label>

@@ -110,6 +110,10 @@ a{
     @extend .input;
 }
 
+.err{
+    color: red;
+}
+
 .checkbox-rect input[type="checkbox"] {
     display: none;
 }
@@ -155,4 +159,24 @@ a{
 
 .cursorNotAllowed:hover{
     cursor: not-allowed;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .err{
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .err{
+        font-size: 0.8rem;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    .err{
+        font-size: 0.7rem;
+    }
 }
