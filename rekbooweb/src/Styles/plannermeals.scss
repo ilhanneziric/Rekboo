@@ -1,9 +1,7 @@
 @import './parent';
 
 .plannerMealsTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
+    @extend .title;
 }
 
 .plannerMealsContainer{
@@ -11,8 +9,6 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 2rem 3rem;
-    // margin-top: 2rem;
-    // margin-bottom: 2rem;
 }
 
 

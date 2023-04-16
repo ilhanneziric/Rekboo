@@ -5,9 +5,7 @@
 }
 
 .loginTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
+    @extend .title;
 }
 
 .loginContainer{

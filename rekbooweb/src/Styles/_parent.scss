@@ -25,6 +25,13 @@ body{
     background-color: $grey;
 }
 
+.title{
+    text-align: center;
+    color: $darkGreen;
+    margin: 0;
+    font-weight: bold;
+}
+
 .btn{
     background-color: $green;
     color: white;

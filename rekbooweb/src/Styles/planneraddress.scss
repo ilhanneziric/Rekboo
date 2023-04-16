@@ -1,11 +1,8 @@
 @import './parent';
 
 .plannerAddressTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
+    @extend .title;
 }
-
 
 .plannerAddressContainer{
     display: flex;

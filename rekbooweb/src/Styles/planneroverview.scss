@@ -1,9 +1,7 @@
 @import './parent';
 
 .plannerOverviewTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
+    @extend .title;
 }
 
 .plannerOverviewContainer{

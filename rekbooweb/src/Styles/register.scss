@@ -5,10 +5,7 @@
 }
 
 .registerTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
-    font-weight: bold;
+    @extend .title;
 }
 
 .registerContainer{

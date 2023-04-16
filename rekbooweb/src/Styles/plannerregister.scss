@@ -1,9 +1,7 @@
 @import './parent';
 
 .plannerRegisterTitle{
-    text-align: center;
-    color: $darkGreen;
-    margin: 0;
+    @extend .title;
 }
 
 .plannerRegisterContainer{
