@@ -36,7 +36,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>  
   )
 }

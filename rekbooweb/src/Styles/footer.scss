@@ -3,9 +3,38 @@
 .footerContainer{
     background-color: $green;
     margin-top: 10px;
+    text-align: center;
 }
 
 .copyRightContainer{
     color: white;
-    padding: 20px;
+    padding: 10px;
 }
+
+.socialMediaContainer{
+    // width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    // padding-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 450px) {
+    .footerContainer{
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footerContainer{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .footerContainer{
+        font-size: 0.7rem;
+    }
+}
+

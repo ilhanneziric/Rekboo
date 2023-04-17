@@ -139,7 +139,7 @@ const PlannerPlan = () => {
           </div>
         </div>
       </div>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }
