@@ -29,8 +29,8 @@ const AdminMeals = () => {
   return (
     <>
       <AdminNavigation activeItem={'meals'}/>
-      <div className="addNewMealBtn" onClick={(e) => setShow(true)}>DODAJ NOVO JELO</div>
-      <div className="adminUsersTblContainer">
+      <div className="adminMealsTblContainer">
+        <div className="addNewMealBtn" onClick={(e) => setShow(true)}>DODAJ NOVO JELO</div>
         <AdminMealsTable/>
       </div>
       <Header/>

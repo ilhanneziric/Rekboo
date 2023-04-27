@@ -1,11 +1,15 @@
 @import './parent';
 
+.adminMealsTblContainer{
+  padding: 0 20px;
+}
+
 .addNewMealBtn{
     @extend .btn;
     position: relative;
     display: block;
     float: right;
-    margin-top: 100px;
+    margin: 30px 0;
 }
 
 .imagesAdminMealModalContainer{
@@ -39,7 +43,7 @@
 .fileInputAdminMealModal::before {
   content: 'ODABERI SLIKU';
   @extend .activeBtn;
-  width: 79%;
+  width: 70%;
   display: inline-block;
   padding: 5px 8px;
 }

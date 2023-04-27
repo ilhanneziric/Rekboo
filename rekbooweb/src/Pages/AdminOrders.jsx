@@ -25,7 +25,7 @@ const AdminOrders = () => {
     <>
       <AdminNavigation activeItem={'orders'}/>
       <Header/>
-      <div className="adminUsersTblContainer">
+      <div className="adminOrdersTblContainer">
         <AdminOrdersTable/>
       </div>
     </>
