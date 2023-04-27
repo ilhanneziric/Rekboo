@@ -91,4 +91,10 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var dataContext = scope.ServiceProvider.GetRequiredService<RekbooContext>();
+    dataContext.Database.Migrate();
+}
+
 app.Run();

@@ -5,9 +5,15 @@ VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rekboo", "Rekboo.csproj", "{6B2055FF-B34A-4A2C-A26E-06E71A93C6F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rekboo.Services", "..\Rekboo.Services\Rekboo.Services.csproj", "{D7B5D70D-4153-41B8-B955-C43F5433C2C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rekboo.Services", "..\Rekboo.Services\Rekboo.Services.csproj", "{D7B5D70D-4153-41B8-B955-C43F5433C2C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rekboo.Model", "..\Rekboo.Model\Rekboo.Model.csproj", "{BE8A7146-199D-47CA-AC7F-BA6005DB089E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rekboo.Model", "..\Rekboo.Model\Rekboo.Model.csproj", "{BE8A7146-199D-47CA-AC7F-BA6005DB089E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A98908BF-2A71-46F9-9CA3-27409AB9195B}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose.yml = ..\docker-compose.yml
+		..\Dockerfile = ..\Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

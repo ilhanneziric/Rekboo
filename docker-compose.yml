@@ -1,0 +1,48 @@
+﻿version: '3'
+services:
+  rekboo-db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: sifra
+      POSTGRES_DB: rekboodb
+    ports:
+      - 5432:5432
+    expose:
+        - 5432
+    networks:
+      - rekboonet
+
+  rekboo-api:
+    restart: unless-stopped
+    build:
+      context: .
+    environment:
+      - ConnectionStrings:DefaultConnection=Server=rekboo-db;Database=rekboodb;Port=5432;User Id=sa;Password=sifra
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - 5184:5184
+    networks:
+      - rekboonet
+    links:
+      - rekboo-db
+    depends_on:
+      - rekboo-db
+
+  rekboo-web:
+    restart: unless-stopped
+    build:
+      context: ./rekbooweb
+    ports:
+      - 3000:3000
+    networks:
+      - rekboonet
+    links:
+      - rekboo-api
+    depends_on:
+      - rekboo-api
+
+networks:
+  rekboonet:
+    driver: bridge   

@@ -3,7 +3,8 @@ import { BsFacebook, BsInstagram, BsLinkedin } from 'react-icons/bs'
 
 const Footer = () => {
   return (
-    <>
+    <div className='footerWholeContainer'>
+        <div className="footerNonAbsoluteElement"></div>
         <div className="footerContainer">
           <div className="socialMediaContainer">
             <a href='//facebook.com/p/Rekboo-100086738291625/?_rdr'><BsFacebook style={{margin: '0 10px'}} color='white'/></a>
@@ -14,7 +15,7 @@ const Footer = () => {
             Copyright © {new Date().getFullYear()} Rekboo Sva prava zadržana.
           </div>
         </div>
-    </>
+    </div>
   )
 }
 

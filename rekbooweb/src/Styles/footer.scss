@@ -1,9 +1,16 @@
 @import './parent';
 
+.footerWholeContainer{
+    position: relative;
+}
+
 .footerContainer{
+    position: absolute;
+    width: 100%;
     background-color: $green;
     margin-top: 10px;
     text-align: center;
+    bottom: 0;
 }
 
 .copyRightContainer{
@@ -17,6 +24,10 @@
     justify-content: center;
     padding-top: 10px;
     // padding-bottom: 20px;
+}
+
+.footerNonAbsoluteElement{
+    height: 100px;
 }
 
 
