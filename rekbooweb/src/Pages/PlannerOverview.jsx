@@ -110,7 +110,6 @@ const PlannerOverview = () => {
     </div>
 
 
-    <Footer/>
     <PlannerOverviewAcceptModal show={show} handleClose={handleClose}/>
   </>
   )

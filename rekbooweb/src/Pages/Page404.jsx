@@ -3,7 +3,7 @@ import Footer from "../Components/Footer"
 const Page404 = () => {
   return (
     <>
-      <Footer/>
+    404
     </>  
   )
 }

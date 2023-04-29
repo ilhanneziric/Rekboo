@@ -107,7 +107,6 @@ const PlannerAddress = () => {
             </div>
           </div> */}
         </div>
-        <Footer/>
     </>
   )
 }

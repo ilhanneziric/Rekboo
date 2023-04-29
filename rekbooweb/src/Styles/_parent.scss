@@ -14,10 +14,13 @@ $white: #F6F6F6;
 $red: #d58c8c;
 $yellow: #d5d08c;
 
-body{
+html{
     // background-color: $grey;
     // font-family: 'Righteous', cursive;
     // font-family: 'Dongle', sans-serif;
+    
+  position: relative;
+  min-height: 100vh;
     font-family: 'Poppins', sans-serif;
 }
 

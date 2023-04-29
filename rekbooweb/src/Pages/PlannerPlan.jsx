@@ -139,7 +139,6 @@ const PlannerPlan = () => {
           </div>
         </div>
       </div>
-      <Footer/>
     </>
   )
 }

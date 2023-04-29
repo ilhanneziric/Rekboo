@@ -1,34 +1,28 @@
 @import './parent';
 
 .footerWholeContainer{
-    position: relative;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    
 }
 
 .footerContainer{
-    position: absolute;
-    width: 100%;
+    height: 70px;
     background-color: $green;
-    margin-top: 10px;
     text-align: center;
-    bottom: 0;
 }
 
 .copyRightContainer{
     color: white;
-    padding: 10px;
 }
 
 .socialMediaContainer{
-    // width: 100%;
     display: flex;
     justify-content: center;
     padding-top: 10px;
-    // padding-bottom: 20px;
 }
 
-.footerNonAbsoluteElement{
-    height: 100px;
-}
 
 
 @media only screen and (max-width: 450px) {

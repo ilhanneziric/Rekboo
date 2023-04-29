@@ -18,6 +18,7 @@ import AdminUsers from './Pages/AdminUsers';
 import AdminReports from './Pages/AdminReports';
 import Register from './Pages/Register';
 import UserOrders from './Pages/UserOrders';
+import Footer from './Components/Footer';
 
 import { updIsAuthenticated } from './redux/actions/isAuthenticatedActions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,7 +38,7 @@ function App() {
     <>
       <Router>
         {/* <div className='container'> */}
-        <div className=''>
+        <div className='pagesContainer'>
           <Routes>
             <Route path='/' element={<HomePage/>}/>
             {/* <Route path='/aboutus' element={<AboutUs/>}/> */}
@@ -59,7 +60,8 @@ function App() {
             <Route path='/*' element={<Page404/>}/>
           </Routes>
         </div>
-      </Router> 
+      </Router>
+      <Footer/>
     </>
   );
 }

@@ -46,7 +46,6 @@ const UserOrders = () => {
                 orders?.map((o, index) => <UserOrder order={o} key={index}/>)
         }
     </div>
-    <Footer/>
     </>
   )
 }

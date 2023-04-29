@@ -5,7 +5,6 @@ const PlannerCheckout = () => {
   return (
     <>
       <Header/>
-      <Footer/>
     </>
   )
 }
