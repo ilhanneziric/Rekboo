@@ -19,7 +19,7 @@ const Login = () => {
       email: '',
       password: ''
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(null);
 
   const [validationError, setValidationError] = useState(false);
   
@@ -35,22 +35,22 @@ const Login = () => {
       try {
         var { error } = loginValidation(inputs);
         if(error){
-          setValidationError(true);
+          setValidationError(error.toString().substring(16));
         }else{
           const response = await UsersService.login(inputs);
           if(response){
             localStorage.setItem('token', response);
           }else{  
             localStorage.removeItem('token')
-            setValidationError(true);
+            setValidationError("Netačna lozinka ili email!!");
           } 
           dispatch(updIsAuthenticated());
         } 
         setLoading(false);
       } catch (err) {
-        localStorage.removeItem('token')
+        localStorage.removeItem('token') 
+        setValidationError("Greška na serveru!");
         dispatch(updIsAuthenticated());
-        setValidationError(true);
         setLoading(false);
       }
   } 
@@ -65,11 +65,11 @@ const Login = () => {
         {window.location.pathname === '/adminlogin' ? <h1 className="loginTitle">PRIJAVA NA ADMIN RAČUN</h1> : <h1 className="loginTitle">PRIJAVA NA RAČUN</h1>}
         <div className="loginContainer">
           <form onSubmit={onSubmitForm} className="loginForm">
-            {validationError && <p className="err">Pogrešan email ili lozinka!</p>}
+            {validationError && <p className="err">{validationError}</p>}
             <label className="loginFormLbl">E-mail:</label>
             <input className="loginFormInput" name="email" type="email" required value={email} onChange={e => onChange(e)}/>
             <label className="loginFormLbl">Lozinka:</label>
-            <input className="loginFormInput" name="password" type="password" minLength={5} required value={password} onChange={e => onChange(e)}/>
+            <input className="loginFormInput" name="password" type="password"value={password} onChange={e => onChange(e)}/>
             <button className='loginBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
             <div className='loginRegisterInfo'>Nemate otvoren račun? Otvori novi <Link to='/register'>račun</Link>.</div>
           </form>

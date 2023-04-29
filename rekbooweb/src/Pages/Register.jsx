@@ -23,7 +23,7 @@ const Register = () => {
     });
     const [loading, setLoading] = useState(false);
 
-    const [validationError, setValidationError] = useState(false);
+    const [validationError, setValidationError] = useState(null);
     
     const { email, password, passwordConfirmation, terms} = inputs;
 
@@ -41,18 +41,18 @@ const Register = () => {
       try {
         var { error } = registerValidation(inputs);
         if(error){
-          setValidationError(true);
+          setValidationError(error.toString().substring(16));
         }else{
           const response = await UsersService.register(inputs);
           if(response){
               navigate('/login');
           }else{
-            setValidationError(true);
+            setValidationError("Greška na serveru!");
           }
         } 
         setLoading(false);
       } catch (err) {
-        setValidationError(true);
+        setValidationError("Greška na serveru!");
         setLoading(false);
       }
     } 
@@ -67,9 +67,9 @@ const Register = () => {
         <h1 className="registerTitle">REGISTRACIJA NOVOG RAČUNA</h1>
         <div className="registerContainer">
             <form onSubmit={onSubmitForm} className="registerForm">
-                {validationError && <p className='err'>Imate grešku u unesenim vrijednostima!</p>}
+                {validationError && <p className='err'>{validationError}</p>}
                 <label className="registerFormLbl">E-mail:</label>
-                <input className="registerFormInput" name="email" type="email" value={email} onChange={e => onChange(e)}/>
+                <input className="registerFormInput" name="email" value={email} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">Lozinka:</label>
                 <input className="registerFormInput" name="password" type="password" value={password} onChange={e => onChange(e)}/>
                 <label className="registerFormLbl">Potvrdite lozinku:</label>

@@ -50,21 +50,21 @@ const PlannerRegister = () => {
     try{
       var { error } = loginValidation({email, password});
       if(error){
-        setValidationError(true);
+        setValidationError(error.toString().substring(16));
       } else {
         const response = await UsersService.login(inputs);
         if(response){
             localStorage.setItem('token', response);
         } else {
           localStorage.removeItem('token');
-          setValidationError(true);
+          setValidationError("Netačna lozinka ili email!");
         }
         dispatch(updIsAuthenticated());
       }
     } catch (err) {
       localStorage.removeItem('token')
       dispatch(updIsAuthenticated());
-      setValidationError(true);
+      setValidationError("Greška na serveru!");
     } finally {
       setLoading(false);
     }
@@ -75,18 +75,18 @@ const PlannerRegister = () => {
     try{
       var { error } = registerValidation(inputs);
       if(error){
-        setValidationError(true);
+        setValidationError(error.toString().substring(16));
       } else {
         const response = await UsersService.register(inputs);
         if(response){
           await plannerLogin();
         } else {
-          setValidationError(true);
+          setValidationError("Greška na serveru!");
         }
       }
       setLoading(false);
     } catch (err) {
-      setValidationError(true);
+      setValidationError("Greška na serveru!");
     } finally {
       setLoading(false);
     }
@@ -97,7 +97,7 @@ const PlannerRegister = () => {
     if(validEmail == null){
       var { error } = emailValidation({email});
       if(error){
-        setValidationError(true);
+        setValidationError(error.toString().substring(16));
       } else {
         setLoading(true);
         var exist = await UsersService.existUser(email);
@@ -145,7 +145,7 @@ const PlannerRegister = () => {
             <img className="plannerRegisterPhoto" src={RegisterPhoto} alt="Register Photo" />
           </div>
           <form onSubmit={onSubmitForm} className="plannerRegisterForm">
-            {validationError && <p className='err'>Imate grešku u unesenim vrijednostima!</p>}
+            {validationError && <p className='err'>{validationError}</p>}
             <label className="plannerRegisterFormLbl">E-mail:</label>
             {
               validEmail === null?
