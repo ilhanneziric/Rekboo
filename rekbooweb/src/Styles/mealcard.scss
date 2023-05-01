@@ -71,6 +71,7 @@
 
 .mealCardDescriptionAddMealToOrder{
     @extend .activeBtn;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +97,7 @@
 
 .mealCardDescriptionRemoveMealToOrder{
     @extend .deleteBtn;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
