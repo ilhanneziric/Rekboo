@@ -20,7 +20,7 @@
     font-weight: bold;
 }
 
-.tagCardChecked, .tagCardBody:hover{
+.tagCardChecked, .tagCardBody:focus{
     outline: 5px solid $green;
     cursor: pointer;
 }
@@ -33,7 +33,7 @@
     color: $greyDisabled;
 }
 
-.tagCardBodyDisabled:hover{
+.tagCardBodyDisabled:focus{
     cursor: not-allowed;
     outline: none;
 }
@@ -43,7 +43,7 @@
         font-size: 0.9rem;
     }
 
-    .tagCardChecked, .tagCardBody:hover{
+    .tagCardChecked, .tagCardBody:focus{
         outline: 4px solid $green;
     }
 }
@@ -54,7 +54,7 @@
         margin: 7px;
     }
 
-    .tagCardChecked, .tagCardBody:hover{
+    .tagCardChecked, .tagCardBody:focus{
         outline: 3px solid $green;
     }
 
