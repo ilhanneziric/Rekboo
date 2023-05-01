@@ -1,5 +1,5 @@
 import '../Styles/header.scss'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,6 +24,14 @@ const Header = () => {
     dispatch(updIsAuthenticated());
     navigate('/');
   }
+
+  useEffect(() => {
+    if (openMenu) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'auto';
+    }
+  }, [openMenu])
   return (
     <>
     { openMenu && <FullScreenNavigation setOpenMenu={setOpenMenu}/> }

@@ -19,11 +19,11 @@ const PlannerOverviewAcceptModal = ({show, handleClose}) => {
     <>
       <Modal show={show} onHide={handleClose} backdrop="static" centered={true} dialogClassName="modal-sm">
         <Modal.Header>
-            <Modal.Title><div className='plannerOverviewAcceptModalTitle'>OBAVIJEST O POTVRDI NARUDŽBE</div></Modal.Title>
+            <Modal.Title><div className='plannerOverviewAcceptModalTitle'>USPJEŠNA NARUDŽBA</div></Modal.Title>
         </Modal.Header>
         <div className='plannerOverviewAcceptBody'>
-          Uspješno ste izvršili narudžbu sedmičnog plana prehrane.
-          Plaćanje se vrši pri preuzimanju paketa!
+          <span> Hvala ti što si dio <b>Rekboo Beta testinga</b>!  </span>
+          Provjerite email za potvrdu narudžbe.
         </div>
         <Modal.Footer>
             <div onClick={submit} className='plannerOverviewAcceptModalBtn'>U REDU</div>

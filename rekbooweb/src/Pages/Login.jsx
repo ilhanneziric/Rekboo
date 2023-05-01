@@ -42,7 +42,7 @@ const Login = () => {
             localStorage.setItem('token', response);
           }else{  
             localStorage.removeItem('token')
-            setValidationError("Netačna lozinka ili email!!");
+            setValidationError("Netačna lozinka ili email!");
           } 
           dispatch(updIsAuthenticated());
         } 
