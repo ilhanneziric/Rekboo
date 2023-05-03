@@ -22,41 +22,51 @@ const AdminUsersTable = () => {
     dispatch(getUsers());
   },[dispatch]);
   
+
+  const override = {
+    position: 'absolute',
+    zIndex: '1',
+    top: '50%',
+    left: '50%'
+  };
   return (
     <>
+    
+      {/* loading?<HashLoader color={"#59de09"}/>: */}
     {
-      loading?<HashLoader color={"#59de09"}/>:
-      <table className="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Ime</th>
-                <th>Prezime</th>
-                <th>Email</th>
-                <th>Telefon</th>
-                <th>Grad</th>
-                <th>Adresa</th>
-                <th>Uloga</th>
-                <th>Narudžbe</th>
-            </tr>
-        </thead>
-        <tbody>
-            {
-                users?.map(u => (<tr key={u.userID}>
-                    <td>{u.userID}</td>
-                    <td>{u.firstName}</td>
-                    <td>{u.lastName}</td>
-                    <td>{u.email}</td>
-                    <td>{u.phone}</td>
-                    <td>{u.city}</td>
-                    <td>{u.address}</td>
-                    <td>{u.role}</td>
-                    <td><div className="activeBtn" onClick={(e) => openModal(u)}>NARUDŽBE</div></td>
-                </tr>))
-            }
-        </tbody>
-      </table>
+      loading&&<HashLoader color={"#59de09"} cssOverride={override}/>
     }
+    <table className="table">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Ime</th>
+              <th>Prezime</th>
+              <th>Email</th>
+              <th>Telefon</th>
+              <th>Grad</th>
+              <th>Adresa</th>
+              <th>Uloga</th>
+              <th>Narudžbe</th>
+          </tr>
+      </thead>
+      <tbody>
+          {
+              users?.map(u => (<tr key={u.userID}>
+                  <td>{u.userID}</td>
+                  <td>{u.firstName}</td>
+                  <td>{u.lastName}</td>
+                  <td>{u.email}</td>
+                  <td>{u.phone}</td>
+                  <td>{u.city}</td>
+                  <td>{u.address}</td>
+                  <td>{u.role}</td>
+                  <td><div className="activeBtn" onClick={(e) => openModal(u)}>NARUDŽBE</div></td>
+              </tr>))
+          }
+      </tbody>
+    </table>
+  
     <AdminUserOrdersModal show={show} handleClose={handleClose} user={user}/>
     </>
   )

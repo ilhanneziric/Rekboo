@@ -39,7 +39,7 @@ const PlannerMeals = () => {
         {
           meals.length === 0 && loading === false ?
           <h2 className="plannerMealsTitle">NEMAMO TRENUTNO JELA KOJA ODGOVARAJU VAŠIM PREFERENCAMA!</h2> :
-          <h2 className="plannerMealsTitle">ODABERITE {order.numberOfMeals} JELA</h2>
+          !loading && <h2 className="plannerMealsTitle">ODABERITE {order.numberOfMeals} JELA</h2>
         }
       <div className="plannerMealsContainer">
         {
