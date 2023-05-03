@@ -12,7 +12,7 @@ const Footer = () => {
             <a href='//linkedin.com/company/rekboo?trk=similar-pages'><BsLinkedin style={{margin: '0 10px'}} color='white'/></a>
           </div>
           <div className="copyRightContainer">
-            Copyright © {new Date().getFullYear()} Rekboo Sva prava zadržana.
+            Copyright © {new Date().getFullYear()} Rekboo. Sva prava zadržana.
           </div>
         </div>
     </div>
