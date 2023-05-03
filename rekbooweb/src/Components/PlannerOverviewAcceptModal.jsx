@@ -22,13 +22,13 @@ const PlannerOverviewAcceptModal = ({show, handleClose}) => {
             <Modal.Title><div className='plannerOverviewAcceptModalTitle'>USPJEŠNA NARUDŽBA</div></Modal.Title>
         </Modal.Header>
         <div className='plannerOverviewAcceptBody'>
-          <span> Hvala ti što si dio <b>Rekboo Beta testinga</b>!  </span>
-          Provjerite email za potvrdu narudžbe.
+          <span> Hvala što si dio <b>Rekboo Beta testinga</b>!  </span>
+          Dobićeš email za potvrdu narudžbe.
         </div>
         <Modal.Footer>
             <div onClick={submit} className='plannerOverviewAcceptModalBtn'>U REDU</div>
         </Modal.Footer>
-      </Modal>``
+      </Modal>
     </>
   )
 }

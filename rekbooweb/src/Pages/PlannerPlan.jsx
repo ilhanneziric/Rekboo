@@ -123,7 +123,6 @@ const PlannerPlan = () => {
                 <TagCard name={'3'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '3'} disabled={true}/>
                 <TagCard name={'4'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '4'} disabled={true}/>
                 <TagCard name={'5'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '5'} disabled={true}/>
-                <TagCard name={'6'} addTag={addNoOfMealsTag} removeTag={removeNoOfMealsTag} checked={order.numberOfMeals === '6'} disabled={true}/>
             </div>
             </div>
             <div className="totalOrderContainer">
