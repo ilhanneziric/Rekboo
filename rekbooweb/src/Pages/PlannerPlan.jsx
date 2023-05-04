@@ -75,19 +75,19 @@ const PlannerPlan = () => {
 
   useEffect(() => {
     checkProgress(); 
-    getTags();
   }, [order]);
-
+  
   const override = {
     position: 'absolute',
     zIndex: '1',
     top: '50%',
     left: '50%'
   };
-
+  
   useEffect(() => {
     if(step === 0 || step >= 1){
       dispatch(updStep(1));
+      getTags();
     }
   }, []);
   return (
