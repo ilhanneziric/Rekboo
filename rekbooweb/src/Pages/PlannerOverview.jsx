@@ -97,13 +97,13 @@ const PlannerOverview = () => {
 
     <div className="plannerOverviewContactContainer">
         <div className="plannerOverviewPlanDataContainer">    
-            <p className="plannerOverviewPlanLbl">Cijena namirnica: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5}KM</div>
+            <p className="plannerOverviewPlanLbl">Cijena namirnica: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5 *0}KM</div>
         </div>
         <div className="plannerOverviewPlanDataContainer">    
-            <p className="plannerOverviewPlanLbl">Cijena dostave i pakovanja: </p><div className="plannerOverviewPlanData">10KM</div>
+            <p className="plannerOverviewPlanLbl">Cijena dostave i pakovanja: </p><div className="plannerOverviewPlanData">0KM</div>
         </div>
         <div className="plannerOverviewPlanDataTotalPriceContainer">    
-            <p className="plannerOverviewPlanLbl">Ukupna cijena: </p><div className="plannerOverviewPlanData">{order?.numberOfMeals*order?.numberOfPeople*5+10}KM</div>
+            <p className="plannerOverviewPlanLbl">Ukupna cijena: </p><div className="plannerOverviewPlanData">{(order?.numberOfMeals*order?.numberOfPeople*5+10)*0}KM</div>
         </div>
     </div>
     <div className="plannerOverviewOrderBtn" onClick={() => acceptOrder()}>{postLoading ? <ClipLoader color={'white'} size={15}/> : 'NARUČI'}</div>

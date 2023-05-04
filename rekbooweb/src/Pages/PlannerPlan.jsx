@@ -128,10 +128,10 @@ const PlannerPlan = () => {
             <div className="totalOrderContainer">
               <div className="totalOrderChosenPlan">{order.tags.join(', ')}</div>
               {order.numberOfMeals && order.numberOfPeople && <div className="totalOrderRecipes">{order.numberOfMeals} recepata u sedmici za {order.numberOfPeople} osoba</div>}
-              <div className="totalOrderRecipes">{order.numberOfMeals*order.numberOfPeople} porcija ukupno: <b>{order.numberOfMeals*order.numberOfPeople*5}KM</b></div>
-              <div className="totalOrderPriceDescription">1 porcija = 5KM</div>
-              <div className="totalOrderDelivery">Pakovanje i dostava: <b>10KM</b></div>
-              <div className="totalOrderPrice">Ukupna cijena narudžbe: <b>{order.numberOfMeals*order.numberOfPeople*5+10}KM</b></div>
+              <div className="totalOrderRecipes">Ukupno {order.numberOfMeals*order.numberOfPeople} porcije: <b>{order.numberOfMeals*order.numberOfPeople*5 *0}KM</b></div>
+              <div className="totalOrderPriceDescription">1 porcija = 0KM</div>
+              <div className="totalOrderDelivery">Pakovanje i dostava: <b>0KM</b></div>
+              <div className="totalOrderPrice">Ukupna cijena narudžbe: <b>{(order.numberOfMeals*order.numberOfPeople*5+10) *0}KM</b></div>
             </div>
             <div className="planNextBtn" onClick={createPlan}>DALJE</div>
             {validationError && <p className='err'>{validationError}</p>}

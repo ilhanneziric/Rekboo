@@ -22,7 +22,7 @@ const UserOrder = ({order}) => {
                     <div className="userOrderContainerRightPartItem"><BiFoodMenu/> <span className="userOrderContainerRightPartitemData">{order?.numberOfRecipes}</span></div>
                 </div>
                 <div className="userOrderContainerRightPartContainer">
-                    <div className="userOrderContainerRightPartItem"><BsCash/> <span className="userOrderContainerRightPartitemData">{order?.numberOfPeople*order?.numberOfRecipes*5+10}KM</span></div>
+                    <div className="userOrderContainerRightPartItem"><BsCash/> <span className="userOrderContainerRightPartitemData">{(order?.numberOfPeople*order?.numberOfRecipes*5+10) *0}KM</span></div>
                 </div>
             </div>
         </div>
