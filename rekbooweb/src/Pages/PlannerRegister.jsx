@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updIsAuthenticated } from '../redux/actions/isAuthenticatedActions';
 import { loginValidation, registerValidation, emailValidation } from '../Utils/validations';
 import { Link, useNavigate } from 'react-router-dom';
-import { HashLoader, ClipLoader } from 'react-spinners';
+import { ClipLoader } from 'react-spinners';
 import { updStep } from "../redux/actions/stepActions"
 
 const PlannerRegister = () => {

@@ -98,8 +98,10 @@ const MealCard = ({meal, add, remove, added, fullOrder}) => {
           </div>
           {
             <div className="mealCardDescriptionFooter">
-              <div className="mealCardKcalTime"><AiOutlineFire/> {meal.calories}kcal</div>  
-              <div className="mealCardKcalTime"><BiTimeFive/> {meal.time}min</div>  
+              <div className='mealCardDescriptionFooterCaloriesAndTimeContainer'>
+                <div className="mealCardKcalTime"><AiOutlineFire/> {meal.calories}kcal</div>  
+                <div className="mealCardKcalTime"><BiTimeFive/> {meal.time}min</div>  
+              </div>
               {
                 !added ? 
                 fullOrder ? 

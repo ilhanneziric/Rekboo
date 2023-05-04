@@ -116,6 +116,13 @@
     margin-right: 3px;
 }
 
+.mealCardDescriptionFooterCaloriesAndTimeContainer{
+    display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    // width: 45%;
+}
+
 @media only screen and (max-width: 840px) {
     .mealCardContainer{
         width: 250px;
@@ -140,6 +147,7 @@
 
     .mealCardKcalTime{
         font-size: 0.8rem;
+        margin-right: 10px;
     }
 
     .mealCardDescriptionAddMealToOrder{
