@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Rekboo.Services.Database
 {
     public partial class Meal
@@ -14,8 +9,8 @@ namespace Rekboo.Services.Database
         public int Calories { get; set; }
         public int Time { get; set; } 
         public bool Active { get; set; }
-        public byte[] Photo1 { get; set; } = null!;
-        public byte[] Photo2 { get; set; } = null!;
+        public string Photo1 { get; set; } = null!;
+        public string Photo2 { get; set; } = null!;
         public string[] Tags { get; set; } = null!;
 
         public virtual ICollection<PlannerMeal>? Planners { get; set; }

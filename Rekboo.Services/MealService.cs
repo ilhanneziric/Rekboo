@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Rekboo.Model.Requests;
@@ -15,6 +16,8 @@ namespace Rekboo.Services
     public class MealService : BaseCRUDService<Model.Meal, Database.Meal, MealSearchObject, MealUpsertRequest, MealUpsertRequest>, IMealService
     {
         private readonly IMemoryCache _memoryCache;
+        private readonly string _imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images");
+
         public MealService(RekbooContext context, IMapper mapper, IMemoryCache memoryCache) : base(context, mapper)
         {
             _memoryCache = memoryCache;
@@ -35,6 +38,31 @@ namespace Rekboo.Services
 
             return filteredQuery;
         }
+
+        public override async void BeforeInsert(MealUpsertRequest insert, Meal entity)
+        {
+            string fileName1 = await UploadImageAsync(insert.Photo1);
+            string fileName2 = await UploadImageAsync(insert.Photo2);
+
+            entity.Photo1 = $"/Images/{fileName1}";
+            entity.Photo2 = $"/Images/{fileName2}";
+            base.BeforeInsert(insert, entity);
+        }
+
+        private async Task<string> UploadImageAsync(IFormFile image)
+        {
+
+            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
+            var filePath = Path.Combine(_imageFolderPath, fileName);
+
+            using (var stream = new FileStream(filePath, FileMode.Create))
+            {
+                await image.CopyToAsync(stream);
+            }
+
+            return fileName;
+        }
+
 
         public IEnumerable<string> GetTags()
         {

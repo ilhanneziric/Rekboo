@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
+
 
 namespace Rekboo.Model.Requests
 {
@@ -13,8 +10,8 @@ namespace Rekboo.Model.Requests
         public int Calories { get; set; }
         public int Time { get; set; }
         public bool Active { get; set; }
-        public string Photo1 { get; set; } = null!;
-        public string Photo2 { get; set; } = null!;
+        public IFormFile Photo1 { get; set; } = null!;
+        public IFormFile Photo2 { get; set; } = null!;
         public string[] Tags { get; set; } = null!;
     }
 }

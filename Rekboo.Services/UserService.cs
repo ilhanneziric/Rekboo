@@ -3,13 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Rekboo.Model.Requests;
 using Rekboo.Model.SearchObjects;
 using Rekboo.Services.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Rekboo.Services
 {
