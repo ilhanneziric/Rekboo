@@ -4,7 +4,6 @@
     display: inline-block;
     width: 300px;
     border-radius: 25px;
-    // border: 5px solid $green;
     margin: 30px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     transition: transform 0.5s, box-shadow 0.5s;
@@ -12,7 +11,6 @@
 
 .mealCardContainer:hover{
     transform: scale(1.1);
-    // cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.5) 0px 15px 12px;
 }
 
@@ -54,7 +52,6 @@
 
 .image-gallery-slides {
     border-radius: 20px;
-    // border-radius: 25px;
 }
 
 .image-gallery{
@@ -70,6 +67,7 @@
 }
 
 .mealCardKcalTime{
+    margin-right: 10px;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -118,9 +116,6 @@
 
 .mealCardDescriptionFooterCaloriesAndTimeContainer{
     display: flex;
-    // align-items: center;
-    // justify-content: space-between;
-    // width: 45%;
 }
 
 @media only screen and (max-width: 840px) {
@@ -146,8 +141,7 @@
     }
 
     .mealCardKcalTime{
-        font-size: 0.8rem;
-        margin-right: 10px;
+        font-size: 0.9rem;
     }
 
     .mealCardDescriptionAddMealToOrder{
@@ -185,10 +179,6 @@
         font-size: 0.6rem;
     }
 
-    .mealCardKcalTime{
-        font-size: 0.8rem;
-    }
-
     .mealCardDescriptionAddMealToOrder{
         width: 80px;
     }
@@ -222,10 +212,6 @@
 
     .mealCardTag{
         font-size: 0.6rem;
-    }
-
-    .mealCardKcalTime{
-        font-size: 0.8rem;
     }
 
     .mealCardDescriptionAddMealToOrder{
