@@ -1,6 +1,6 @@
 ﻿version: '3'
 services:
-  rekboo-db:
+  db:
     image: postgres
     restart: unless-stopped
     environment:
@@ -9,40 +9,53 @@ services:
       POSTGRES_DB: rekboodb
     ports:
       - 5432:5432
-    expose:
-        - 5432
     networks:
-      - rekboonet
-
-  rekboo-api:
+      - rekboo-net
+   
+   
+  api:
     restart: unless-stopped
     build:
       context: .
     environment:
-      - ConnectionStrings:DefaultConnection=Server=rekboo-db;Database=rekboodb;Port=5432;User Id=sa;Password=sifra
+      - ConnectionStrings:DefaultConnection=Server=db;Database=rekboodb;Port=5432;User Id=sa;Password=sifra
       - ASPNETCORE_ENVIRONMENT=Development
     ports:
-      - 5184:5184
-    networks:
-      - rekboonet
-    links:
-      - rekboo-db
+      - 9998:9998
+    expose:
+      - 5184
     depends_on:
-      - rekboo-db
+      - db
+    networks:
+      - rekboo-net
 
-  rekboo-web:
+  web:
     restart: unless-stopped
     build:
       context: ./rekbooweb
     ports:
-      - 3000:3000
+      - 9999:9999
+    expose:
+      - 3000
     networks:
-      - rekboonet
-    links:
-      - rekboo-api
+      - rekboo-net
     depends_on:
-      - rekboo-api
+      - api
+   
+  nginx:
+    image: nginx:latest
+    restart: unless-stopped
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - rekboo-net
 
 networks:
-  rekboonet:
-    driver: bridge   
+  rekboo-net:
+    driver: bridge
