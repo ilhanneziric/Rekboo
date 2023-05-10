@@ -15,9 +15,6 @@ namespace Rekboo.Services
         {
             CreateMap<Database.User, Model.User>();
             CreateMap<Database.Meal, Model.Meal>();
-            //CreateMap<Database.Meal, Model.Meal>()
-            //.ForMember<string>(desti => desti.Photo1, source => source.MapFrom(m => Convert.ToBase64String(m.Photo1)))
-            //.ForMember<string>(desti => desti.Photo2, source => source.MapFrom(m => Convert.ToBase64String(m.Photo2)));
             CreateMap<Database.PlannerMeal, Model.PlannerMeal>();
             CreateMap<Database.PlannerMeal, Model.Meal>()
                 .ForMember(d => d.MealID, opt => opt.MapFrom(s => s.MealID));
@@ -29,60 +26,12 @@ namespace Rekboo.Services
             CreateMap<UserUpdateRequest, Database.User>();
 
             CreateMap<MealUpsertRequest, Database.Meal>()
-            .ForMember<string>(desti => desti.Photo1, source => source.MapFrom(m => ""))
-            .ForMember<string>(desti => desti.Photo2, source => source.MapFrom(m => ""));
+            .ForMember<string>(desti => desti.Photo1, source => source.Ignore())
+            .ForMember<string>(desti => desti.Photo2, source => source.Ignore());
 
-            //CreateMap<MealUpsertRequest, Database.Meal>()
-            //.ForMember<byte[]>(desti => desti.Photo1, source => source.MapFrom(m => Convert.FromBase64String(m.Photo1)))
-            //.ForMember<byte[]>(desti => desti.Photo2, source => source.MapFrom(m => Convert.FromBase64String(m.Photo2)));
             CreateMap<PlannerMealUpsertRequest, Database.PlannerMeal>();
             CreateMap<PlannerUpsertRequest, Database.Planner>();
 
-            //CreateMap<MealUpsertRequest, Database.Meal>()
-            //.ConvertUsing((source, existing, context) =>
-            //{
-            //    // If existing is not null, the user called .Map() with an existing
-            //    // destination instance, which should be filled.
-            //    var dest = existing ?? new Database.Meal();
-
-            //    // Call special method to fill dest instance.
-            //    dest.Photo1 = Convert.ToBase64String(source.Photo1);
-            //    //dest.photo2(System.Convert.ToBase64String(source.Photo2));
-
-            //    // if mapper is needed for other (nested) mappings, it can be used
-            //    var id = context.Mapper.Map<string>(source.Id);
-            //    dest.UpdateId(id);
-            
-            //    return dest;
-            //});
-
-
-            //CreateMap<byte[], string>().ConvertUsing<ByteArrayToStringTypeConverter>();
-            //CreateMap<string, byte[]>().ConvertUsing<StringToByteArrayTypeConverter>();
-        }
-
-        public string CreateUrl(IFormFile Photo1)
-        {
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(Photo1.FileName);
-            return $"https://localhost:44305/Images/{fileName}";
         }
     }
-
-  
-
-    //public class ByteArrayToStringTypeConverter : ITypeConverter<byte[], string>
-    //{
-    //    public string Convert(byte[] source, string destination, ResolutionContext context)
-    //    {
-    //        return System.Convert.ToBase64String(source);
-    //    }
-    //}
-
-    //public class StringToByteArrayTypeConverter : ITypeConverter<string, byte[]>
-    //{
-    //    public byte[] Convert(string source, byte[] destination, ResolutionContext context)
-    //    {
-    //        return System.Convert.FromBase64String(source);
-    //    }
-    //}
 }

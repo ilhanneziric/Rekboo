@@ -7,6 +7,7 @@ import NoImage from '../Assets/NoImage.png';
 import Select from 'react-select'
 import MealsService from "../Services/MealsService";
 import { mealValidation } from "../Utils/validations";
+import { ImageURL } from "../config";
 
 const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const disptach = useDispatch();
@@ -16,8 +17,8 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
         calories: 0,
         time: 0,
         active: false,
-        photo1: '',
-        photo2: '',
+        photo1: null,
+        photo2: null,
         tags: []
     });
 
@@ -34,15 +35,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
     const onChange = e => {
         if(e.target.type === 'file'){
             const file = e.target.files[0];
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => {
-                let encoded = reader.result.toString().replace(/^data:(.*,)?/, '');
-                if ((encoded.length % 4) > 0) {
-                    encoded += '='.repeat(4 - (encoded.length % 4));
-                }
-                setInputs({...inputs, [e.target.name] : encoded});    
-            };
+            setInputs({...inputs, [e.target.name] : file});    
         }else if(e.target.type === 'checkbox'){
             setInputs({...inputs, [e.target.name] : e.target.checked});    
         }else if(e.target.type === 'number'){
@@ -60,11 +53,25 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
             setValidationError(error.toString());
         }else{
             setValidationError(null);
+
+            const formData = new FormData();
+            formData.append("Name", mealData.name);
+            formData.append("Description", mealData.description);
+            formData.append("Calories", mealData.calories);
+            formData.append("Time", mealData.time);
+            formData.append("Active", mealData.active);
+            formData.append("Photo1", mealData.photo1);
+            formData.append("Photo2", mealData.photo2);
+            mealData.tags.forEach((tag, index) => {
+                formData.append(`Tags[${index}]`, tag);
+            });
+
             if(meal === null){
-                disptach(addMeal(mealData));
+                disptach(addMeal(formData));
             }else{
-                disptach(editMeal(mealData));
+                disptach(editMeal(formData, meal.mealID));
             }
+
             handleClose();
         }
 
@@ -75,7 +82,7 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
     useEffect(() => {
         meal && setInputs({...meal, tags: meal?.tags.map((option) => ({ value: option, label: option }))});
         getTags();
-    }, [meal]);
+    }, [meal]); //delete meal??
 
     const customStyles = {
         control: (provided, state) => ({
@@ -110,9 +117,9 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
                 <div className="imagesAdminMealModalContainer">
                     <div className="imageAdminMealModalContainer">
                         {
-                            photo1 === '' ?
+                            photo1 === null ?
                             <img src={NoImage} alt="" className="imageAdminMealModal"/>:
-                            <img src={`data:image/png;base64,${photo1}`} alt="" className="imageAdminMealModal"/>
+                            <img src={typeof photo1 === 'string' ? `${ImageURL}${photo1}` : URL.createObjectURL(photo1)} alt="" className="imageAdminMealModal"/>
                         }
                         <label htmlFor="photo1" className="lbl">Glavna slika</label>
                         <input type="file" name="photo1" required className="fileInputAdminMealModal" accept="image/png, image/gif, image/jpeg" onChange={e => onChange(e)}/>
@@ -120,9 +127,9 @@ const AdminMealsModal = ({show, handleClose, meal = null}) => {
 
                     <div className="imageAdminMealModalContainer">
                         {
-                            photo2 === '' ?
+                            photo2 === null ?
                             <img src={NoImage} alt="" className="imageAdminMealModal"/>:
-                            <img src={`data:image/png;base64,${photo2}`} alt="" className="imageAdminMealModal" />
+                            <img src={typeof photo2 === 'string' ? `${ImageURL}${photo2}` : URL.createObjectURL(photo2)} alt="" className="imageAdminMealModal" />
                         }
                         <label htmlFor="photo2" className="lbl">Sporedna slika</label>
                         <input type="file" name="photo2" required className="fileInputAdminMealModal" accept="image/png, image/gif, image/jpeg" onChange={e => onChange(e)}/>

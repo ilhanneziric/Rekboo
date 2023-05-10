@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Rekboo.Model.SearchObjects;
 using Rekboo.Services.Database;
+using System.Collections.Generic;
 
 namespace Rekboo.Services
 {
@@ -32,18 +33,20 @@ namespace Rekboo.Services
         {
             var set = Context.Set<TDb>();
             var entity = set.Find(id);
-            if (entity != null)
-            {
-                Mapper.Map(update, entity);
-            }
-            else
-            {
+            if (entity == null)
                 return null;
-            }
+
+            Mapper.Map(update, entity);
+
+            BeforeUpdate(update, entity);
 
             Context.SaveChanges();
 
             return Mapper.Map<T>(entity);
+        }
+
+        public virtual void BeforeUpdate(TUpdate update, TDb entity)
+        {
         }
     }
 }

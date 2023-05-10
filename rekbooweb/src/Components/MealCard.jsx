@@ -16,18 +16,18 @@ const MealCard = ({meal, add, remove, added, fullOrder}) => {
   const handleMouseEnter = () => { setShowNav(true); };
   const handleMouseLeave = () => { setShowNav(false); };
 
-  const createUrlFromBase64 = (base64String) => {
-    const binaryString = window.atob(base64String);
-    const uint8Array = new Uint8Array(binaryString.length);
-    for (let i = 0; i < binaryString.length; i++) {
-      uint8Array[i] = binaryString.charCodeAt(i);
-    }
+  // const createUrlFromBase64 = (base64String) => {
+  //   const binaryString = window.atob(base64String);
+  //   const uint8Array = new Uint8Array(binaryString.length);
+  //   for (let i = 0; i < binaryString.length; i++) {
+  //     uint8Array[i] = binaryString.charCodeAt(i);
+  //   }
 
-    const blob = new Blob([uint8Array], { type: "image/png" });
-    const url = URL.createObjectURL(blob);
+  //   const blob = new Blob([uint8Array], { type: "image/png" });
+  //   const url = URL.createObjectURL(blob);
 
-    return url;
-  }
+  //   return url;
+  // }
 
   // const handleIntersection = (entries) => {
   //   const [entry] = entries;
@@ -41,8 +41,8 @@ const MealCard = ({meal, add, remove, added, fullOrder}) => {
 
   const getImages = (meal) => {
     setImages([
-      { original: createUrlFromBase64(meal.photo1) },
-      { original: createUrlFromBase64(meal.photo2) }
+      { original: `https://localhost:44305${meal.photo1}`},
+      { original: `https://localhost:44305${meal.photo2}` }
     ]);
     // setLoading(false);
   }

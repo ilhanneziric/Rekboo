@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API, getHeaders } from "../config";
+import { API, getHeaders, getFormDataHeaders } from "../config";
 
 const getAllMeals = async (params) => {
     try {
@@ -33,16 +33,16 @@ const getTags = async () => {
 
 const addMeal = async (meal) => {
     try {
-        const response = await axios.post(API + 'Meal', meal, {headers: getHeaders()})
+        const response = await axios.post(API + 'Meal', meal, {headers: getFormDataHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;
     }
 };
 
-const editMeal = async (meal) => {
+const editMeal = async (meal, mealID) => {
     try {
-        const response = await axios.put(API + `Meal/${meal.mealID}`, meal, {headers: getHeaders()})
+        const response = await axios.put(API + `Meal/${mealID}`, meal, {headers: getFormDataHeaders()})
         return await response.data;
     } catch (err) {
         return err.message;

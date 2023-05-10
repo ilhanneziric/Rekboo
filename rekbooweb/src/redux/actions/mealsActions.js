@@ -33,10 +33,10 @@ export const addMeal = (meal) => async(dispatch) => {
     }
 }
 
-export const editMeal = (meal) => async(dispatch) => {
+export const editMeal = (meal, mealID) => async(dispatch) => {
     dispatch({ type: actionTypes.EDIT_MEAL});
     try {
-        const data = await MealsService.editMeal(meal);
+        const data = await MealsService.editMeal(meal, mealID);
         dispatch({ 
             type: actionTypes.EDIT_MEAL_SUCCESS, 
             payload: data

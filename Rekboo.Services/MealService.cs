@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Rekboo.Services
 {
@@ -47,6 +48,32 @@ namespace Rekboo.Services
             entity.Photo1 = $"/Images/{fileName1}";
             entity.Photo2 = $"/Images/{fileName2}";
             base.BeforeInsert(insert, entity);
+        }
+
+        public override async void BeforeUpdate(MealUpsertRequest update, Meal entity)
+        {
+
+            await DeleteImageAsync(entity.Photo1);
+            await DeleteImageAsync(entity.Photo2);
+
+            string fileName1 = await UploadImageAsync(update.Photo1);
+            string fileName2 = await UploadImageAsync(update.Photo2);
+
+            entity.Photo1 = $"/Images/{fileName1}";
+            entity.Photo2 = $"/Images/{fileName2}";
+
+            base.BeforeUpdate(update, entity);
+        }
+
+        private async Task DeleteImageAsync(string imageUrl)
+        {
+            var imageName = Path.GetFileName(imageUrl);
+            var filePath = Path.Combine(_imageFolderPath, imageName);
+
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+            }
         }
 
         private async Task<string> UploadImageAsync(IFormFile image)

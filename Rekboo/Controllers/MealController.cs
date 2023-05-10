@@ -26,5 +26,10 @@ namespace Rekboo.Controllers
         {
             return base.Insert(insert);
         }
+
+        public override Meal Update(int id, [FromForm] MealUpsertRequest update)
+        {
+            return base.Update(id, update);
+        }
     }
 }

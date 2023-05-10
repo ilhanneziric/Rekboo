@@ -104,10 +104,10 @@ export const mealValidation = data => {
         name: Joi.string().required().messages({
             'any.required': 'Moraš unijeti ime jela!' ,
         }),
-        photo1: Joi.string().required().messages({
+        photo1: Joi.object().required().messages({
             'any.required': 'Glavna slika nije validna!' ,
         }),
-        photo2: Joi.string().required().messages({
+        photo2: Joi.object().required().messages({
             'any.required': 'Sporedna slija nije validna!' ,
         }),
         tags: Joi.array().min(1).required().messages({
