@@ -126,7 +126,7 @@ const PlannerPlan = () => {
             </div>
             <div className="totalOrderContainer">
               <div className="totalOrderChosenPlan">{order.tags.join(', ')}</div>
-              {order.numberOfMeals && order.numberOfPeople && <div className="totalOrderRecipes">{order.numberOfMeals} recepata u sedmici za {order.numberOfPeople} osoba</div>}
+              {order.numberOfMeals && order.numberOfPeople && <div className="totalOrderRecipes">{order.numberOfMeals} recepata u sedmici za {order.numberOfPeople} osobe</div>}
               <div className="totalOrderRecipes">Ukupno {order.numberOfMeals*order.numberOfPeople} porcije: <b>{order.numberOfMeals*order.numberOfPeople*5 *0}KM</b></div>
               <div className="totalOrderPriceDescription">1 porcija = 0KM</div>
               <div className="totalOrderDelivery">Pakovanje i dostava: <b>0KM</b></div>
