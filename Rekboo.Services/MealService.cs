@@ -82,6 +82,11 @@ namespace Rekboo.Services
             var fileName = Guid.NewGuid().ToString() + Path.GetExtension(image.FileName);
             var filePath = Path.Combine(_imageFolderPath, fileName);
 
+            if (!Directory.Exists(_imageFolderPath))
+            {
+                Directory.CreateDirectory(_imageFolderPath);
+            }
+
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
                 await image.CopyToAsync(stream);
