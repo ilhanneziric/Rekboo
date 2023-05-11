@@ -18,7 +18,7 @@ namespace Rekboo.Services
             _configuration = configuration;
         }
 
-        public override Model.User Insert(UserInsertRequest insert)
+        public override Task<Model.User> Insert(UserInsertRequest insert)
         {
             if(insert.Password != insert.PasswordConfirmation)
             {
@@ -31,12 +31,12 @@ namespace Rekboo.Services
             return entity;
         }
 
-        public override void BeforeInsert(UserInsertRequest insert, Database.User entity)
+        public override Task BeforeInsert(UserInsertRequest insert, Database.User entity)
         {
             var salt = GenerateSalt();
             entity.PasswordSalt = salt;
             entity.PasswordHash = GenerateHash(salt, insert.Password);
-            base.BeforeInsert(insert, entity);
+            return base.BeforeInsert(insert, entity);
         }
 
         public static string GenerateSalt()

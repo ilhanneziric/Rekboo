@@ -9,14 +9,14 @@ namespace Rekboo.Controllers
         public BaseCRUDController(IService<T, TSearch> service) : base(service) { }
 
         [HttpPost]
-        public virtual T Insert([FromBody] TInsert insert)
+        public virtual Task<T> Insert([FromBody] TInsert insert)
         {
             var result = ((ICRUDService<T, TSearch, TInsert, TUpdate>)this.Service).Insert(insert);
             return result;
         }
 
         [HttpPut("{id}")]
-        public virtual T Update(int id, [FromBody] TUpdate update)
+        public virtual Task<T> Update(int id, [FromBody] TUpdate update)
         {
             var result = ((ICRUDService<T, TSearch, TInsert, TUpdate>)this.Service).Update(id, update);
             return result;

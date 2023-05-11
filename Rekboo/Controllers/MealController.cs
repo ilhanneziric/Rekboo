@@ -22,12 +22,12 @@ namespace Rekboo.Controllers
             return Ok(_mealService.GetTags());
         }
 
-        public override Meal Insert([FromForm] MealUpsertRequest insert)
+        public override Task<Meal> Insert([FromForm] MealUpsertRequest insert)
         {
             return base.Insert(insert);
         }
 
-        public override Meal Update(int id, [FromForm] MealUpsertRequest update)
+        public override Task<Meal> Update(int id, [FromForm] MealUpsertRequest update)
         {
             return base.Update(id, update);
         }

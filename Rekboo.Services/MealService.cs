@@ -40,7 +40,7 @@ namespace Rekboo.Services
             return filteredQuery;
         }
 
-        public override async void BeforeInsert(MealUpsertRequest insert, Meal entity)
+        public override async Task BeforeInsert(MealUpsertRequest insert, Meal entity)
         {
             string fileName1 = await UploadImageAsync(insert.Photo1);
             string fileName2 = await UploadImageAsync(insert.Photo2);
@@ -50,7 +50,7 @@ namespace Rekboo.Services
             base.BeforeInsert(insert, entity);
         }
 
-        public override async void BeforeUpdate(MealUpsertRequest update, Meal entity)
+        public override async Task BeforeUpdate(MealUpsertRequest update, Meal entity)
         {
 
             await DeleteImageAsync(entity.Photo1);

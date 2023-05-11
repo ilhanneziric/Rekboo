@@ -28,6 +28,8 @@ namespace Rekboo.Services
             CreateMap<MealUpsertRequest, Database.Meal>()
             .ForMember<string>(desti => desti.Photo1, source => source.Ignore())
             .ForMember<string>(desti => desti.Photo2, source => source.Ignore());
+            //.ForMember<string>(desti => desti.Photo1, source => source.MapFrom(x => x.Photo1))
+            //.ForMember<string>(desti => desti.Photo2, source => source.MapFrom(x => x.Photo1));
 
             CreateMap<PlannerMealUpsertRequest, Database.PlannerMeal>();
             CreateMap<PlannerUpsertRequest, Database.Planner>();

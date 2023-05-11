@@ -11,25 +11,25 @@ namespace Rekboo.Services
     {
         public BaseCRUDService(RekbooContext context, IMapper mapper) : base(context, mapper) { }
 
-        public virtual T Insert(TInsert insert)
+        public virtual async Task<T> Insert(TInsert insert)
         {
             var set = Context.Set<TDb>();
             TDb entity = Mapper.Map<TDb>(insert);
 
             set.Add(entity);
 
-            BeforeInsert(insert, entity);
+            await BeforeInsert(insert, entity);
 
             Context.SaveChanges();
 
             return Mapper.Map<T>(entity);
         }
 
-        public virtual void BeforeInsert(TInsert insert, TDb entity)
+        public virtual async Task BeforeInsert(TInsert insert, TDb entity)
         {
         }
 
-        public virtual T Update(int id, TUpdate update)
+        public virtual async Task<T> Update(int id, TUpdate update)
         {
             var set = Context.Set<TDb>();
             var entity = set.Find(id);
@@ -38,14 +38,14 @@ namespace Rekboo.Services
 
             Mapper.Map(update, entity);
 
-            BeforeUpdate(update, entity);
+            await BeforeUpdate(update, entity);
 
             Context.SaveChanges();
 
             return Mapper.Map<T>(entity);
         }
 
-        public virtual void BeforeUpdate(TUpdate update, TDb entity)
+        public virtual async Task BeforeUpdate(TUpdate update, TDb entity)
         {
         }
     }

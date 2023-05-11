@@ -24,16 +24,16 @@ namespace Rekboo.Services
             return filteredQuery;
         }
 
-        public override Model.Planner Insert(PlannerUpsertRequest insert)
+        public override Task<Model.Planner> Insert(PlannerUpsertRequest insert)
         {
-            var result = base.Insert(insert);
+            var result = base.Insert(insert);       
             
             foreach (var mealID in insert.MealIDs)
             {
                 PlannerMeal plannerMealEntity = Mapper.Map<PlannerMeal>(new PlannerMealUpsertRequest
                 {
                     MealID = mealID,
-                    PlannerID = result.PlannerID
+                    PlannerID = result.Result.PlannerID
                 });
                 Context.PlannerMeals.Add(plannerMealEntity);
             }

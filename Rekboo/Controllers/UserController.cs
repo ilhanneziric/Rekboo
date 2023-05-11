@@ -28,7 +28,7 @@ namespace Rekboo.Controllers
         //}
 
         [AllowAnonymous]
-        public override User Insert([FromBody] UserInsertRequest insert)
+        public override Task<User> Insert([FromBody] UserInsertRequest insert)
         {
             return base.Insert(insert);
         }
