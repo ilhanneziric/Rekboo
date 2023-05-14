@@ -5,6 +5,7 @@ import { BsCheck } from 'react-icons/bs';
 import { AiOutlineFire } from 'react-icons/ai';
 import { useEffect, useRef, useState } from 'react';
 import { HashLoader } from "react-spinners"
+import { ImageURL } from "../config";
 
 const MealCard = ({meal, add, remove, added, fullOrder}) => {
   const [showNav, setShowNav] = useState(false);
@@ -41,8 +42,8 @@ const MealCard = ({meal, add, remove, added, fullOrder}) => {
 
   const getImages = (meal) => {
     setImages([
-      { original: `https://localhost:44305${meal.photo1}`},
-      { original: `https://localhost:44305${meal.photo2}` }
+      { original: `${ImageURL}${meal.photo1}`},
+      { original: `${ImageURL}${meal.photo2}` }
     ]);
     // setLoading(false);
   }

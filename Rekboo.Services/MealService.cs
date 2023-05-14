@@ -17,7 +17,7 @@ namespace Rekboo.Services
     public class MealService : BaseCRUDService<Model.Meal, Database.Meal, MealSearchObject, MealUpsertRequest, MealUpsertRequest>, IMealService
     {
         private readonly IMemoryCache _memoryCache;
-        private readonly string _imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Images");
+        private readonly string _imageFolderPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
 
         public MealService(RekbooContext context, IMapper mapper, IMemoryCache memoryCache) : base(context, mapper)
         {
@@ -45,8 +45,8 @@ namespace Rekboo.Services
             string fileName1 = await UploadImageAsync(insert.Photo1);
             string fileName2 = await UploadImageAsync(insert.Photo2);
 
-            entity.Photo1 = $"/Images/{fileName1}";
-            entity.Photo2 = $"/Images/{fileName2}";
+            entity.Photo1 = $"/images/{fileName1}";
+            entity.Photo2 = $"/images/{fileName2}";
             base.BeforeInsert(insert, entity);
         }
 
@@ -59,8 +59,8 @@ namespace Rekboo.Services
             string fileName1 = await UploadImageAsync(update.Photo1);
             string fileName2 = await UploadImageAsync(update.Photo2);
 
-            entity.Photo1 = $"/Images/{fileName1}";
-            entity.Photo2 = $"/Images/{fileName2}";
+            entity.Photo1 = $"/images/{fileName1}";
+            entity.Photo2 = $"/images/{fileName2}";
 
             base.BeforeUpdate(update, entity);
         }
