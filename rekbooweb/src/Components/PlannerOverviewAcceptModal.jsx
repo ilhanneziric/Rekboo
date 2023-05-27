@@ -22,8 +22,7 @@ const PlannerOverviewAcceptModal = ({show, handleClose}) => {
             <Modal.Title><div className='plannerOverviewAcceptModalTitle'>USPJEŠNA NARUDŽBA</div></Modal.Title>
         </Modal.Header>
         <div className='plannerOverviewAcceptBody'>
-          <span> Hvala što si dio <b>Rekboo Beta testinga</b>!  </span>
-          Dobićeš email za potvrdu narudžbe.
+          Hvala Vam što ste probali našu uslugu! Nažalost naš servis još uvijek nije dostupan, ali radimo naporno da Rekboo okuse donesemo i na Vaša vrata. Stay tuned! 
         </div>
         <Modal.Footer>
             <div onClick={submit} className='plannerOverviewAcceptModalBtn'>U REDU</div>

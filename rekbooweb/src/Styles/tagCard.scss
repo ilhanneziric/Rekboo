@@ -29,6 +29,11 @@
     color: $green;
 }
 
+
+.tagCardBody:hover{
+    cursor: pointer;
+}
+
 .tagCardNameDisabled{
     color: $greyDisabled;
 }
@@ -36,6 +41,11 @@
 .tagCardBodyDisabled:focus{
     cursor: not-allowed;
     outline: none;
+}
+
+
+.tagCardBodyDisabled:hover{
+    cursor: not-allowed;
 }
 
 @media only screen and (max-width: 1000px) {

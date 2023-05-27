@@ -84,7 +84,8 @@ const PlannerAddress = () => {
             <label className="addressFormLbl">Grad:</label>
             <input className="addressFormInput" name="city" type="text" value={inputs.city} onChange={e => onChange(e)}/>
             <label className="addressFormLbl">Telefon:</label>
-            <input className="addressFormInput" name="phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
+            <input className="addressFormInputAddressCountryCode" type="text" value={'+387'} disabled/>
+            <input className="addressFormInputAddress" name="phone" type="text" value={inputs.phone} onChange={e => onChange(e)}/>
             <button className='addressBtn'>{loading ? <ClipLoader color={'white'} size={15}/> : 'POTVRDI'}</button>
           </form>
           </div>
