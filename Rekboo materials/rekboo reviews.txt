@@ -1,0 +1,51 @@
+Da li ste naišli na tehničke poteškoće prilikom korištenja web aplikacije? Molimo Vas da nam pružite detaljan opis.:
+
+Nisam naišla na tehničke probleme ali zanima me da li odabir "tagova" odnosno vrste recepata suzi i menu? Ako jeste tako, postoji li mogućnost da se cijeli meni vidi neovisno o tipovima recepata koje izaberemo. Mozda da su prvi recepti ti koji su u skladu sa nasim odabirom, npr vegan i vegetarian, a onda ispod da se mogu vidjeti i ostala jela. Radila sam kao CC za HelloFresh i to mi se uvijek dopadalo jer u nekim situacijama je ptorebno naručiti recepte koje inače možda ne bi. 
+
+"Nije bilo poteškoća, a ocjene gdje sam stavio 4 su zato što nisam shvatio da mogu izabrati više kategorija u isto vrijeme, nego sam se vraćao na korak jedan da vidim šta im a zdravo, pa šta ima moderno i sl. Dakle, mislim da bi čitav UI bio poboljšan ako bi kod kategorija pisalo da je moguće izabrati više njih. :) 
+Naručio sam koristeći mobitel i sve je tehnički bilo ekstra."
+
+Nema opcije "zaboravili ste lozinku" tako da sam morala napraviti drugi račun 
+
+Nije bilo tehnickih poteskoca
+
+
+
+Molimo Vas da podijelite opće povratne informacije i prijedloge za poboljšanje Rekboo web aplikacije i korisničkog iskustva.":
+
+Jedina sitnica koju sam uočio da bi dobro došla jeste mogućnost da se privremeno prikaže password prilikom kreiranja naloga. Mimo toga, sve odlično!
+
+Izgleda super, jedino sto bih voljela vidjeti je spisak namirnica. Moja situacija je specificna jer imam 23 alergije na hranu pa bez tog spiska ne bih mogla narucivati.
+
+"Bilo bi dobro da imamo pristup receptima ili barem sastojcima čisto zbog mogućih alergija a i generalno dobro je znati sta tačno očekivati. Sigurna sam da ne šaljete npr. vodu, sol, biber, obično ulje i sl. ali dobro je i to dodati. 
+Vidjeti i odabrati jela nekoliko sedmica unaprijed, kao i pauzirati po potrebi. 
+Kada se gleda narudžba u sistemu bilo bi dobro da se može vidjeti i adresa na koju narudžba ide.
+I nekako iz iskustva bih samo rekla da bi za vas i sve potencijalne kupce bilo najbolje da odmah na pocetku, jasno i vidljivo objasnite sta je subskipcija i kako funkcioniše kao i bilo kakve rokove za promjenu narudžbe jer to je nekako najveći izazov i najviše upita je vezano za to. 
+Imam još puno ideja ali sigurna sam da previse razmisljam u detalje i da ste vec razmisljali o svemu tako da vam necu gubiti vrijeme. Sretno! :)"
+
+"Već sam gore napisao, ali ponovit ću i ovdje... Mislim da bi UI bio poboljšan ako bi kod kategorija pisalo da je moguće izabrati više njih, jer nije jasno na prvu. 
+Dodatne informacije koje bi bile zbodne: Detaljna nutritivna vrijednost. Ako sam na dijeti ili treniram, zanimalo bi me koliko proteina ima u jelu, ne samo kalorije. 
+Možda ne bi bilo loše da napišete i alergene, ali to vjerovatno piše u receptima. Na kraju krajeva, ovo su pre-meal kits, tako da svako može izostaviti peršun ako je npr. alergičan na peršun, haha. 
+Sve u svemu, jako dobro, svaka čast, sretno i radujem se svojoj narudžbi. Hvala vam i vidimo se. 🍀"
+
+Samo dodato detaljan termin dostave, sve ostalo super ❤️
+
+Ideja je fenomenalna i nadam se da ćete vremenom nastaviti da usavršavate kompletnu uslugu. 
+
+U dijelu gdje se odabiru kategorije jela (vegan, vegetarijansko i sl.) mozda samo naglasiti da korisnik moze odabrati vise kategorija odjednom. 
+
+
+
+
+ZAKLJUCAK:
+-dodati feature koji ce da prvo izlista sva jela po odabranim kategorijama a onda da stoji label "Ostala jela" i tu ubud sva ostala jela
+-mozda kod labela kategorije dodati sitnim slovima da pise da je moguce odabrati vise jer su ljudi glupi, ili mozda prebaciti sve kategorije u planner meals korak
+(mozda da se izbrise onaj plan i gdje se popunjava sa kategorijama, mozda to zbunjuje ljude da misle da ne mogu odabrati vise kategoriaj odjednom)
+-dodati feature zaboravili ste lozinku (parent email verification)
+-dodati feature prikaz passworda 
+-dodati feature prikaz spiska svih namirnica jer ima ljudi koji su alergicni na neke stvari pa im to dobro dodje, a i generalno je dobro znati sta ce se tacno dobiti
+-mozda dodati feature da se odaberu jela nekoliko sedmica unaprijed a i da se ima mogucnost otkazivanja narudzbe
+-dodati feature da prikaz detalja narudzbe jer ima neko zeli da vidi gdje tacno narudzba ide i kada tacno se dostavlja
+-dodati feature prikaza detaljne nutritivne vrijednosti a ne samo kalorija, ne bi bilo lose da se dodaju alergeni
+-dodati feture prikaz detaljan termin dostave
+

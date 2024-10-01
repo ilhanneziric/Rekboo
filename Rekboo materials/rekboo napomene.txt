@@ -1,0 +1,69 @@
+register funkcija treba vratiti token a ne objekat Model.User
+
+dodati svoj toast koji ce se otvarati odozgo i trajati koju sekundu, kada se ulogujem ili kada kreiram racun tada se treba prikazati i kada
+kreiram narudzbu takodjer
+
+dodati neku sliku pozadine, da bude bijela i da ima neke sare koje se jedva primjete
+
+izbrisati animaciju uvecanja jer nekako smeta kad se hoce kliknuti dodaj i ukloni jer se nekako pomjera i nije lijep osjecaj kad hoces da 
+ubodes
+
+staviti animaciju kad se poklopi da su odabrana jela da onaj dole sticky div se povecava i smanjuje konstantno kao da blinka, to je cool
+
+kreirati paging na svako vracanje getAll, tj trenutno na meals, orders i users
+
+dodati nazad btn koji ce da vodi na prosli korak
+
+optimizacija citave aplikacije jer ima mjesta gdje je jako spora
+
+malo preurediti register korak i mozda kontakt korak na fazon plan koraka, jer u plan koraku na pocetku bude prazna linija pa se onda puni
+a register bude napola pun
+
+urediti errore iz joi validatora jer mogu napraviti preko messages svoje error poruke i tako da bude dosta intuitivnija aplikacija kad se
+na nasem kaze sta ne valja od inputas
+
+urediti tabele u admin dijelu, koriste isti css, a admin meals ima btn
+
+useeffect kod plannera a mislim i ostalih nekako bezze jer se radi neka sranje provjera 
+
+gledati sapa.ba i app.sapa.ba kako su implementirali neke stvari i iskopirati ih
+
+preraspodijeliti foldere na backendu, to bi moglo ici u dva foldera, jedan za iterface servisa a drugi za klase servisa
+
+dodati validaciju za add i edit jela u adminu
+
+implementirati onaj drugi nacin pohranjivanja slika
+
+dodati datum kreiranja narudzbe
+
+upravljanje sedmicom
+
+urediti kad se ono zapamti inputi pa se odabere oa bude plavu background https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete
+
+promijeniti how it works i uraditi profesionalno ono kao linija odozgo prema dole
+
+srediti modal o narudzbi
+
+izmijeniti sve one sto sam radi css-a stavljao dva put element, narucito u wizardu, da ide preko tercijalnog operatera u classnameu
+
+faq feature
+
+alergeni feature
+
+kad je loading onda footer ne bude u dnu, possible solution is da footer zavisi o loadingu tj kad je loading false da se prikaze footer
+
+mozda zamijeniti onaj dockerfile u apiju da bude kao u rootu, prvo pogledati kod rs2vjezbe kako je handlano
+
+dodati label za curasel na rekboo
+
+izbrisati addswaggergen in progam cs rekboo
+
+profesionalno impleemntirati logger za rekboo
+
+dodati napomenu u planner overview 
+
+
+
+spinneri -> https://www.npmjs.com/package/react-spinners
+
+ham menu -> https://hamburger-react.netlify.app/  and  https://www.npmjs.com/package/hamburger-react
